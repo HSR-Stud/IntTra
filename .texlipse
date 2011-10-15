@@ -1,0 +1,13 @@
+#TeXlipse project settings
+#Tue Sep 25 19:47:48 CEST 2007
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=IntTra.tex
+outputFile=IntTra.pdf
+langSpell=en
+markDer=true
+srcDir=

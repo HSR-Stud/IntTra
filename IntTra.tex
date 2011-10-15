@@ -1,0 +1,75 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dokumentinformationen %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\titleinfo}{Integraltransformationen - Formelsammlung}
+\newcommand{\authorinfo}{Braun \& Co, J.Rast}
+\newcommand{\versioninfo}{$Revision: 1 $ - powered by \LaTeX}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Standard projektübergreifender Header für
+% - Makros 
+% - Farben
+% - Mathematische Operatoren
+%
+% DORT NUR ERGÄNZEN, NICHTS LÖSCHEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{header}
+
+% Möglichst keine Ergänzungen hier, sondern in header.tex
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Einleitung
+\section{Varianten der Integraltransformationen}
+\begin{tabular}{|l||l|l|}
+\hline & & \\
+\textbf{Signalart}
+	& diskret
+	& kontinuierlich \\
+\hline \hline & & \\
+periodisch
+	& Diskrete Fourier-Transformation
+	& Fourierreihe \\
+\hline & & \\
+impulsförmig
+	& ``Fourierreihe mit $T = Impulsdauer$''
+	& Fourierintegral \\
+\hline & & \\
+kausal
+	& Z-Transformation
+	& Laplace-Transformation \\
+\hline
+\end{tabular}
+
+% Signale und Systeme
+\input{files/SigSys}
+\newpage
+
+% Diskrete Fourier Transformation
+\input{files/DFT}
+\newpage
+
+% Fourierreihe
+\input{files/Fourierreihe}
+\newpage
+	
+% Fourier-Integral / Fourier-Transformation
+\input{files/FourierIntegral}
+\newpage
+
+% LaPlace-Transformation
+\input{files/LaPlaceTransformation}
+\newpage
+
+% Diverses
+\input{files/Diverses}
+\newpage
+
+% Wichtige Formeln
+\input{files/wichtigeFormeln}
+\newpage
+
+% Integraltabelle
+\input{files/Integrale}
+\end{document}

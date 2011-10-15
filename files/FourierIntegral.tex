@@ -1,0 +1,87 @@
+\section{Fourier-Integral / Fourier-Transformation}
+	$$\boxed{f(t) =  \frac{1}{2\pi}\int\limits_{-\infty}^{\infty}
+	F(j\omega)e^{j\omega t}d\omega}=\boxed{\int\limits_0^{\infty}[a(\omega)
+	\cos(\omega t) + b(\omega) \sin(\omega t)]d\omega} =\boxed{\int
+	\limits_0^{\infty}[A(\omega) \cos(\omega t +\varphi(\omega))]d\omega}$$
+	
+	$$\boxed{F(j\omega) = \int\limits_{-\infty}^{\infty} f(t)e^{-j\omega t}dt}
+	\qquad \boxed{a(\omega)= \frac{1}{\pi}\int\limits_{-\infty}^{\infty}
+	f(t)\cos(\omega t)dt \quad \mbox{ und } \quad b(\omega)=
+	\frac{1}{\pi}\int\limits_{-\infty}^{\infty}f(t)\sin(\omega t)dt}$$
+
+	$$ a(\omega)=\frac{Re[F(j\omega)]}{\pi} \quad
+	b(\omega)=-\frac{Im[F(j\omega)]}{\pi} \quad
+	A(\omega)=\frac{1}{\pi} |F(j\omega)| \quad
+	\varphi(\omega)=arg[F(j\omega)] \quad
+	F(j\omega)=\pi[a(\omega)-jb(\omega)]=\pi A(\omega)e^{j\varphi(\omega)} $$
+	
+	\subsection{Symmetrie}
+	Es gelten die gleichen Symmetrien wie bei der Fourierreihe.
+		
+	\subsection{Eigenschaften}
+		\renewcommand{\arraystretch}{2}
+		\begin{tabular}{|p{8cm}|p{8cm}|}
+        	\hline
+        	Linearität & 
+        	$\alpha\cdot f(t) + \beta\cdot g(t) \FT \alpha\cdot F(j\omega) +
+        	\beta\cdot G(j\omega)$\\
+        	\hline
+			Zeitumkehrung (Spiegelung an der Y-Achse)&
+			$f(-t) \FT F(-j\omega) = F^*(jw)$ \\
+			\hline        	
+  			"Ahnlichkeit / Zeitskalierung &
+  			$f(\alpha t) \FT \frac{1}{|\alpha|}F \left (j\frac{\omega}{\alpha} \right)
+  			\quad\alpha \in\mathbb{R}\setminus \{0\}$\\
+  			\hline
+  			Verschiebung im	Zeitbereich &
+  			$f(t\pm t_0) \FT F(j\omega)e^{\pm j\omega t_0}$\\
+  			\hline
+			Verschiebung im Frequenzbereich &
+			$f(t)e^{\pm j\omega_0 t} \FT F(j(\omega\mp\omega_0))$\\
+			\hline
+			Ableitung im Zeitbereich &
+			$\frac{\partial^n f(t)}{\partial t^n} \FT (j\omega)^n F(j\omega)$\\
+			\hline
+			Integration im Zeitbereich &
+			$\int\limits_{-\infty}^{t}f(\tau)d\tau \FT
+			\frac{F(j\omega)}{j\omega}+F(0)\pi\delta(\omega)$\\
+			\hline				
+			Ableitung im Frequenzbereich &
+			$t^n f(t) \FT j^n \frac{\partial F(j\omega)}{\partial \omega^n}$\\
+			\hline		
+			Faltung im Zeitbereich &
+			$f(t) \ast g(t) = \int\limits_{-\infty}^{\infty} f(\tau)g(t-\tau)d\tau \FT
+			F(j\omega) \cdot G(j\omega)$\\
+			\hline
+			Faltung im Frequenzbereich &
+			$f(t) \cdot g(t) \FT \frac{1}{2\pi}F(j\omega) \ast G(j\omega)$\\
+			\hline
+			Vertauschungssatz (Dualität) &
+			$f(t) \FT F(j\omega)\nonumber$ \\
+ 			& $F(t) \FT 2\pi \cdot f(-j\omega)$\\
+ 			\hline
+ 			Modulation &
+ 			$\cos(\alpha t) \cdot f(t)  \FT  \frac{1}{2}\cdot
+ 			\left[F(j(\omega-\alpha)) + F(j(\omega+\alpha))\right ]$\\
+ 			& $\sin(\alpha t) \cdot f(t) \FT \frac{1}{2j}\cdot \left[
+ 			F(j(\omega-\alpha)) - F(j(\omega+\alpha))\right ]$\\
+ 			\hline
+        	Parseval's Theorem &
+ 			$\int\limits_{-\infty}^{\infty}f(t)g^{\ast}(t)dt = \frac{1}{2\pi}
+  			\int\limits_{-\infty}^{\infty}F(j\omega)G^{\ast}(j\omega)d\omega$\\
+  			\hline
+  			Bessel's Theorem &
+  			$\int\limits_{-\infty}^{\infty}|f(t)|^2 dt = \frac{1}{2\pi}
+  			\int\limits_{-\infty}^{\infty}|F(j\omega)|^2 d\omega$\\
+  			\hline 			
+			Anfangswerte &
+			$f(0)=\frac{1}{2\pi}\int\limits_{-\infty}^{\infty}F(j\omega)d\omega
+			\hspace*{1cm} F(0)=\int\limits_{-\infty}^{\infty}f(t)dt$\\
+			\hline
+			$\infty$ lange Folge von $\delta$-Impulsen &
+			$\sum_{n=-\infty}^{\infty} \delta(t-n\cdot t_0) \FT
+			\sum_{n=-\infty}^{\infty} \frac{2\pi}{t_0}\delta(\omega-n\cdot
+			\frac{2\pi}{t_0})$\\
+			\hline
+        \end{tabular}
+		\renewcommand{\arraystretch}{1}
