@@ -13,44 +13,44 @@
 		\begin{tabular}{|p{6cm}|p{11cm}|}
         	\hline
         	Linearität & 
- 			$\alpha\cdot f(t) + \beta\cdot g(t) \FT \alpha\cdot F(s) + \beta\cdot
+ 			$\alpha\cdot f(t) + \beta\cdot g(t) \laplace \alpha\cdot F(s) + \beta\cdot
  			G(s)$ \\
  			\hline
  			"Ahnlichkeit / Zeitskalierung &
- 			$f(\alpha t) \FT \frac{1}{\alpha}F \left (\frac{s}{\alpha} \right ) \quad 0
+ 			$f(\alpha t) \laplace \frac{1}{\alpha}F \left (\frac{s}{\alpha} \right ) \quad 0
  			<\alpha \in\mathbb{R}$ \\
  			\hline
  			Faltung im Zeitbereich &
- 			$f(t) \ast g(t) = \int\limits_{0}^{\infty} f(\tau)g(t-\tau)d\tau \FT F(s)
+ 			$f(t) \ast g(t) = \int\limits_{0}^{\infty} f(\tau)g(t-\tau)d\tau \laplace F(s)
  			\cdot G(s)$\\
  			\hline
  			Faltung im Frequenzbereich &
- 			$f(t) \cdot g(t) \FT \frac{1}{2\pi j}\int\limits_{c-j\infty}^{c+j\infty}
+ 			$f(t) \cdot g(t) \laplace \frac{1}{2\pi j}\int\limits_{c-j\infty}^{c+j\infty}
  			F(\xi) G(s-\xi)d\xi$ \\
  			\hline
  			Ableitung im Zeitbereich &
- 			$\frac{\partial f(t)}{\partial t} \FT sF(s)
+ 			$\frac{\partial f(t)}{\partial t} \laplace sF(s)
  			-f(0+)$ \\
  			\hline
  			Ableitungen im Zeitbereich &
- 			$\frac{\partial^n f(t)}{\partial t^n} \FT s^nF(s)
+ 			$\frac{\partial^n f(t)}{\partial t^n} \laplace s^nF(s)
  			-s^{n-1}f(0+)-s^{n-2}\frac{\partial f(0+)}{\partial t}-\ldots
  			-s^0\frac{\partial^{n-1} f(0+)}{\partial t^{n-1}}$ \\
  			\hline
  			Multiplikation mit $t$ &
- 			$t\cdot f(t)  \FT \frac{-\partial F(s)}{\partial s}$ \\
+ 			$t\cdot f(t)  \laplace \frac{-\partial F(s)}{\partial s}$ \\
  			\hline
  			Ableitung im Frequenzbereich &
- 			$(-t)^n f(t) \FT  \frac{\partial^n F(s)}{\partial s^n}$ \\
+ 			$(-t)^n f(t) \laplace  \frac{\partial^n F(s)}{\partial s^n}$ \\
  			\hline
  			Verschiebung im Zeitbereich &
- 			$f(t\pm t_0) \FT F(s)e^{\pm t_0 s}$ \\
+ 			$f(t\pm t_0) \laplace F(s)e^{\pm t_0 s}$ \\
  			\hline
  			Verschiebung im Frequenzbereich &
- 			$f(t)e^{\mp\alpha t} \FT F(s\pm\alpha)$ \\
+ 			$f(t)e^{\mp\alpha t} \laplace F(s\pm\alpha)$ \\
  			\hline
  			Integration &
- 			$\int\limits_0^t f(\tau)d\tau \FT \frac{F(s)}{s}$ \\
+ 			$\int\limits_0^t f(\tau)d\tau \laplace \frac{F(s)}{s}$ \\
  			\hline
  			Anfangswert &
  			$\lim_{t\rightarrow 0} f(t) = \lim_{s\rightarrow \infty} sF(s),\text{~wenn

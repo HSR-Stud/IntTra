@@ -31,12 +31,13 @@
 
 \subsection{Schrittfunktion - unit step}
 	\begin{minipage}{10cm}
-		$u(t) =	\begin{cases}
+		$u(t) = \sigma(t) =	\begin{cases}
 		  		 0 & \text{für } t < 0 \\
 		  		 \frac{1}{2} \text{(praxis)}  \text{ oder undef. (math.)} & \text{für } t = 0 \\
 		  		 1 & \text{für } t > 0
 		  	\end{cases}
 		$
+		$\sigma(t) \laplace \frac{1}{j\omega} + \pi\delta(\omega) = \Sigma(\omega)$
 	\end{minipage}
 	\begin{minipage}{8cm}
 		\includegraphics[width=6cm]{./bilder/unitstep.png}
