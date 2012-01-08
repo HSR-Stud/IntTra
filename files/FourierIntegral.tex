@@ -1,25 +1,58 @@
 \section{Fourier-Integral / Fourier-Transformation}
-	$$\boxed{f(t) =  \frac{1}{2\pi}\int\limits_{-\infty}^{\infty}
-	F(j\omega)e^{j\omega t}d\omega}=\boxed{\int\limits_0^{\infty}[a(\omega)
-	\cos(\omega t) + b(\omega) \sin(\omega t)]d\omega} =\boxed{\int
-	\limits_0^{\infty}[A(\omega) \cos(\omega t +\varphi(\omega))]d\omega}$$
-	
-	$$\boxed{F(j\omega) = \int\limits_{-\infty}^{\infty} f(t)e^{-j\omega t}dt}
-	\qquad \boxed{a(\omega)= \frac{1}{\pi}\int\limits_{-\infty}^{\infty}
-	f(t)\cos(\omega t)dt \quad \mbox{ und } \quad b(\omega)=
-	\frac{1}{\pi}\int\limits_{-\infty}^{\infty}f(t)\sin(\omega t)dt}$$
+\begin{tabular}{|ll|}
+\hline
+\textbf{Fouriertransformierte/Fourierintegral:} &
+$F(j\omega) = \int\limits_{-\infty}^{\infty} f(t)e^{-j\omega t}dt$ \\
 
-	$$ a(\omega)=\frac{Re[F(j\omega)]}{\pi} \quad
-	b(\omega)=-\frac{Im[F(j\omega)]}{\pi} \quad
-	A(\omega)=\frac{1}{\pi} |F(j\omega)| \quad
-	\varphi(\omega)=arg[F(j\omega)] \quad
-	F(j\omega)=\pi[a(\omega)-jb(\omega)]=\pi A(\omega)e^{j\varphi(\omega)} $$
-	
-	\subsection{Symmetrie}
+\textbf{Rücktransformierte:} &
+$f(t) = \frac{1}{2\pi}\int\limits_{-\infty}^{\infty}F(j\omega)e^{j\omega t}d\omega$ \\
+
+Dies ergibt das \textbf{Korespondenzpaar:} & $f(t) \laplace F(\omega)$ \\
+mit der \textbf{Symetrie:} & $F(t) \laplace 2\pi \cdot f(-\omega)$ \\
+
+$F(\omega) = R(\omega) -jX(\omega)$ wobei: ($f(t)$ reell!) &
+$R(\omega) = \int\limits_{-\infty}^\infty f(t)\cdot \cos(\omega t)\,dt \quad\quad X(\omega) =
+\int\limits_{-\infty}^\infty f(t)\cdot \sin(\omega t)\,dt$
+\\
+&$f(t)$ gerade: $X(\omega)$ verschwindet, f(t) ungerade: $R(\omega)$ verschwindet \\
+\hline
+\end{tabular}
+
+Jede reelle $f(t)$ lässt sich aus Summe einer geraden und einer ungeraden Funktion beschreiben:\\
+\begin{tabular}{lll}
+$f(t) = f_e(t) + f_o(t)$ mit & $f_e(t) = \frac{1}{2}[f(t) + f(-t)]$ & $f_o(t) = \frac{1}{2}[f(t) - f(-t)]$ \\
+
+Also: & $R(\omega) = 2 \int\limits_0^\infty f_e(t) \cos(\omega t)\,dt$ & $X(\omega) = 2 \int\limits_0^\infty
+f_o(t) \sin(\omega t)\,dt$ \\
+
+Und: & $f_e(t) = \frac{1}{\pi}\int\limits_0^\infty R(\omega)\cos(\omega t)\,d\omega$ & 
+$f_o(t) = \frac{1}{\pi}\int\limits_0^\infty X(\omega)\sin(\omega t)\,d\omega$ \\
+\end{tabular}
+
+Bei \textbf{kausalen} Funktionen gilt:\\
+$f_e(t) = f_o(t) = \frac{1}{2}f(t) \quad \quad \quad
+f(t) = \frac{2}{\pi}\int\limits_0^\infty R(\omega) \cos(\omega t)\,dt = \frac{2}{\pi}\int\limits_0^\infty X(\omega)
+\sin(\omega t)\,dt$
+
+\begin{tabular}{|l|l|l|}
+\hline
+Spektraldichte / Spektraldarstellung	& $F(\omega)$ 		& KEINE absoluten Werte für Amplitude \& Phase \\
+\hline
+Amplitudendichte 						& $|F(\omega)|$		& f reell $\rightarrow$ $|F(\omega)|$ symetrisch zur Ordinatenachse \\
+\hline
+Phasendichte							& $arg(F(\omega))$	& f reell $\rightarrow$ $arg(F(\omega))$ punktsymetrisch zum Ursprung \\
+\hline
+Kosinusamplitudendichte					& $R(\omega)$		& f reell $\rightarrow$ $R(\omega)$ gerade \\
+\hline
+Sinusamplitudendichte					& $X(\omega)$ 		& f reell $\rightarrow$ $X(\omega)$ ungerade \\
+\hline
+\end{tabular}
+
+
+\subsection{Symmetrie}
 	Es gelten die gleichen Symmetrien wie bei der Fourierreihe.
 		
 	\subsection{Eigenschaften}
-		\renewcommand{\arraystretch}{2}
 		\begin{tabular}{|p{8cm}|p{8cm}|}
         	\hline
         	Linearität & 
@@ -84,4 +117,3 @@
 			\frac{2\pi}{t_0})$\\
 			\hline
         \end{tabular}
-		\renewcommand{\arraystretch}{1}
