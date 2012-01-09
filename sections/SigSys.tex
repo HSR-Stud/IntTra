@@ -46,20 +46,22 @@
 		\end{tabular}	
 		
 	\subsection{Faltung}
-		\begin{tabular}{ll}
-	        $\boxed{y=x*h=h*x}$&$h=$Impulsantwort des Systems\\ & \\
-	   		\textbf{diskret}& \textbf{kontinuierlich}\\
-	   		$\boxed{y(i)=\sum\limits_{k=-\infty}^{\infty}x(k)\cdot
-	   		h(i-k)=\sum\limits_{k=-\infty}^{\infty}x(i-k)\cdot h(k)}$&
-	   		$\boxed{y(t)=\int\limits_{-\infty}^{\infty}x(\tau)\cdot
-	   		h(t-\tau)\cdot d\tau=\int\limits_{-\infty}^{\infty}x(t-\tau)\cdot
-	   		h(\tau)\cdot d\tau}$\\ & \\
-	   		grafische Interpretation: & grafische Interpretation:\\
-	   		\parbox{8cm}{1. einfacheres Signal an der Y-Achse spiegeln\\
-	   					2. Verschiebung um  $i$ nach rechts\\
-	   					3. Skalarprodukt der beiden Signale bilden}&
-			\parbox{8cm}{1. einfacheres Signal an der Y-Achse spiegeln\\
-			 			2. Verschiebung um $t$ nach rechts\\
-			 			3. Multiplikation und Integration der beiden Signale}		
-        \end{tabular}
-	
+	$y(t) = f(t)\ast h(t) = h(t) \ast f(t) = (f \ast h)(t) = \int\limits_{-\infty}^\infty x(u) \cdot h(t-u)\,du 
+	= \int\limits_{-\infty}^\infty x(t-u) \cdot h(u)\,du $ \\
+	wobei gilt: $h(t) = $ Impulsantwort des Systems \\
+	\begin{multicols}{2}
+		\textbf{grafische Interpretation:}
+		\begin{enumerate}
+  			\item einfacheres Signal an der Y-Achse spiegeln
+  			\item Verschiebung um t nach rechts
+  			\item Multiplikation und Integration der beiden Signale
+		\end{enumerate}
+		\columnbreak
+		\textbf{Bestimmung der Grenzen:}
+		\begin{enumerate}
+		  \item Koordinatensystem: X-Achse: t, Y-Achse: u
+		  \item Erster Faktor $\rightarrow$ Streifen parallel zur X-Achse
+		  \item Zweiter Faktor $\rightarrow$ Streiffen parallel zur $45^{\circ}$-Geraden
+		  \item Grenzen für ein bestimmtes t ablesen
+		\end{enumerate}
+	\end{multicols}	
