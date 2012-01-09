@@ -10,7 +10,7 @@
   
  	\subsection{Eigenschaften}
   		\renewcommand{\arraystretch}{2}
-		\begin{tabular}{|p{6cm}|p{11cm}|}
+		\begin{tabular}{|l|l|}
         	\hline
         	Linearität & 
  			$\alpha\cdot f(t) + \beta\cdot g(t) \laplace \alpha\cdot F(s) + \beta\cdot
@@ -46,7 +46,7 @@
  			Verschiebung im Zeitbereich &
  			$f(t\pm t_0) \laplace F(s)e^{\pm t_0 s}$ \\
  			\hline
- 			Verschiebung im Frequenzbereich &
+ 			Verschiebung im Frequenzbereich (Dämpfungssatz) &
  			$f(t)e^{\mp\alpha t} \laplace F(s\pm\alpha)$ \\
  			\hline
  			Integration &
@@ -61,7 +61,7 @@
  			}  \lim_{t\rightarrow \infty} f(t)\text{~existiert}.$ \\
  			\hline
        	\end{tabular}
-		\renewcommand{\arraystretch}{1}
+		\renewcommand{\arraystretch}{\arraystretchOriginal}
 	
 	\subsection{Laplacetabelle}
 	\begin{center}
