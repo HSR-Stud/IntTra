@@ -41,14 +41,26 @@
 			\parbox{8cm}{
 			$$s_2(t) = h(t) * s_1(t) \laplace S_2(s) = H(s) S_1(s)$$
 			$$h(t) \laplace H(s)$$}
-			& \parbox{8cm}{
+			& \parbox{4cm}{
 			\includegraphics[width=5cm]{./bilder/utf-theorie.png}}\\
 		\end{tabular}	
 		
 	\subsection{Faltung}
-	$y(t) = f(t)\ast h(t) = h(t) \ast f(t) = (f \ast h)(t) = \int\limits_{-\infty}^\infty x(u) \cdot h(t-u)\,du 
-	= \int\limits_{-\infty}^\infty x(t-u) \cdot h(u)\,du $ \\
-	wobei gilt: $h(t) = $ Impulsantwort des Systems \\
+	$y(t) = f(t)\ast g(t) = g(t) \ast f(t) = (f \ast g)(t) :=
+	\int\limits_{-\infty}^\infty f(u) \cdot g(t-u)\,du =
+	\int\limits_{-\infty}^\infty f(t-u) \cdot h(u)\,du $ \\
+	wobei gilt: $g(t) = $ Impulsantwort des Systems \\
+	Hat $g\left(t\right)$ keine negative Argumente dann gilt :
+	$\left(g \ast t \right)\left(t\right)=\int\limits_{-\infty}^t f(u) \cdot
+	g(t-u)\,du$\\
+	Hat $f\left(t\right)$ keine negative Argumente (Einschaltvorgang) dann gilt :
+	$\left(g \ast t \right)\left(t\right)=\int\limits_{0}^t f(u) \cdot
+	g(t-u)\,du$\\
+	Bei einer Faltung mit einer $\delta\left(t\right)$Funktion
+	gilt:$f\left(t\right) \ast \delta\left(t\right) = f\left(t\right)$\\
+	
+	\newpage
+	
 	\begin{multicols}{2}
 		\textbf{grafische Interpretation:}
 		\begin{enumerate}
