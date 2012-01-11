@@ -14,11 +14,4 @@
 	<natures>
 		<nature>net.sourceforge.texlipse.builder.TexlipseNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>idiotenseite/Idiotenseite.tex</name>
-			<type>1</type>
-			<location>E:/HSR/Zusammenfassungen/Idiotenseite/Idiotenseite.tex</location>
-		</link>
-	</linkedResources>
 </projectDescription>
