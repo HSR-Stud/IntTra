@@ -1,13 +1,21 @@
 \section{Signale und Systeme}
+
 	\begin{tabular}{|l|l|}
     	\hline
     	\textbf{Linearität} & \textbf{Zeitinvarianz}\\
     	\hline
-    	$S(x1+x2)=S(x1)+S(x2)$ & $S(x(t-t_0)=S(x)\cdot x(t-t_0)$ \\
-    	$S(c\cdot x)=c\cdot S(x)$ & \\
+    	$\mathcal{L}(x1+x2)=\mathcal{L}(x1)+\mathcal{L}(x2)$ & $\mathcal{L}(x(t)) = y(t)$ \\
+    	$\mathcal{L}(c\cdot x)=c\cdot \mathcal{L}(x)$ & $\mathcal{L}(x(t-t_0)) = y(t-t_0)$ \\
 		\hline    
     \end{tabular}
-  	
+  
+	\subsection{Amplitudengang}
+		$|H(\omega)| = \begin{cases}
+			< 1 \text{ Dämpfung} \\
+			> 1 \text{ Verstärkung}
+		\end{cases}$
+		
+		
 	\subsection{Lineare Systeme}
 		\textbf{Basissignale}
 		\begin{list}{$\bullet$}{\setlength{\itemsep}{0cm} \setlength{\parsep}{0cm} \setlength{\topsep}{0cm}} 
@@ -27,7 +35,7 @@
 		$\Rightarrow x=r\cdot a + s\cdot b + t\cdot c\qquad$ ($x=$
 		Eingangssignal; $a,b,c=$ Basisvektoren; $r,s,t=$
 		Linearkombinationsparameter)\\ 
-		2. Systemantwort $y=r\cdot S(a) + s\cdot S(b) + t\cdot S(c); \qquad (S(a)=$
+		2. Systemantwort $y=r\cdot \mathcal{L}(a) + s\cdot \mathcal{L}(b) + t\cdot \mathcal{L}(c); \qquad (\mathcal{L}(a)=$
 		Systemantwort der Basis $a$)
 	
 	\subsection{Lineare zeitinvariante Systeme (LTI-Systeme)}
@@ -39,17 +47,24 @@
 		\textbf{Berechnung der Systemantwort von kontinuierlichen LTI-Systemen}\\
 		\begin{tabular}{ll}
 			\parbox{8cm}{
-			$$s_2(t) = h(t) * s_1(t) \laplace S_2(s) = H(s) S_1(s)$$
+			$$f_2(t) = h(t) * f_1(t) \laplace F_2(s) = H(s) F_1(s)$$
 			$$h(t) \laplace H(s)$$}
 			& \parbox{4cm}{
-			\includegraphics[width=5cm]{./bilder/utf-theorie.png}}\\
+			\includegraphics[width=6cm]{./bilder/utf-theorie.png}}\\
 		\end{tabular}	
-		
+	
+	\subsection{Eigenfrequenz, Frequenzgang}
+	Zu jeder Frequenz gehört der eigene Frequenzgang mit $a, b \in \mathbb{C}$\\
+	$$a e^{j\omega_1 t} + b e^{j\omega_2 t} \rightarrow a H(\omega_1) e^{j\omega_1 t} + b H(\omega_2) e^{j\omega_2 t}$$
+	Frequenzgang bei Spektraldrastellung: $$\sum_{k=-\infty}^{\infty} c_k e^{jk\omega t} \rightarrow \boxed{H(\omega)}
+	\rightarrow \sum_{k=-\infty}^{\infty} c_k H(\omega k) e^{jk\omega t}$$
+
+	
 	\subsection{Faltung}
 	$y(t) = f(t)\ast g(t) = g(t) \ast f(t) = (f \ast g)(t) :=
 	\int\limits_{-\infty}^\infty f(u) \cdot g(t-u)\,du =
-	\int\limits_{-\infty}^\infty f(t-u) \cdot h(u)\,du $ \\
-	wobei gilt: $h\left(t\right) = g(t) = $ Impulsantwort des Systems \\
+	\int\limits_{-\infty}^\infty f(t-u) \cdot g(u)\,du $ \\
+	($g(t-u)$ entspricht einer Spiegelung an der Y-Achse und ist um t nach rechts geschoben)\\
 	Hat $g\left(t\right)$ keine negative Argumente dann gilt :
 	$\left(g \ast f \right)\left(t\right)=\int\limits_{-\infty}^t f(u) \cdot
 	g(t-u)\,du$\\
@@ -59,12 +74,17 @@
 	Bei einer Faltung mit einer $\delta\left(t\right)$Funktion
 	gilt:$f\left(t\right) \ast \delta\left(t\right) = f\left(t\right)$\\
 	
-	\newpage
+	\begin{tabular}{|l | l |}
+		\hline
+			Faltungssatz: & $f(t)\cdot g(t) \laplace F(\omega) \ast G(\omega)$ \\
+			& $f(t) \ast g(t) \laplace \frac{1}{2\pi}F(\omega) \cdot G(\omega)$ \\
+		\hline
+	\end{tabular}
 	
 	\begin{multicols}{2}
 		\textbf{grafische Interpretation:}
 		\begin{enumerate}
-  			\item einfacheres Signal an der Y-Achse spiegeln
+  			\item einfacheres Signal ($g(t)$) an der Y-Achse spiegeln
   			\item Verschiebung um t nach rechts
   			\item Multiplikation und Integration der beiden Signale
 		\end{enumerate}
@@ -72,9 +92,11 @@
 		\textbf{Bestimmung der Grenzen:}
 		\begin{enumerate}
 		  \item Koordinatensystem: X-Achse: t, Y-Achse: u
-		  \item Erster Faktor $\rightarrow$ Streifen parallel zur X-Achse
-		  \item Zweiter Faktor $\rightarrow$ Streiffen parallel zur $45^{\circ}$-Geraden
-		  \item Grenzen für ein bestimmtes t ablesen
+		  \item $f(u)$ unterteilen $\rightarrow$ Streifen parallel zur X-Achse
+		  \item $g(t-u)$ $\rightarrow$ Streiffen parallel zur $45^{\circ}$-Geraden
+		  \item In u-Richtung sind die Integralgrenzen für ein \\ bestimmtes t abzulesen
 		\end{enumerate}
-	\end{multicols}	
-
+	\end{multicols}
+	(Beispiel 4.2, Skript S.33)
+	
+	
