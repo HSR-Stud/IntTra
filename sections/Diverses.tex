@@ -14,13 +14,22 @@
 	\[f(x)=\frac{1,5x}{x^3-6x^2+12x-8}=\frac{A}{x-2}+\frac{B}{(x-2)^2}+\frac{C}{(x-2)^3}=\frac{A(x-2)^2+B(x-2)+C}{(x-2)^3}\]
 	\[f(x)=\frac{x^2-1}{x^3+2x^2-2x-12}=\frac{A}{x-2}+\frac{Bx+C}{x^2+4x+6}=\frac{A(x^2+4x+6)+(Bx+C)(x-2)}{(x-2)(x^2+4x+6)}\]
 
-	Variante mit Koeffizientenvergleich: \\
-	\[F(s) = \frac{1}{s(s^2+6s+13)} = \frac{A}{s} + \frac{Bs+C}{s^2+6s+13}\]
-	\[1 = A(s^2+6s+13) + s(Bs+C) \]
-	\[1 = s^2(A+B) + s(C+6A) + 13A \]
-	\[\Rightarrow 1 = 13A; (A+B)=0; (C+6A)=0 \]
-	\[\Rightarrow A=\frac{1}{13}; B=-\frac{1}{13}; C=-\frac{6}{13}\]
-
+	
+		Variante mit Koeffizientenvergleich: \\
+		\begin{minipage}{9cm}
+			\[F(s) = \frac{1}{s(s^2+6s+13)} = \frac{A}{s} + \frac{Bs+C}{s^2+6s+13}\]
+			\[1 = A(s^2+6s+13) + s(Bs+C)\] 
+			\[1 = s^2(A+B) + s(C+6A) + 13A\] 
+			\[\Rightarrow 1 = 13A; (A+B)=0; (C+6A)=0\]
+			\[\Rightarrow A=\frac{1}{13}; B=-\frac{1}{13}; C=-\frac{6}{13}\]
+		\end{minipage}
+		\begin{minipage}{9cm}
+			$s^2: A+B = 0$\\
+			$s^1: 6A+C =0$\\
+			$s^0: 13A = 1$
+		\end{minipage}
+	
+	
 			
 \subsection{Hornerschema}
 	\begin{minipage}[t]{9cm}
@@ -45,7 +54,8 @@
 		  		 1 & \text{für } t > 0
 		  	\end{cases}
 		$
-		$\sigma(t) \laplace \frac{1}{j\omega} + \pi\delta(\omega) = \Sigma(\omega)$
+		$\sigma(t) \laplace \frac{1}{j\omega} + \pi\delta(\omega) = \Sigma(\omega)$ \\
+		$\frac{du(t)}{dt}=\delta(t)$
 	\end{minipage}
 	\begin{minipage}{8cm}
 		\includegraphics[width=6cm]{./bilder/unitstep.png}
@@ -55,9 +65,28 @@
 	\begin{minipage}{10cm}
 		$\delta (t)=\begin{cases} 0 & t\ne 0\\\infty & t=0\end{cases} \qquad
 		\text{und} \qquad \int\limits_{-\infty}^\infty \delta(t) \, \mathrm dt = 1 $\\
-		$$\frac{du(t)}{dt}=\delta(t) \qquad
-		\int\limits_{-\infty}^{\infty}\delta(t-t_0)f(t)dt=f(t_0)$$
+		$\int\limits_{-\infty}^{\infty}\delta(t-t_0)f(t)dt=f(t_0)$\\
+		$\int\limits_{-\infty}^{\infty}\delta(at)\cdot f(t) dt = \frac{1}{|a|} \cdot f(0)$\\
+		$s(t) \cdot \delta(t-t_0) = s(t_0)\cdot \delta(t-t_0)$\\
+		Fouriertransformierte von $\delta(t)$:\\
+		$\delta(t) \laplace 1(\omega)$\\
+		$\delta(t-t_0) \laplace e^{-j\omega t_0}$\\
+		$1(t) \laplace 2\pi \delta(\omega)$
 	\end{minipage}
 	\begin{minipage}{8cm}
 		\includegraphics[width=6cm]{./bilder/diracimpulse.png}
 	\end{minipage}
+	
+\subsection{Signumfunktion}
+	\begin{tabular}{p{6cm} p{6cm} p{6cm}}
+		$sgn(t) = \begin{cases} 1 & \text{falls }t > 0 \\ -1 & \text{falls }t < 0 \end{cases}$ &
+		$sgn(t) \laplace \frac{2}{j\omega}$ &
+		$\frac{1}{\pi t} \laplace -j sgn(\omega)$
+	\end{tabular}
+	
+\subsection{Rechteckimpuls}
+	\begin{tabular}{p{9cm} p{9cm}}
+		$r_T(t) \laplace \frac{2}{\omega} \cdot \sin(\omega T) \Rightarrow$ sinc-Funktion &
+		$\int\limits_{-\infty}^{\infty} \frac{\sin(a \omega)}{\omega} d\omega = 
+		\begin{cases} \pi & \text{falls }a > 0 \\ -\pi & \text{falls }a < 0 \end{cases}$
+	\end{tabular}
