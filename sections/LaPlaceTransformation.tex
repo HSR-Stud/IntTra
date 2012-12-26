@@ -1,10 +1,10 @@
 \section{Laplace-Transformation}
-	$$\boxed{F(s)=\int\limits_0^\infty f(t)e^{-st}dt} \qquad s=\sigma+j\omega$$\\
+	$$\boxed{F(s)=\int\limits_0^\infty f(t)e^{-st}dt} \qquad s=x+j\omega$$\\
 	- Definitionsbereich nur für kausale Systeme $t\geq 0$\\
 	- Integrierbar über das Intervall $(0,\infty)$\\
 	- Wachstum kleiner als der von eienr Exponentialfunktion\\ 
 	- Gegen"uber $j\omega$ bei der Fourier-Transformation ist bei der
-	Laplace-Transformation $s$ verallgemeinert zu $s=\sigma + j\omega$. Das
+	Laplace-Transformation $s$ verallgemeinert zu $s=x + j\omega$. Das
 	bedeutet, dass die Fourier-Transformierte $F(j\omega)$ durch die
 	Laplace-Transformation $F(s)$ ausgedr\"uckt werden kann.  	
   
@@ -21,7 +21,7 @@
  			<\alpha \in\mathbb{R}$ \\
  			\hline
  			Faltung im Zeitbereich &
- 			$f(t) \ast g(t) = \int\limits_{0}^{\infty} f(\tau)g(t-\tau)d\tau \laplace F(s)
+ 			$f(t) \ast g(t) = \int\limits_{0}^{t} f(\tau)g(t-\tau)d\tau \laplace F(s)
  			\cdot G(s)$\\
  			\hline
  			Faltung im Frequenzbereich &
@@ -30,12 +30,12 @@
  			\hline
  			Ableitung im Zeitbereich &
  			$\frac{\partial f(t)}{\partial t} \laplace sF(s)
- 			-f(0+)$ \\
+ 			-f(0^+)$ \\
  			\hline
  			Ableitungen im Zeitbereich &
  			$\frac{\partial^n f(t)}{\partial t^n} \laplace s^nF(s)
- 			-s^{n-1}f(0+)-s^{n-2}\frac{\partial f(0+)}{\partial t}-\ldots
- 			-s^0\frac{\partial^{n-1} f(0+)}{\partial t^{n-1}}$ \\
+ 			-s^{n-1}f(0^+)-s^{n-2}\frac{\partial f(0^+)}{\partial t}-\ldots
+ 			-s^0\frac{\partial^{n-1} f(0^+)}{\partial t^{n-1}}$ \\
  			\hline
  			Multiplikation mit $t$ &
  			$t\cdot f(t)  \laplace \frac{-\partial F(s)}{\partial s}$ \\
@@ -43,17 +43,20 @@
  			Ableitung im Frequenzbereich &
  			$(-t)^n f(t) \laplace  \frac{\partial^n F(s)}{\partial s^n}$ \\
  			\hline
- 			Verschiebung im Zeitbereich &
- 			$f(t\pm t_0) \laplace F(s)e^{\pm t_0 s}$ \\
+ 			Verschiebung im Zeitbereich nach rechts &
+ 			$f(t - t_0) \laplace F(s)e^{- t_0 s}$ \\
  			\hline
+			Verschiebung im Zeitbereich nach links &
+			$f(t + t_0) \laplace e^{t_0 s} \cdot [F(s) - \int\limits_0^{t_0} f(t) \cdot e^{-st} dt]$\\
+			\hline
  			Verschiebung im Frequenzbereich (Dämpfungssatz) &
  			$f(t)e^{\mp\alpha t} \laplace F(s\pm\alpha)$ \\
  			\hline
- 			Integration &
+ 			Integration (Sprungantwort)&
  			$\int\limits_0^t f(\tau)d\tau \laplace \frac{F(s)}{s}$ \\
  			\hline
  			Anfangswert &
- 			$\lim_{t\rightarrow 0} f(t) = \lim_{s\rightarrow \infty} sF(s),\text{~wenn
+ 			$\lim_{t\rightarrow 0^+} f(t) = \lim_{s\rightarrow \infty} sF(s),\text{~wenn
  			}  \lim_{t\rightarrow 0} f(t)\text{~existiert}.$ \\
  			\hline
  			Endwert &
@@ -99,5 +102,50 @@
 			\end{tabular}
 	
 	\subsection{Lösung linearer Differentialgleichungen}
-				\includegraphics[width=14cm]{./bilder/diffgleichungen.png}
+		\includegraphics[width=10cm]{./bilder/diffgleichungen2.png}
+		
+		\renewcommand{\arraystretch}{2}
+		\begin{tabular}{| l | l |}
+			\hline
+				Übertragungsfunktion & $G(s) = \frac{1}{p(s)}$\\
+				& $g(t) \laplace G(s)$ \\
+			\hline
+				Frequenzgang & $G(j\omega) = H(\omega)$ \\
+			\hline
+				Impulsantwort & $y_{\delta}(t) = g(t) \laplace G(s) = \frac{1}{p(s)}=Y_{\delta}(s)$\\
+			\hline
+				Sprungwantwort & $y_{\sigma}(t)=\int\limits_0^t g(u) du \laplace \frac{G(s)}{s} = \frac{1}{s \cdot p(s)} = Y_{\sigma}(s)$\\
+			\hline
+				Eigenschwingung & $\frac{h(s)}{p(s)}$ \\
+			\hline
+				äussere Erregung & $\frac{F(s)}{p(s)}$ \\
+			\hline
+				stationärer Zustand & = ungedämpfte Eigenschwingung\\
+			\hline
+		\end{tabular}
+		\renewcommand{\arraystretch}{\arraystretchOriginal}\\
+		
+		\begin{minipage}[l]{16cm}
+				\textbf{Beispiel:} $y'' + 8y' + 25y = \sigma{t} \cdot \sin(2t)$ mit $y(0) = 2, y'(0) = -1$\\
 				
+				$\sin(2t) \laplace \frac{2}{s^2+4}$ \\
+				
+				$\Rightarrow Y(s)(s^2+8s+25) = 2s+15+\frac{2}{s^2+4}$\\
+				
+				$\Leftrightarrow Y(s) = \frac{2s+15}{s^2+8s+25}+\frac{2}{(s^2+4)(s^2+8s+25)}=
+				\underbrace{\frac{2s+15}{s^2+8s+25}}_\text{Eigenschwinung durch Anfangszustand} +
+				\underbrace{\frac{As + B}{s^2+4}}_\text{stationärer Zustand} +
+				\underbrace{\frac{Cs + D}{s^2+8s+25}}_\text{Eigenschwinung durch Einschalten}$
+		\end{minipage}
+
+	\subsection{Eigenschwinung}
+		spezielle Anfangswerte bei einem System ohne äussere Einflüsse: $y(0) = 0, y'(0) = 0, \dots , y^{(n-2)} = 0, y^{(n-1)} = 1$\\
+		in diesem Fall wird $h(s) = 1$\\
+		\begin{minipage}[l]{16cm}
+			$y(t) \laplace \color{green} Y(s)$\\
+			$y'(t) \laplace \color{green} sY(s)\color{red} - y_0$\\
+			$\vdots$\\
+			$y^{(n)} \laplace 
+			\color{green}\underbrace{s^nY(s)}_{Y(s) \cdot p(s)}
+			\color{red}\underbrace{-s^{n-1}y_0 - \dots - y^{(n-1)}}_{h(s)}$
+		\end{minipage}
