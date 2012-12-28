@@ -1,3 +1,4 @@
+\newpage
 \section{Diverses}
 \subsection{Partialbruchzerlegung}
 	\[f(x)=\frac{x^2+20x+149}{x^3+4x^2-11x-30} \Rightarrow \; \begin{array}{l}\text{Nenner faktorisieren mit}\\
@@ -37,6 +38,8 @@
 		$\Rightarrow f(x) = (x-x_1)(b_2x^2 + b_1x + b_0) = (x+2)(x^2-2x-63)$	
 	\end{minipage}
 
+\newpage
+
 \subsection{Schrittfunktion - unit step}
 	\begin{minipage}{10cm}
 		$u(t) = \sigma(t) =	\begin{cases}
@@ -53,10 +56,16 @@
 
 \subsection{Impulsfunktion - dirac delta function}
 	\begin{minipage}{10cm}
-		$\delta (t)=\begin{cases} 0 & t\ne 0\\\infty & t=0\end{cases} \qquad
-		\text{und} \qquad \int\limits_{-\infty}^\infty \delta(t) \, \mathrm dt = 1 $\\
-		$$\frac{du(t)}{dt}=\delta(t) \qquad
-		\int\limits_{-\infty}^{\infty}\delta(t-t_0)f(t)dt=f(t_0)$$
+		\begin{tabular}{l l}
+		Definition & $\delta (t)=\begin{cases} 0 & t\ne 0\\\infty & t=0\end{cases}$ \\
+				   & $\int\limits_{-\infty}^\infty \delta(t) \, \mathrm dt = 1 $ \\
+		Zusammenhang mit der $\sigma$-Funktion & $\frac{d\sigma(t)}{dt}=\delta(t)$ \\
+		Abtastung & $\int\limits_{-\infty}^{\infty} \delta(t-t_0)f(t)dt=f(t_0)$ \\
+		Transformierte & $\delta(t) \laplace 1(\omega)$ \\
+						& $1(t) \laplace 2\pi \cdot \delta(\omega)$ \\
+		Faltung & $f(t) \ast \delta(t) = f(t)$ \\
+		Ableitung & $\int\limits_{-\infty}^{\infty} \delta^{(k)}(t) \cdot f(t) dt = (-1)^k \cdot f^{(k)}(0)$ \\
+		\end{tabular}
 	\end{minipage}
 	\begin{minipage}{8cm}
 		\includegraphics[width=6cm]{./bilder/diracimpulse.png}

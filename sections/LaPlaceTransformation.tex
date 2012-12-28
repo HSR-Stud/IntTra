@@ -1,3 +1,4 @@
+\newpage
 \section{Laplace-Transformation}
 	$$\boxed{F(s)=\int\limits_0^\infty f(t)e^{-st}dt} \qquad s=\sigma+j\omega$$\\
 	- Definitionsbereich nur für kausale Systeme $t\geq 0$\\
@@ -63,31 +64,40 @@
        	\end{tabular}
 		\renewcommand{\arraystretch}{\arraystretchOriginal}
 	
-	\subsection{Laplacetabelle}
-	\begin{center}
-		\begin{tabular}{|lcc|}
-		\hline
-			$\sigma \left( t \right)$ & $\laplace$ & $\frac{1}{s}$ \\
-			$\sigma \left( t \right) \cdot t$ & $\laplace$ & $\frac{1}{s^2}$\\
-			$\sigma \left( t \right) \cdot t^2$ & $\laplace$ & $\frac{2}{s^3}$\\
-			$\sigma \left( t \right) \cdot t^n$ & $\laplace$ & $\frac{n!}{s^{n+1}}$\\
-			$\sigma \left( t \right) \cdot e^{\alpha t}$ & $\laplace$ &
-			$\frac{1}{s-\alpha}$\\
-			$\sigma \left( t \right) \cdot t \cdot e^{\alpha t}$ & $\laplace$ &
-			$\frac{1}{( s - \alpha )^2}$\\
-			$\sigma \left( t \right)\cdot t^2 \cdot e^{\alpha t}$ &
-			$\laplace$ & $\frac{2}{{( s - \alpha )}^3}$\\
-			$\sigma \left( t \right)\cdot t^n \cdot e^{ \alpha t}$ &
-			$\laplace$ & $\frac{n!}{(s-\alpha)^{n+1}}$\\
-			$\sigma \left( t \right) \cdot \sin \left(\omega t \right)$ & $\laplace$ &
-			$\frac{\omega}{s^2 + {\omega^2}}$\\
-			$\sigma \left( t \right) \cdot \cos \left( \omega t \right)$ & $\laplace$ &
-			$\frac{s}{ s^2 + \omega^2}$\\
-			$\delta \left( t \right)$ & $\laplace$ & $1\left( s \right)$ \\
-			$\delta \left( t - \alpha \right)$ & $\laplace$ & $e^{- \alpha s}$\\
-		\hline
-		\end{tabular}
-	\end{center}
+	\subsection{Laplace-Tabelle}
+	\begin{multicols}{2}
+		\begin{center}
+			\begin{tabular}{|lcc|}
+				\hline
+				$\sigma \left( t \right)$ & $\laplace$ & $\frac{1}{s}$ \\
+				$\sigma \left( t \right) \cdot t$ & $\laplace$ & $\frac{1}{s^2}$\\
+				$\sigma \left( t \right) \cdot t^2$ & $\laplace$ & $\frac{2}{s^3}$\\
+				$\sigma \left( t \right) \cdot t^n$ & $\laplace$ & $\frac{n!}{s^{n+1}}$\\
+				$\sigma \left( t \right) \cdot e^{\alpha t}$ & $\laplace$ &
+				$\frac{1}{s-\alpha}$\\
+				$\sigma \left( t \right) \cdot t \cdot e^{\alpha t}$ & $\laplace$ &
+				$\frac{1}{( s - \alpha )^2}$\\
+				\hline
+			\end{tabular}
+		\end{center}
+	\columnbreak
+		\begin{center}
+			\begin{tabular}{|lcc|}
+				\hline
+				$\sigma \left( t \right)\cdot t^2 \cdot e^{\alpha t}$ &
+				$\laplace$ & $\frac{2}{{( s - \alpha )}^3}$\\
+				$\sigma \left( t \right)\cdot t^n \cdot e^{ \alpha t}$ &
+				$\laplace$ & $\frac{n!}{(s-\alpha)^{n+1}}$\\
+				$\sigma \left( t \right) \cdot \sin \left(\omega t \right)$ & $\laplace$ &
+				$\frac{\omega}{s^2 + {\omega^2}}$\\
+				$\sigma \left( t \right) \cdot \cos \left( \omega t \right)$ & $\laplace$ &
+				$\frac{s}{ s^2 + \omega^2}$\\
+				$\delta \left( t \right)$ & $\laplace$ & $1\left( s \right)$ \\
+				$\delta \left( t - \alpha \right)$ & $\laplace$ & $e^{- \alpha s}$\\
+				\hline
+			\end{tabular}
+		\end{center}
+	\end{multicols}
 		
 	\subsection{Rücktransformation}
 		\subsubsection{Vorgehen}
