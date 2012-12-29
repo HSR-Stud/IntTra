@@ -62,10 +62,17 @@ einer Fouriertransformation auseinander. \\
 \begin{tabular}{|l|} \hline
 $\Re(\omega) = \frac{1}{\pi} \cdot \int\limits_{-\infty}^{\infty} \frac{\Im(u)}{\omega-u}du$ \\
 $\Im(\omega) = -\frac{1}{\pi} \cdot \int\limits_{-\infty}^{\infty} \frac{\Re(u)}{\omega-u}du$ \\ \hline
+\end{tabular}
+\hspace{5mm}bzw. für analytische Signale: \hspace{5mm}
+\begin{tabular}{|l|} \hline
+$s_R(t) = - \frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{s_I(u)}{t-u} du$ \\
+$s_I(t) = \frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{s_R(u)}{t-u} du$ \\ \hline
 \end{tabular} \\
 
 Allgemein ist die Hilbert-Transformation $\mathcal{H}$ folgendermassen definiert: \\
 $\mathcal{H}(f(t)) := \frac{1}{\pi} \cdot \int\limits_{-\infty}^{\infty} \frac{f(u)}{t-u}du$ \\
+Die Hilbert-Transformation eines Signals $s(t)$ ist gegeben durch die Faltung: \\
+$\mathcal{H}(s(t)) = s(t) * \frac{1}{\pi t}$ mit $\frac{1}{\pi t} \: \laplace \: -j \cdot sgn(\omega)$ \\
 
 \subsection{Eigenschaften}
 		\begin{tabular}{|p{8cm}|p{8cm}|}
