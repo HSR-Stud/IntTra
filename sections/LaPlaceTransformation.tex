@@ -1,14 +1,19 @@
 \section{Laplace-Transformation}
-	$$\boxed{F(s)=\int\limits_0^\infty f(t)e^{-st}dt} \qquad s=x+j\omega$$\\
-	- Definitionsbereich nur für kausale Systeme $t\geq 0$\\
-	- Integrierbar über das Intervall $(0,\infty)$\\
-	- Wachstum kleiner als der von eienr Exponentialfunktion\\ 
-	- Gegen"uber $j\omega$ bei der Fourier-Transformation ist bei der
-	Laplace-Transformation $s$ verallgemeinert zu $s=x + j\omega$. Das
-	bedeutet, dass die Fourier-Transformierte $F(j\omega)$ durch die
-	Laplace-Transformation $F(s)$ ausgedr\"uckt werden kann.  	
-  
- 	\subsection{Eigenschaften}
+	$$\boxed{F(s)=\int\limits_0^\infty f(t)e^{-st}dt} \qquad s=\sigma+j\omega$$\\
+	\begin{tabular}{p{1cm}p{17cm}}
+		$\bullet$ & Definitionsbereich nur für kausale Systeme $t\geq 0$\\
+		$\bullet$ & Integrierbar über das Intervall $(0,\infty)$\\
+		$\bullet$ & Wachstum kleiner als der von eienr Exponentialfunktion\\ 
+		$\bullet$ & Gegen"uber $j\omega$ bei der Fourier-Transformation ist bei der
+			Laplace-Transformation $s$ verallgemeinert zu $s=\sigma + j\omega$. Das
+			bedeutet, dass die Fourier-Transformierte $F(j\omega)$ durch die
+			Laplace-Transformation $F(s)$ ausgedr\"uckt werden kann. \\
+		$\bullet$ & mit $\sigma = 0 \rightarrow$ Amplitude bleibt konstant\\
+		$\bullet$ & mit $\sigma > 0 \rightarrow$ explodiert die Amplitude f\"ur $0 < t \rightarrow \infty$ \\
+		$\bullet$ & mit $\sigma < 0 \rightarrow$ klingt die Amplidute für $0 < t \rightarrow \infty$ auf $0$ ab
+	\end{tabular}
+	
+ 	\subsection{Eigenschaften der Laplace-Transformation}
   		\renewcommand{\arraystretch}{2}
 		\begin{tabular}{|l|l|}
         	\hline
@@ -96,11 +101,19 @@
 		\subsubsection{Vorgehen}
 			\begin{tabular}{p{6cm}p{6cm}}
 				1. Kürzen oder vereinfachen &
-				3. Rücktransformation mittels Tabelle \\
+				3. Rücktransformation mittels Laplace-Tabelle \\
 				2. Partialbruchzerlegung falls nötig &
 				4. $h(t)\hspace{0.2cm}\underline{nicht} < 0$ \\
 			\end{tabular}
-	
+			
+		\subsubsection{Residuensatz}
+			Beispiel:\\
+			$F(s) = \frac{1}{(s+\alpha)(s+\beta)}, \qquad (0 < \alpha,\beta \in \mathbf{R}, \alpha \neq \beta)$\\
+			$f(t) = \frac{1}{2\pi j} \int\limits_{-j\infty}^{j\infty} F(s)e^{st} ds = \sum\limits_{i=1}^k Res(F(s_k)e^{s_kt})$\\
+			$=\lim_{s \to -\alpha} ((s+\alpha)F(s)e^{st}) + \lim_{s \to -\beta}((s+\beta)F(s)e^{st})$\\
+			$=\frac{e^{-\alpha t}}{\beta - \alpha} + \frac{e^{-\beta t}}{\alpha - \beta} = \frac{e^{-\alpha t}-e^{-\beta t}}{\beta - \alpha}$
+			
+			
 	\subsection{Lösung linearer Differentialgleichungen}
 		\includegraphics[width=10cm]{./bilder/diffgleichungen2.png}
 		
@@ -139,9 +152,12 @@
 		\end{minipage}
 
 	\subsection{Eigenschwinung}
-		spezielle Anfangswerte bei einem System ohne äussere Einflüsse: $y(0) = 0, y'(0) = 0, \dots , y^{(n-2)} = 0, y^{(n-1)} = 1$\\
-		in diesem Fall wird $h(s) = 1$\\
-		\begin{minipage}[l]{16cm}
+		\begin{minipage}{12cm}
+			spezielle Anfangswerte bei einem System ohne äussere Einflüsse:\\
+			$y(0) = 0, y'(0) = 0, \dots , y^{(n-2)} = 0, y^{(n-1)} = 1$\\
+			in diesem Fall wird $h(s) = 1$\\
+		\end{minipage}
+		\begin{minipage}{6cm}
 			$y(t) \laplace \color{green} Y(s)$\\
 			$y'(t) \laplace \color{green} sY(s)\color{red} - y_0$\\
 			$\vdots$\\
