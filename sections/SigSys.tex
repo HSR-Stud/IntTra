@@ -9,11 +9,7 @@
     \end{tabular}
 	
 	\subsection{Lineare zeitinvariante Systeme (LTI-Systeme)}
-		LTI-Systeme sind durch ihre Impulsantwort $h$ vollständig bestimmt\\ \\
-		\textbf{Berechnung der Systemantwort von diskreten LTI-Systemen}\\
-		$\; y=x*h \qquad$ ($y=$ Systemantwort; $x=$ Eingangssignal; $h=$
-		Impulsantwort)\\
-		
+		LTI-Systeme sind durch ihre Impulsantwort $h$ vollständig bestimmt\\ \\	
 		\textbf{Berechnung der Systemantwort von kontinuierlichen LTI-Systemen}\\
 		\begin{tabular}{ll}
 			\parbox{8cm}{
@@ -26,11 +22,14 @@
 								< 1 \text{ Dämpfung} \\
 								> 1 \text{ Verstärkung}
 								\end{cases}$	\\
+		\textbf{Sprungantwort} \\
+		Die Sprungantwort $y_{\sigma}(t)$ ist die Systemantwort auf die
+		Sprungfunktion $\sigma(t)$: \\ $Y_{\sigma}(s)=H(s) \cdot \Sigma(\omega)$
 
 	\subsection{Eigenfrequenz, Frequenzgang}
 	Zu jeder Frequenz gehört der eigene Frequenzgang mit $a, b \in \mathbb{C}$\\
 	$$a e^{j\omega_1 t} + b e^{j\omega_2 t} \rightarrow a H(\omega_1) e^{j\omega_1 t} + b H(\omega_2) e^{j\omega_2 t}$$
-	Frequenzgang bei Spektraldrastellung: $$\sum_{k=-\infty}^{\infty} c_k e^{jk\omega t} \rightarrow \boxed{H(\omega)}
+	Frequenzgang bei Spektraldarstellung: $$\sum_{k=-\infty}^{\infty} c_k e^{jk\omega t} \rightarrow \boxed{H(\omega)}
 	\rightarrow \sum_{k=-\infty}^{\infty} c_k H(\omega k) e^{jk\omega t}$$			
 		
 	\subsection{Faltung}
