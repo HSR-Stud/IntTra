@@ -138,15 +138,21 @@ Phasenverschiebung						& $\Phi(\omega) = arg(H(\omega))$ & $= \arctan(\frac{Im(
 \subsection{Hilbertransformation}
 	\begin{tabular}{| l | l l |}
 		\hline
+			Fourier-Transformierte: & $F(\omega) = \mathfrak{R}(\omega) + j \mathfrak{I}(\omega)
+			= \frac{1}{\pi j} \int\limits_{-\infty}^{\infty}\frac{\mathfrak{R}(u) + j \mathfrak{I}(u)}{\omega - u} du$ & \\
+		\hline
 			Hilbert-Transformationspaar: & $\mathfrak{R}(\omega) = \frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{\mathfrak{I}(u)}{\omega - u} du$ & (Realteil)\\
 			& $\mathfrak{I}(\omega) = -\frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{\mathfrak{R}(u)}{\omega - u} du$ & (Imaginärteil)\\
 		\hline
-			Hilbert-Transformation $\mathcal{H}$: & $\mathcal{H}(f(t)) = \frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{f(u)}{t-u} du$ & \\
+			Hilbert-Transformation $\mathcal{H}$: & $\mathcal{H}(f(t)) = \frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{f(u)}{t-u} du
+			= f(t) * \frac{1}{\pi t}$ & \\
 		\hline
 			Analytisches Signal: & $s_R(t) = - \frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{s_I(u)}{t-u} du$ & (Realteil)\\
 			& $s_I(t) = \frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{s_R(u)}{t-u} du$ & (Imaginärteil)\\
 		\hline
 	\end{tabular}
 
-	Die Hilbert-Transformation eines Signals $s(t)$ ist gegeben durch die Faltung $s(t) * \frac{1}{\pi t}$ mit $\frac{1}{\pi t} \laplace -j sgn(\omega)$.
+	Die Hilbert-Transformation eines Signals $s(t)$ ist gegeben durch die Faltung $s(t) * \frac{1}{\pi t}$ mit $\frac{1}{\pi t} \laplace -j sgn(\omega)$.\\
+	Durch die Hilbert-Transformation lässt es sich einfach die Fourier-Transformierte berechnen, wenn der Realteil oder der Imaginärteil gegeben
+	ist.
 	
