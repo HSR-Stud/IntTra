@@ -109,5 +109,18 @@
 			\end{tabular}
 	
 	\subsection{Lösung linearer Differentialgleichungen}
-				\includegraphics[width=14cm]{./bilder/diffgleichungen.png}
-				
+		\subsubsection{Vorgehen}		
+			\includegraphics[width=14cm]{./bilder/diffgleichungen.png} \\
+		
+		\subsubsection{Eigenschwingungen}
+			Aus der Eigenschwingung können die Nullstellen des charakteristischen Polynom $p(s)$ 
+			direkt abgelesen werden. \\
+			\textbf{Beispiel:} \\
+			$y(t) = \frac{1}{2} e^{-t} \sin(3t) - \frac{2}{3} e^{-2t} \cos(2t) = 
+			\underbrace{\frac{1}{2} e^{\textcolor{red}{-t}} \frac{1}{2j}(e^{\textcolor{red}{3j}t}
+			-e^{\textcolor{red}{-3j}t})}_{NS = EW = \textcolor{red}{-1 \pm 3j}} - 
+			\underbrace{\frac{2}{3} e^{\textcolor{red}{-2}t} \frac{1}{2}(e^{\textcolor{red}{2j}t}
+			+e^{\textcolor{red}{-2j}t})}_{NS = EW = \textcolor{red}{-2 \pm 2j}}$ \\\\
+			Damit ist das char. Polynom $p(s) = (s-NS_1)(s-NS_2)\ldots(s-NS_n)$ \\\\
+			Der stationäre Zustand ist $\lim\limits_{t->\infty}y(t) = \frac{1}{p(0)}$ \\
+			
