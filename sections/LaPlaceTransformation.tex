@@ -109,8 +109,41 @@
 			\end{tabular}
 	
 	\subsection{Lösung linearer Differentialgleichungen}
-		\subsubsection{Vorgehen}		
-			\includegraphics[width=14cm]{./bilder/diffgleichungen.png} \\
+
+		\includegraphics[width=10cm]{./bilder/diffgleichungen.png} \\
+		\renewcommand{\arraystretch}{2}
+		\begin{tabular}{| l | l |}
+			\hline
+				Übertragungsfunktion & $G(s) = \frac{1}{p(s)}$\\
+				& $g(t) \laplace G(s)$ \\
+			\hline
+				Frequenzgang & $G(j\omega) = H(\omega)$ \\
+			\hline
+				Impulsantwort & $y_{\delta}(t) = g(t) \laplace G(s) = \frac{1}{p(s)}=Y_{\delta}(s)$\\
+			\hline
+				Sprungwantwort & $y_{\sigma}(t)=\int\limits_0^t g(u) du \laplace \frac{G(s)}{s} = \frac{1}{s \cdot p(s)} = Y_{\sigma}(s)$\\
+			\hline
+				Eigenschwingung & $\frac{h(s)}{p(s)}$ \\
+			\hline
+				äussere Erregung & $\frac{F(s)}{p(s)}$ \\
+			\hline
+				stationärer Zustand & = ungedämpfte Eigenschwingung\\
+			\hline
+		\end{tabular}
+		\renewcommand{\arraystretch}{\arraystretchOriginal}\\
+		
+		\begin{minipage}[l]{16cm}
+				\textbf{Beispiel:} $y'' + 8y' + 25y = \sigma{t} \cdot \sin(2t)$ mit $y(0) = 2, y'(0) = -1$\\
+				
+				$\sin(2t) \laplace \frac{2}{s^2+4}$ \\
+				
+				$\Rightarrow Y(s)(s^2+8s+25) = 2s+15+\frac{2}{s^2+4}$\\
+				
+				$\Leftrightarrow Y(s) = \frac{2s+15}{s^2+8s+25}+\frac{2}{(s^2+4)(s^2+8s+25)}=
+				\underbrace{\frac{2s+15}{s^2+8s+25}}_\text{Eigenschwinung durch Anfangszustand} +
+				\underbrace{\frac{As + B}{s^2+4}}_\text{stationärer Zustand} +
+				\underbrace{\frac{Cs + D}{s^2+8s+25}}_\text{Eigenschwinung durch Einschalten}$
+		\end{minipage}
 		
 		\subsubsection{Eigenschwingungen}
 			Aus der Eigenschwingung können die Nullstellen des charakteristischen Polynom $p(s)$ 
@@ -122,5 +155,5 @@
 			\underbrace{\frac{2}{3} e^{\textcolor{red}{-2}t} \frac{1}{2}(e^{\textcolor{red}{2j}t}
 			+e^{\textcolor{red}{-2j}t})}_{NS = EW = \textcolor{red}{-2 \pm 2j}}$ \\\\
 			Damit ist das char. Polynom $p(s) = (s-NS_1)(s-NS_2)\ldots(s-NS_n)$ \\\\
-			Der stationäre Zustand ist $\lim\limits_{t->\infty}y(t) = \frac{1}{p(0)}$ \\
+			Der stationäre Zustand ist $\lim\limits_{t\rightarrow\infty}y(t) = \frac{1}{p(0)}$ \\
 			
