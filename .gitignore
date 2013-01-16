@@ -1,4 +1,6 @@
 IntTra.pdf
 tmp/
 *.aux
+*.out
 *.synctex*
+.DS_STORE

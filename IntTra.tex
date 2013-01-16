@@ -2,8 +2,8 @@
 % Dokumentinformationen %
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\titleinfo}{Integraltransformationen - Formelsammlung}
-\newcommand{\authorinfo}{Braun \& Co, J\"urg \& Die Schwachstromelektriker}
-\newcommand{\versioninfo}{$Revision: 1 $ - powered by \LaTeX}
+\newcommand{\authorinfo}{Braun \& Co, J\"urg \& Co, Hannes Revision}
+\newcommand{\versioninfo}{$Revision: 2 $ - powered by \LaTeX}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Standard projektübergreifender Header für
@@ -15,6 +15,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \include{header/header}
+\usepackage{tikz}
 
 % Möglichst keine Ergänzungen hier, sondern in header.tex
 \begin{document}
@@ -62,6 +63,8 @@ kausal
 
 % Diverses
 \input{sections/Diverses}
+% Riisä Tricks
+\input{sections/Tricks}
 \newpage
 
 % Wichtige Formeln
@@ -72,6 +75,5 @@ kausal
 \input{sections/Integrale}
 \newpage
 
-% Riisä Tricks
-\input{sections/Tricks}
+
 \end{document}

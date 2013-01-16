@@ -1,3 +1,4 @@
+\newpage
 \section{Laplace-Transformation}
 	$$\boxed{F(s)=\int\limits_0^\infty f(t)e^{-st}dt} \qquad s=\sigma+j\omega$$\\
 	- Definitionsbereich nur für kausale Systeme $t\geq 0$\\
@@ -63,31 +64,40 @@
        	\end{tabular}
 		\renewcommand{\arraystretch}{\arraystretchOriginal}
 	
-	\subsection{Laplacetabelle}
-	\begin{center}
-		\begin{tabular}{|lcc|}
-		\hline
-			$\sigma \left( t \right)$ & $\laplace$ & $\frac{1}{s}$ \\
-			$\sigma \left( t \right) \cdot t$ & $\laplace$ & $\frac{1}{s^2}$\\
-			$\sigma \left( t \right) \cdot t^2$ & $\laplace$ & $\frac{2}{s^3}$\\
-			$\sigma \left( t \right) \cdot t^n$ & $\laplace$ & $\frac{n!}{s^{n+1}}$\\
-			$\sigma \left( t \right) \cdot e^{\alpha t}$ & $\laplace$ &
-			$\frac{1}{s-\alpha}$\\
-			$\sigma \left( t \right) \cdot t \cdot e^{\alpha t}$ & $\laplace$ &
-			$\frac{1}{( s - \alpha )^2}$\\
-			$\sigma \left( t \right)\cdot t^2 \cdot e^{\alpha t}$ &
-			$\laplace$ & $\frac{2}{{( s - \alpha )}^3}$\\
-			$\sigma \left( t \right)\cdot t^n \cdot e^{ \alpha t}$ &
-			$\laplace$ & $\frac{n!}{(s-\alpha)^{n+1}}$\\
-			$\sigma \left( t \right) \cdot \sin \left(\omega t \right)$ & $\laplace$ &
-			$\frac{\omega}{s^2 + {\omega^2}}$\\
-			$\sigma \left( t \right) \cdot \cos \left( \omega t \right)$ & $\laplace$ &
-			$\frac{s}{ s^2 + \omega^2}$\\
-			$\delta \left( t \right)$ & $\laplace$ & $1\left( s \right)$ \\
-			$\delta \left( t - \alpha \right)$ & $\laplace$ & $e^{- \alpha s}$\\
-		\hline
-		\end{tabular}
-	\end{center}
+	\subsection{Laplace-Tabelle}
+	\begin{multicols}{2}
+		\begin{center}
+			\begin{tabular}{|lcc|}
+				\hline
+				$\sigma \left( t \right)$ & $\laplace$ & $\frac{1}{s}$ \\
+				$\sigma \left( t \right) \cdot t$ & $\laplace$ & $\frac{1}{s^2}$\\
+				$\sigma \left( t \right) \cdot t^2$ & $\laplace$ & $\frac{2}{s^3}$\\
+				$\sigma \left( t \right) \cdot t^n$ & $\laplace$ & $\frac{n!}{s^{n+1}}$\\
+				$\sigma \left( t \right) \cdot e^{\alpha t}$ & $\laplace$ &
+				$\frac{1}{s-\alpha}$\\
+				$\sigma \left( t \right) \cdot t \cdot e^{\alpha t}$ & $\laplace$ &
+				$\frac{1}{( s - \alpha )^2}$\\
+				\hline
+			\end{tabular}
+		\end{center}
+	\columnbreak
+		\begin{center}
+			\begin{tabular}{|lcc|}
+				\hline
+				$\sigma \left( t \right)\cdot t^2 \cdot e^{\alpha t}$ &
+				$\laplace$ & $\frac{2}{{( s - \alpha )}^3}$\\
+				$\sigma \left( t \right)\cdot t^n \cdot e^{ \alpha t}$ &
+				$\laplace$ & $\frac{n!}{(s-\alpha)^{n+1}}$\\
+				$\sigma \left( t \right) \cdot \sin \left(\omega t \right)$ & $\laplace$ &
+				$\frac{\omega}{s^2 + {\omega^2}}$\\
+				$\sigma \left( t \right) \cdot \cos \left( \omega t \right)$ & $\laplace$ &
+				$\frac{s}{ s^2 + \omega^2}$\\
+				$\delta \left( t \right)$ & $\laplace$ & $1\left( s \right)$ \\
+				$\delta \left( t - \alpha \right)$ & $\laplace$ & $e^{- \alpha s}$\\
+				\hline
+			\end{tabular}
+		\end{center}
+	\end{multicols}
 		
 	\subsection{Rücktransformation}
 		\subsubsection{Vorgehen}
@@ -99,5 +109,51 @@
 			\end{tabular}
 	
 	\subsection{Lösung linearer Differentialgleichungen}
-				\includegraphics[width=14cm]{./bilder/diffgleichungen.png}
+
+		\includegraphics[width=10cm]{./bilder/diffgleichungen.png} \\
+		\renewcommand{\arraystretch}{2}
+		\begin{tabular}{| l | l |}
+			\hline
+				Übertragungsfunktion & $G(s) = \frac{1}{p(s)}$\\
+				& $g(t) \laplace G(s)$ \\
+			\hline
+				Frequenzgang & $G(j\omega) = H(\omega)$ \\
+			\hline
+				Impulsantwort & $y_{\delta}(t) = g(t) \laplace G(s) = \frac{1}{p(s)}=Y_{\delta}(s)$\\
+			\hline
+				Sprungwantwort & $y_{\sigma}(t)=\int\limits_0^t g(u) du \laplace \frac{G(s)}{s} = \frac{1}{s \cdot p(s)} = Y_{\sigma}(s)$\\
+			\hline
+				Eigenschwingung & $\frac{h(s)}{p(s)}$ \\
+			\hline
+				äussere Erregung & $\frac{F(s)}{p(s)}$ \\
+			\hline
+				stationärer Zustand & = ungedämpfte Eigenschwingung\\
+			\hline
+		\end{tabular}
+		\renewcommand{\arraystretch}{\arraystretchOriginal}\\
+		
+		\begin{minipage}[l]{16cm}
+				\textbf{Beispiel:} $y'' + 8y' + 25y = \sigma{t} \cdot \sin(2t)$ mit $y(0) = 2, y'(0) = -1$\\
 				
+				$\sin(2t) \laplace \frac{2}{s^2+4}$ \\
+				
+				$\Rightarrow Y(s)(s^2+8s+25) = 2s+15+\frac{2}{s^2+4}$\\
+				
+				$\Leftrightarrow Y(s) = \frac{2s+15}{s^2+8s+25}+\frac{2}{(s^2+4)(s^2+8s+25)}=
+				\underbrace{\frac{2s+15}{s^2+8s+25}}_\text{Eigenschwinung durch Anfangszustand} +
+				\underbrace{\frac{As + B}{s^2+4}}_\text{stationärer Zustand} +
+				\underbrace{\frac{Cs + D}{s^2+8s+25}}_\text{Eigenschwinung durch Einschalten}$
+		\end{minipage}
+		
+		\subsubsection{Eigenschwingungen}
+			Aus der Eigenschwingung können die Nullstellen des charakteristischen Polynom $p(s)$ 
+			direkt abgelesen werden. \\
+			\textbf{Beispiel:} \\
+			$y(t) = \frac{1}{2} e^{-t} \sin(3t) - \frac{2}{3} e^{-2t} \cos(2t) = 
+			\underbrace{\frac{1}{2} e^{\textcolor{red}{-t}} \frac{1}{2j}(e^{\textcolor{red}{3j}t}
+			-e^{\textcolor{red}{-3j}t})}_{NS = EW = \textcolor{red}{-1 \pm 3j}} - 
+			\underbrace{\frac{2}{3} e^{\textcolor{red}{-2}t} \frac{1}{2}(e^{\textcolor{red}{2j}t}
+			+e^{\textcolor{red}{-2j}t})}_{NS = EW = \textcolor{red}{-2 \pm 2j}}$ \\\\
+			Damit ist das char. Polynom $p(s) = (s-NS_1)(s-NS_2)\ldots(s-NS_n)$ \\\\
+			Der stationäre Zustand ist $\lim\limits_{t\rightarrow\infty}y(t) = \frac{1}{p(0)}$ \\
+			
