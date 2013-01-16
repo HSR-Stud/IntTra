@@ -1,22 +1,20 @@
-\section{Fourier-Integral / Fourier-Transformation}
-\begin{tabular}{|ll|}
-\hline
-\textbf{Fouriertransformierte/Fourierintegral:} &
-$F(j\omega) = \int\limits_{-\infty}^{\infty} f(t)e^{-j\omega t}dt$ \\
-
-\textbf{Rücktransformierte:} &
-$f(t) = \frac{1}{2\pi}\int\limits_{-\infty}^{\infty}F(j\omega)e^{j\omega t}d\omega$ \\
-
-Dies ergibt das \textbf{Korespondenzpaar:} & $f(t) \laplace F(\omega)$ \\
-mit der \textbf{Symetrie:} & $F(t) \laplace 2\pi \cdot f(-\omega)$ \\
-
-$F(\omega) = R(\omega) -jX(\omega)$ wobei: ($f(t)$ reell!) &
-$R(\omega) = \int\limits_{-\infty}^\infty f(t)\cdot \cos(\omega t)\,dt \quad\quad X(\omega) =
-\int\limits_{-\infty}^\infty f(t)\cdot \sin(\omega t)\,dt$
-\\
-&$f(t)$ gerade: $X(\omega)$ verschwindet, f(t) ungerade: $R(\omega)$ verschwindet \\
-\hline
-\end{tabular}
+\section{Fourier-Transformation}
+\begin{tabular}{|p{6cm} l|} \hline
+	\textbf{Fouriertransformierte:} &
+	$F(j\omega) = \int\limits_{-\infty}^{\infty} f(t)e^{-j\omega t}dt$ \\
+	\textbf{Rücktransformierte:} &
+	$f(t) = \frac{1}{2\pi}\int\limits_{-\infty}^{\infty}F(j\omega)e^{j\omega t}d\omega$ \\ \hline
+\end{tabular} \\
+\begin{tabular}{p{6cm} l}
+Dies ergibt das \textbf{Korespondenzpaar:}	& $f(t) \laplace F(\omega)$ \\
+											 & $F(t) \laplace 2\pi \cdot f(-\omega)$ \\
+\end{tabular} \\
+\begin{tabular}{p{6cm} l}
+$F(\omega) = R(\omega) -jX(\omega)$ wobei &
+$R(\omega) = \int\limits_{-\infty}^\infty f(t)\cdot \cos(\omega t)\,dt \quad \text{und} \quad X(\omega) =
+\int\limits_{-\infty}^\infty f(t)\cdot \sin(\omega t)\,dt$ \\
+ & $f(t)$ gerade: $X(\omega)$ verschwindet, f(t) ungerade: $R(\omega)$ verschwindet \\
+\end{tabular} \\
 
 Jede reelle $f(t)$ lässt sich aus Summe einer geraden und einer ungeraden Funktion beschreiben:\\
 \begin{tabular}{lll}
@@ -52,13 +50,33 @@ Dämpfung / Amplitudengang				& $A(\omega) = |H(\omega)|$ & $= \sqrt{H(\omega)\c
 \hline
 Phasenverschiebung						& $\Phi(\omega) = arg(H(\omega))$ & $= \arctan(\frac{Im(H(\omega))}{Re(H(\omega))})$ \\
 \hline
+Systemantwort							& $H(\omega) = A(\omega) \cdot e^{\jmath \Phi(\omega)}$ \\
+\hline
 \end{tabular}
-
 
 \subsection{Symmetrie}
 	Es gelten die gleichen Symmetrien wie bei der Fourierreihe.
-		
-	\subsection{Eigenschaften}
+
+\subsection{Hilbert-Transformation}
+Das folgende Paar heisst \textit{Hilbert-Transformationspaar} und ermöglicht die Berechnung von Real- und Imaginärteil
+einer Fouriertransformation auseinander. \\ 
+
+\begin{tabular}{|l|} \hline
+$\Re(\omega) = \frac{1}{\pi} \cdot \int\limits_{-\infty}^{\infty} \frac{\Im(u)}{\omega-u}du$ \\
+$\Im(\omega) = -\frac{1}{\pi} \cdot \int\limits_{-\infty}^{\infty} \frac{\Re(u)}{\omega-u}du$ \\ \hline
+\end{tabular}
+\hspace{5mm}bzw. für analytische Signale: \hspace{5mm}
+\begin{tabular}{|l|} \hline
+$s_R(t) = - \frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{s_I(u)}{t-u} du$ \\
+$s_I(t) = \frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{s_R(u)}{t-u} du$ \\ \hline
+\end{tabular} \\
+
+Allgemein ist die Hilbert-Transformation $\mathcal{H}$ folgendermassen definiert: \\
+$\mathcal{H}(f(t)) := \frac{1}{\pi} \cdot \int\limits_{-\infty}^{\infty} \frac{f(u)}{t-u}du$ \\
+Die Hilbert-Transformation eines Signals $s(t)$ ist gegeben durch die Faltung: \\
+$\mathcal{H}(s(t)) = s(t) * \frac{1}{\pi t}$ mit $\frac{1}{\pi t} \: \laplace \: -j \cdot sgn(\omega)$ \\
+
+\subsection{Eigenschaften}
 		\begin{tabular}{|p{8cm}|p{8cm}|}
         	\hline
         	Linearität & 
@@ -123,3 +141,10 @@ Phasenverschiebung						& $\Phi(\omega) = arg(H(\omega))$ & $= \arctan(\frac{Im(
 			\frac{2\pi}{t_0})$\\
 			\hline
         \end{tabular}
+        
+\subsection{Beispiele}
+\begin{tabular}{l l}
+Rechteckimpuls $r_T$ der Breite $2T$ & $r_T \laplace \frac{2 \cdot \sin(\omega T}{\omega}$ \\
+Signum-Funktion & $\frac{1}{\pi \cdot t} \laplace -j \cdot sgn(\omega)$ \\
+				& $sgn(t) \laplace \frac{2}{j\omega}$ \\
+\end{tabular}
