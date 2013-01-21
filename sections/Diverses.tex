@@ -15,13 +15,22 @@
 	\[f(x)=\frac{1,5x}{x^3-6x^2+12x-8}=\frac{A}{x-2}+\frac{B}{(x-2)^2}+\frac{C}{(x-2)^3}=\frac{A(x-2)^2+B(x-2)+C}{(x-2)^3}\]
 	\[f(x)=\frac{x^2-1}{x^3+2x^2-2x-12}=\frac{A}{x-2}+\frac{Bx+C}{x^2+4x+6}=\frac{A(x^2+4x+6)+(Bx+C)(x-2)}{(x-2)(x^2+4x+6)}\]
 
-	Variante mit Koeffizientenvergleich: \\
-	\[F(s) = \frac{1}{s(s^2+6s+13)} = \frac{A}{s} + \frac{Bs+C}{s^2+6s+13}\]
-	\[1 = A(s^2+6s+13) + s(Bs+C) \]
-	\[1 = s^2(A+B) + s(C+6A) + 13A \]
-	\[\Rightarrow 1 = 13A; (A+B)=0; (C+6A)=0 \]
-	\[\Rightarrow A=\frac{1}{13}; B=-\frac{1}{13}; C=-\frac{6}{13}\]
-
+	
+		Variante mit Koeffizientenvergleich: \\
+		\begin{minipage}{9cm}
+			\[F(s) = \frac{1}{s(s^2+6s+13)} = \frac{A}{s} + \frac{Bs+C}{s^2+6s+13}\]
+			\[1 = A(s^2+6s+13) + s(Bs+C)\] 
+			\[1 = s^2(A+B) + s(C+6A) + 13A\] 
+			\[\Rightarrow 1 = 13A; (A+B)=0; (C+6A)=0\]
+			\[\Rightarrow A=\frac{1}{13}; B=-\frac{1}{13}; C=-\frac{6}{13}\]
+		\end{minipage}
+		\begin{minipage}{9cm}
+			$s^2: A+B = 0$\\
+			$s^1: 6A+C =0$\\
+			$s^0: 13A = 1$
+		\end{minipage}
+	
+	
 			
 \subsection{Hornerschema}
 	\begin{minipage}[t]{9cm}
@@ -38,7 +47,6 @@
 		$\Rightarrow f(x) = (x-x_1)(b_2x^2 + b_1x + b_0) = (x+2)(x^2-2x-63)$	
 	\end{minipage}
 
-\newpage
 
 \subsection{Schrittfunktion - unit step}
 	\begin{minipage}{10cm}

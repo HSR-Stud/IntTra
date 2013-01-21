@@ -4,17 +4,19 @@
 	$F(j\omega) = \int\limits_{-\infty}^{\infty} f(t)e^{-j\omega t}dt$ \\
 	\textbf{Rücktransformierte:} &
 	$f(t) = \frac{1}{2\pi}\int\limits_{-\infty}^{\infty}F(j\omega)e^{j\omega t}d\omega$ \\ \hline
-\end{tabular} \\
-\begin{tabular}{p{6cm} l}
-Dies ergibt das \textbf{Korespondenzpaar:}	& $f(t) \laplace F(\omega)$ \\
-											 & $F(t) \laplace 2\pi \cdot f(-\omega)$ \\
-\end{tabular} \\
-\begin{tabular}{p{6cm} l}
-$F(\omega) = R(\omega) -jX(\omega)$ wobei &
-$R(\omega) = \int\limits_{-\infty}^\infty f(t)\cdot \cos(\omega t)\,dt \quad \text{und} \quad X(\omega) =
-\int\limits_{-\infty}^\infty f(t)\cdot \sin(\omega t)\,dt$ \\
- & $f(t)$ gerade: $X(\omega)$ verschwindet, f(t) ungerade: $R(\omega)$ verschwindet \\
-\end{tabular} \\
+
+Dies ergibt das \textbf{Korespondenzpaar:} & $f(t) \laplace F(\omega)$ \\
+mit der \textbf{Symetrie:} & $F(t) \laplace 2\pi \cdot f(-\omega)$ \\
+
+$F(\omega) = R(\omega) -jX(\omega)$ wobei: ($f(t)$ reell!) &
+$R(\omega) = \int\limits_{-\infty}^\infty f(t)\cdot \cos(\omega t)\,dt \quad\quad X(\omega) =
+\int\limits_{-\infty}^\infty f(t)\cdot \sin(\omega t)\,dt$
+\\
+&$f(t)$ gerade: $X(\omega)$ verschwindet, f(t) ungerade: $R(\omega)$ verschwindet \\
+\hline
+\end{tabular}
+
+f sei stückweise stetig $\frac{1}{2}(f(t^+) + f(t^-)) = \frac{1}{2\pi} \int\limits_{-\infty}^{\infty}F(\omega)e^{j\omega t} dt$
 
 Jede reelle $f(t)$ lässt sich aus Summe einer geraden und einer ungeraden Funktion beschreiben:\\
 \begin{tabular}{lll}
@@ -28,10 +30,12 @@ $f_o(t) = \frac{1}{\pi}\int\limits_0^\infty X(\omega)\sin(\omega t)\,d\omega$ \\
 \end{tabular}
 
 Bei \textbf{kausalen} Funktionen gilt:\\
-$f_e(t) = f_o(t) = \frac{1}{2}f(t) \quad \quad \quad
-f(t) = \frac{2}{\pi}\int\limits_0^\infty R(\omega) \cos(\omega t)\,dt = \frac{2}{\pi}\int\limits_0^\infty X(\omega)
-\sin(\omega t)\,dt$
-
+\begin{tabular}{c c c}
+	$f(t) = 0$ falls $t<0$ & 
+	$f_e(t) = f_o(t) = \frac{1}{2}f(t)$ &
+	$f(t) = \frac{2}{\pi}\int\limits_0^\infty R(\omega) \cos(\omega t)\,dt = \frac{2}{\pi}\int\limits_0^\infty X(\omega) \sin(\omega t)\,dt$
+\end{tabular}
+	
 \begin{tabular}{|l|l|l|}
 \hline
 Spektraldichte / Spektraldarstellung	& $F(\omega)$ 		& KEINE absoluten Werte für Amplitude \& Phase \\
@@ -46,7 +50,11 @@ Kosinusamplitudendichte					& $R(\omega)$		& f reell $\rightarrow$ $R(\omega)$ g
 \hline
 Sinusamplitudendichte					& $X(\omega)$ 		& f reell $\rightarrow$ $X(\omega)$ ungerade \\
 \hline
-Dämpfung / Amplitudengang				& $A(\omega) = |H(\omega)|$ & $= \sqrt{H(\omega)\cdot \overline{H(\omega)}}$  \\
+Dämpfung / Amplitudengang				& $A(\omega) = |H(\omega)|$ & $= \sqrt{H(\omega)\cdot \overline{H(\omega)}} \qquad$  
+$\begin{cases}
+	< 1 \text{ Dämpfung}\\
+	> 1 \text{ Verstärkung}
+\end{cases}$ \\
 \hline
 Phasenverschiebung						& $\Phi(\omega) = arg(H(\omega))$ & $= \arctan(\frac{Im(H(\omega))}{Re(H(\omega))})$ \\
 \hline
@@ -80,59 +88,60 @@ $\mathcal{H}(s(t)) = s(t) * \frac{1}{\pi t}$ mit $\frac{1}{\pi t} \: \laplace \:
 		\begin{tabular}{|p{8cm}|p{8cm}|}
         	\hline
         	Linearität & 
-        	$\alpha\cdot f(t) + \beta\cdot g(t) \laplace \alpha\cdot F(j\omega) +
-        	\beta\cdot G(j\omega)$\\
+        	$\alpha\cdot f(t) + \beta\cdot g(t) \laplace \alpha\cdot F(\omega) +
+        	\beta\cdot G(\omega)$\\
         	\hline
 			Zeitumkehrung (Spiegelung an der Y-Achse)&
-			$f(-t) \laplace F(-j\omega) = F^*(jw)$ \\
+			$f(-t) \laplace F(-\omega) = F^*(w)$ \\
 			\hline        	
   			"Ahnlichkeit / Zeitskalierung &
-  			$f(\alpha t) \laplace \frac{1}{|\alpha|}F \left (j\frac{\omega}{\alpha} \right)
+  			$f(\alpha t) \laplace \frac{1}{|\alpha|}F \left (\frac{\omega}{\alpha} \right)
   			\quad\alpha \in\mathbb{R}\setminus \{0\}$\\
+				& $F(\alpha\omega) \bullet-\circ \frac{1}{|\alpha|}f(\frac{t}{\alpha})$ \\
   			\hline
   			Verschiebung im	Zeitbereich &
-  			$f(t\pm t_0) \laplace F(j\omega)e^{\pm j\omega t_0}$\\
+  			$f(t\pm t_0) \laplace F(\omega)e^{\pm j\omega t_0}$\\
   			\hline
-			Verschiebung im Frequenzbereich &
-			$f(t)e^{\pm j\omega_0 t} \laplace F(j(\omega\mp\omega_0))$\\
+			Verschiebung im Frequenzbereich (Modulationstheorem) &
+			$f(t)e^{\pm j\omega_0 t} \laplace F(\omega\mp\omega_0)$\\
 			\hline
 			Ableitung im Zeitbereich &
-			$\frac{\partial^n f(t)}{\partial t^n} \laplace (j\omega)^n F(j\omega)$\\
+			$\frac{\partial^n f(t)}{\partial t^n} \laplace (j\omega)^n F(\omega) \qquad (n \in \mathbb{N}_0)$\\
 			\hline
 			Integration im Zeitbereich &
 			$\int\limits_{-\infty}^{t}f(\tau)d\tau \laplace
-			\frac{F(j\omega)}{j\omega}+F(0)\pi\delta(\omega)$\\
+			\frac{F(\omega)}{j\omega}+F(0)\pi\delta(\omega)$\\
 			\hline				
 			Ableitung im Frequenzbereich &
-			$t^n f(t) \laplace j^n \frac{\partial F(j\omega)}{\partial \omega^n}$\\
+			$t^n f(t) \laplace j^n \frac{\partial F(\omega)}{\partial \omega^n}$\\
 			\hline		
 			Faltung im Zeitbereich &
 			$f(t) \ast g(t) = \int\limits_{-\infty}^{\infty} f(\tau)g(t-\tau)d\tau \laplace
-			F(j\omega) \cdot G(j\omega)$\\
+			F(\omega) \cdot G(\omega)$\\
 			\hline
 			Faltung im Frequenzbereich &
-			$f(t) \cdot g(t) \laplace \frac{1}{2\pi}F(j\omega) \ast G(j\omega)$\\
+			$f(t) \cdot g(t) \laplace \frac{1}{2\pi}F(\omega) \ast G(\omega)$\\
 			\hline
 			Vertauschungssatz (Dualität) &
-			$f(t) \laplace F(j\omega)\nonumber$ \\
- 			& $F(t) \laplace 2\pi \cdot f(-j\omega)$\\
+			$f(t) \laplace F(\omega)\nonumber$ \\
+ 			& $F(t) \laplace 2\pi \cdot f(-\omega)$\\
  			\hline
  			Modulation &
  			$\cos(\alpha t) \cdot f(t)  \laplace  \frac{1}{2}\cdot
- 			\left[F(j(\omega-\alpha)) + F(j(\omega+\alpha))\right ]$\\
+ 			\left[F(\omega-\alpha) + F(\omega+\alpha)\right ]$\\
  			& $\sin(\alpha t) \cdot f(t) \laplace \frac{1}{2j}\cdot \left[
- 			F(j(\omega-\alpha)) - F(j(\omega+\alpha))\right ]$\\
+ 			F(\omega-\alpha) - F(\omega+\alpha)\right ]$\\
  			\hline
         	Parseval's Theorem &
  			$\int\limits_{-\infty}^{\infty}f(t)g^{\ast}(t)dt = \frac{1}{2\pi}
-  			\int\limits_{-\infty}^{\infty}F(j\omega)G^{\ast}(j\omega)d\omega$\\
+  			\int\limits_{-\infty}^{\infty}F(\omega)G^{\ast}(\omega)d\omega$\\
   			\hline
   			Bessel's Theorem &
   			$\int\limits_{-\infty}^{\infty}|f(t)|^2 dt = \frac{1}{2\pi}
-  			\int\limits_{-\infty}^{\infty}|F(j\omega)|^2 d\omega$\\
+  			\int\limits_{-\infty}^{\infty}|F(\omega)|^2 d\omega$\\
   			\hline 			
 			Anfangswerte &
-			$f(0)=\frac{1}{2\pi}\int\limits_{-\infty}^{\infty}F(j\omega)d\omega
+			$f(0)=\frac{1}{2\pi}\int\limits_{-\infty}^{\infty}F(\omega)d\omega
 			\hspace*{1cm} F(0)=\int\limits_{-\infty}^{\infty}f(t)dt$\\
 			\hline
 			$\infty$ lange Folge von $\delta$-Impulsen &
@@ -148,3 +157,26 @@ Rechteckimpuls $r_T$ der Breite $2T$ & $r_T \laplace \frac{2 \cdot \sin(\omega T
 Signum-Funktion & $\frac{1}{\pi \cdot t} \laplace -j \cdot sgn(\omega)$ \\
 				& $sgn(t) \laplace \frac{2}{j\omega}$ \\
 \end{tabular}
+
+
+\subsection{Hilbertransformation}
+	\begin{tabular}{| l | l l |}
+		\hline
+			Fourier-Transformierte: & $F(\omega) = \mathfrak{R}(\omega) + j \mathfrak{I}(\omega)
+			= \frac{1}{\pi j} \int\limits_{-\infty}^{\infty}\frac{\mathfrak{R}(u) + j \mathfrak{I}(u)}{\omega - u} du$ & \\
+		\hline
+			Hilbert-Transformationspaar: & $\mathfrak{R}(\omega) = \frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{\mathfrak{I}(u)}{\omega - u} du$ & (Realteil)\\
+			& $\mathfrak{I}(\omega) = -\frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{\mathfrak{R}(u)}{\omega - u} du$ & (Imaginärteil)\\
+		\hline
+			Hilbert-Transformation $\mathcal{H}$: & $\mathcal{H}(f(t)) = \frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{f(u)}{t-u} du
+			= f(t) * \frac{1}{\pi t}$ & \\
+		\hline
+			Analytisches Signal: & $s_R(t) = - \frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{s_I(u)}{t-u} du$ & (Realteil)\\
+			& $s_I(t) = \frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{s_R(u)}{t-u} du$ & (Imaginärteil)\\
+		\hline
+	\end{tabular}
+
+	Die Hilbert-Transformation eines Signals $s(t)$ ist gegeben durch die Faltung $s(t) * \frac{1}{\pi t}$ mit $\frac{1}{\pi t} \laplace -j sgn(\omega)$.\\
+	Durch die Hilbert-Transformation lässt es sich einfach die Fourier-Transformierte berechnen, wenn der Realteil oder der Imaginärteil gegeben
+	ist.
+	

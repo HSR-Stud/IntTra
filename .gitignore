@@ -1,6 +1,6 @@
-IntTra.pdf
-tmp/
-*.aux
-*.out
-*.synctex*
+/*.pdf
+/*.aux
+/*.log
+/*.out
+/*.gz
 .DS_STORE
