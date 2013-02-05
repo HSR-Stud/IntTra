@@ -40,7 +40,6 @@
 	
 	\subsection{Lineare zeitinvariante Systeme (LTI-Systeme)}
 		LTI-Systeme sind durch ihre Impulsantwort $h$ vollständig bestimmt\\ \\	
-		LTI-Systeme sind durch ihre Impulsantwort $h$ vollständig bestimmt\\ \\
 		\textbf{Berechnung der Systemantwort von diskreten LTI-Systemen}\\
 		$\; y=x*h \qquad$ ($y=$ Systemantwort; $x=$ Eingangssignal; $h=$
 		Impulsantwort)\\
@@ -53,13 +52,6 @@
 			& \parbox{4cm}{
 			\includegraphics[width=6cm]{./bilder/utf-theorie.png}}\\
 		\end{tabular} \\
-		Amplitudengang: 		$|H(\omega)| = \begin{cases}
-								< 1 \text{ Dämpfung} \\
-								> 1 \text{ Verstärkung}
-								\end{cases}$	\\
-		\textbf{Sprungantwort} \\
-		Die Sprungantwort $y_{\sigma}(t)$ ist die Systemantwort auf die
-		Sprungfunktion $\sigma(t)$: \\ $Y_{\sigma}(s)=H(s) \cdot \Sigma(\omega)$
 
 	\subsection{Eigenfrequenz, Frequenzgang}
 	Zu jeder Frequenz gehört der eigene Frequenzgang mit $a, b \in \mathbb{C}$\\
@@ -67,48 +59,36 @@
 	Frequenzgang bei Spektraldarstellung: $$\sum_{k=-\infty}^{\infty} c_k e^{jk\omega t} \rightarrow \boxed{H(\omega)}
 	\rightarrow \sum_{k=-\infty}^{\infty} c_k H(\omega k) e^{jk\omega t}$$			
 	
-	\subsection{Eigenfrequenz, Frequenzgang}
-	Zu jeder Frequenz gehört der eigene Frequenzgang mit $a, b \in \mathbb{C}$\\
-	$$a e^{j\omega_1 t} + b e^{j\omega_2 t} \rightarrow a H(\omega_1) e^{j\omega_1 t} + b H(\omega_2) e^{j\omega_2 t}$$
-	Frequenzgang bei Spektraldrastellung: $$\sum_{k=-\infty}^{\infty} c_k e^{jk\omega t} \rightarrow \boxed{H(\omega)}
-	\rightarrow \sum_{k=-\infty}^{\infty} c_k H(\omega k) e^{jk\omega t}$$
-
-	
 	\subsection{Faltung}
-	\begin{tabular}{|l|} \hline
 	$y(t) = f(t)\ast g(t) = g(t) \ast f(t) = (f \ast g)(t) :=
 	\int\limits_{-\infty}^\infty f(u) \cdot g(t-u)\,du =
 	\int\limits_{-\infty}^\infty f(t-u) \cdot g(u)\,du $ \\
 	($g(t-u)$ entspricht einer Spiegelung an der Y-Achse und ist um t nach rechts geschoben)\\
 	
-	Hat $g\left(t\right)$ keine negative Argumente dann gilt :
+	Hat $g\left(t\right)$ \textbf{keine negative} Argumente dann gilt :
 	$\left(g \ast f \right)\left(t\right)=\int\limits_{-\infty}^t f(u) \cdot
 	g(t-u)\,du$\\
 	Hat $f\left(t\right)$ keine negative Argumente (Einschaltvorgang) dann gilt :
 	$\left(g \ast f \right)\left(t\right)=\int\limits_{0}^t f(u) \cdot
 	g(t-u)\,du$\\
 	Bei einer Faltung mit einer $\delta\left(t\right)$Funktion
-	gilt:$f\left(t\right) \ast \delta\left(t\right) = f\left(t\right)$\\
-	
-	\begin{tabular}{|l | l |}
-		\hline
-			Faltungssatz: & $f(t)\cdot g(t) \laplace F(\omega) \ast G(\omega)$ \\
-			& $f(t) \ast g(t) \laplace \frac{1}{2\pi}F(\omega) \cdot G(\omega)$ \\
-		\hline
-	\end{tabular}
+	gilt:$f\left(t\right) \ast \delta\left(t\right) = f\left(t\right)$
 	
 	\begin{multicols}{2}
+		\begin{tabular}{|l | l |}
+				\hline
+					Faltungssatz: & $f(t)\cdot g(t) \laplace F(\omega) \ast G(\omega)$ \\
+					& $f(t) \ast g(t) \laplace \frac{1}{2\pi}F(\omega) \cdot G(\omega)$ \\
+				\hline
+			\end{tabular}\\ \\
 		\textbf{grafische Interpretation:}
 		\begin{enumerate}
   			\item einfacheres Signal ($g(t)$) an der Y-Achse spiegeln
-	\textbf{Bestimmung der Grenzen:}
-	Koordinatensystem mit t auf X-Achse und u auf Y-Achse. Einzeichnen, in welchen Bereichen
-	die Faktoren $0$ werden. Integriert werden muss nur, wo Signal $\neq 0$ ist. 
   			\item Verschiebung um t nach rechts
   			\item Multiplikation und Integration der beiden Signale
 		\end{enumerate}
 		\columnbreak
-		\textbf{Bestimmung der Grenzen:}
+		\textbf{Bestimmung der Grenzen bei $\int\limits_{-\infty}^\infty f(u) \cdot g(t-u)\,du$:}
 		\begin{enumerate}
 		  \item Koordinatensystem: X-Achse: t, Y-Achse: u
 		  \item $f(u)$ unterteilen $\rightarrow$ Streifen parallel zur X-Achse

@@ -3,15 +3,18 @@
 	$$\boxed{F(s)=\int\limits_0^\infty f(t)e^{-st}dt} \qquad s=\sigma+j\omega$$\\
 	\begin{tabular}{p{1cm}p{17cm}}
 		$\bullet$ & Definitionsbereich nur für kausale Systeme $t\geq 0$\\
-		$\bullet$ & Integrierbar über das Intervall $(0,\infty)$\\
+		%$\bullet$ & Integrierbar über das Intervall $(0,\infty)$\\
 		$\bullet$ & Wachstum kleiner als der von eienr Exponentialfunktion\\ 
 		$\bullet$ & Gegen"uber $j\omega$ bei der Fourier-Transformation ist bei der
 			Laplace-Transformation $s$ verallgemeinert zu $s=\sigma + j\omega$. Das
 			bedeutet, dass die Fourier-Transformierte $F(j\omega)$ durch die
 			Laplace-Transformation $F(s)$ ausgedr\"uckt werden kann. \\
-		$\bullet$ & mit $\sigma = 0 \rightarrow$ Amplitude bleibt konstant\\
-		$\bullet$ & mit $\sigma > 0 \rightarrow$ explodiert die Amplitude f\"ur $0 < t \rightarrow \infty$ \\
-		$\bullet$ & mit $\sigma < 0 \rightarrow$ klingt die Amplidute für $0 < t \rightarrow \infty$ auf $0$ ab
+		$\bullet$ & mit 
+		$\begin{cases} 
+		\sigma = 0 & \rightarrow \text{Amplitude bleibt konstant} \\ 
+		\sigma > 0 & \rightarrow \text{explodiert die Amplitude f\"ur } 0 < t \rightarrow \infty \\
+		\sigma < 0 & \rightarrow \text{klingt die Amplidute für} 0 < t \rightarrow \infty \text{ auf $0$ ab} \
+		 \end{cases} $ \\   
 	\end{tabular}
 	
  	\subsection{Eigenschaften der Laplace-Transformation}
@@ -19,47 +22,47 @@
 		\begin{tabular}{|l|l|}
         	\hline
         	Linearität & 
- 			$\alpha\cdot f(t) + \beta\cdot g(t) \laplace \alpha\cdot F(s) + \beta\cdot
+ 			$\alpha\cdot f(t) + \beta\cdot g(t) \; \laplace \; \alpha\cdot F(s) + \beta\cdot
  			G(s)$ \\
  			\hline
  			"Ahnlichkeit / Streckung &
- 			$f(\alpha t) \laplace \frac{1}{\alpha}F \left (\frac{s}{\alpha} \right ) \quad 0
+ 			$f(\alpha t) \; \laplace \; \frac{1}{\alpha}F \left (\frac{s}{\alpha} \right ) \quad 0
  			<\alpha \in\mathbb{R}$ \\
  			\hline
  			Faltung im Zeitbereich &
- 			$f(t) \ast g(t) = \int\limits_{0}^{t} f(\tau)g(t-\tau)d\tau \laplace F(s)
+ 			$f(t) \ast g(t) = \int\limits_{0}^{t} f(\tau)g(t-\tau)d\tau \; \laplace \; F(s)
  			\cdot G(s)$\\
  			\hline
  			Faltung im Frequenzbereich &
- 			$f(t) \cdot g(t) \laplace \frac{1}{2\pi j}\int\limits_{c-j\infty}^{c+j\infty}
+ 			$f(t) \cdot g(t) \; \laplace \; \frac{1}{2\pi j}\int\limits_{c-j\infty}^{c+j\infty}
  			F(\xi) G(s-\xi)d\xi$ \\
  			\hline
  			Ableitung im Zeitbereich &
- 			$\frac{\partial f(t)}{\partial t} \laplace sF(s)
+ 			$\frac{\partial f(t)}{\partial t} \; \laplace \; sF(s)
  			-f(0^+)$ \\
  			\hline
  			Ableitungen im Zeitbereich &
- 			$\frac{\partial^n f(t)}{\partial t^n} \laplace s^nF(s)
+ 			$\frac{\partial^n f(t)}{\partial t^n} \; \laplace \; s^nF(s)
  			-s^{n-1}f(0^+)-s^{n-2}\frac{\partial f(0^+)}{\partial t}-\ldots
  			-s^0\frac{\partial^{n-1} f(0^+)}{\partial t^{n-1}}$ \\
  			\hline
  			Multiplikation mit $t$ &
- 			$t\cdot f(t)  \laplace \frac{-\partial F(s)}{\partial s}$ \\
+ 			$t\cdot f(t)  \; \laplace \; \frac{-\partial F(s)}{\partial s}$ \\
  			\hline
  			Ableitung im Frequenzbereich &
- 			$(-t)^n f(t) \laplace  \frac{\partial^n F(s)}{\partial s^n}$ \\
+ 			$(-t)^n f(t) \; \laplace \;  \frac{\partial^n F(s)}{\partial s^n}$ \\
  			\hline
  			Verschiebung im Zeitbereich nach rechts &
- 			$f(t - t_0) \laplace F(s)e^{- t_0 s}$ \\
+ 			$f(t - t_0) \; \laplace \; F(s)e^{- t_0 s}$ \\
  			\hline
 			Verschiebung im Zeitbereich nach links &
-			$f(t + t_0) \laplace e^{t_0 s} \cdot [F(s) - \int\limits_0^{t_0} f(t) \cdot e^{-st} dt]$\\
+			$f(t + t_0) \; \laplace \; e^{t_0 s} \cdot [F(s) - \int\limits_0^{t_0} f(t) \cdot e^{-st} dt]$\\
 			\hline
  			Verschiebung im Frequenzbereich (Dämpfungssatz) &
- 			$f(t)e^{\mp\alpha t} \laplace F(s\pm\alpha)$ \\
+ 			$f(t)e^{\mp\alpha t} \; \laplace \; F(s\pm\alpha)$ \\
  			\hline
  			Integration (Sprungantwort)&
- 			$\int\limits_0^t f(\tau)d\tau \laplace \frac{F(s)}{s}$ \\
+ 			$\int\limits_0^t f(\tau)d\tau \; \laplace \; \frac{F(s)}{s}$ \\
  			\hline
  			Anfangswert &
  			$\lim_{t\rightarrow 0^+} f(t) = \lim_{s\rightarrow \infty} sF(s),\text{~wenn
@@ -77,13 +80,13 @@
 		\begin{center}
 			\begin{tabular}{|lcc|}
 				\hline
-				$\sigma \left( t \right)$ & $\laplace$ & $\frac{1}{s}$ \\
-				$\sigma \left( t \right) \cdot t$ & $\laplace$ & $\frac{1}{s^2}$\\
-				$\sigma \left( t \right) \cdot t^2$ & $\laplace$ & $\frac{2}{s^3}$\\
-				$\sigma \left( t \right) \cdot t^n$ & $\laplace$ & $\frac{n!}{s^{n+1}}$\\
-				$\sigma \left( t \right) \cdot e^{\alpha t}$ & $\laplace$ &
+				$\sigma \left( t \right)$ & $\; \laplace \;$ & $\frac{1}{s}$ \\
+				$\sigma \left( t \right) \cdot t$ & $\; \laplace \;$ & $\frac{1}{s^2}$\\
+				$\sigma \left( t \right) \cdot t^2$ & $\; \laplace \;$ & $\frac{2}{s^3}$\\
+				$\sigma \left( t \right) \cdot t^n$ & $\; \laplace \;$ & $\frac{n!}{s^{n+1}}$\\
+				$\sigma \left( t \right) \cdot e^{\alpha t}$ & $\; \laplace \;$ &
 				$\frac{1}{s-\alpha}$\\
-				$\sigma \left( t \right) \cdot t \cdot e^{\alpha t}$ & $\laplace$ &
+				$\sigma \left( t \right) \cdot t \cdot e^{\alpha t}$ & $\; \laplace \;$ &
 				$\frac{1}{( s - \alpha )^2}$\\
 				\hline
 			\end{tabular}
@@ -93,15 +96,15 @@
 			\begin{tabular}{|lcc|}
 				\hline
 				$\sigma \left( t \right)\cdot t^2 \cdot e^{\alpha t}$ &
-				$\laplace$ & $\frac{2}{{( s - \alpha )}^3}$\\
+				$\; \laplace \;$ & $\frac{2}{{( s - \alpha )}^3}$\\
 				$\sigma \left( t \right)\cdot t^n \cdot e^{ \alpha t}$ &
-				$\laplace$ & $\frac{n!}{(s-\alpha)^{n+1}}$\\
-				$\sigma \left( t \right) \cdot \sin \left(\omega t \right)$ & $\laplace$ &
+				$\; \laplace \;$ & $\frac{n!}{(s-\alpha)^{n+1}}$\\
+				$\sigma \left( t \right) \cdot \sin \left(\omega t \right)$ & $\; \laplace \;$ &
 				$\frac{\omega}{s^2 + {\omega^2}}$\\
-				$\sigma \left( t \right) \cdot \cos \left( \omega t \right)$ & $\laplace$ &
+				$\sigma \left( t \right) \cdot \cos \left( \omega t \right)$ & $\; \laplace \;$ &
 				$\frac{s}{ s^2 + \omega^2}$\\
-				$\delta \left( t \right)$ & $\laplace$ & $1\left( s \right)$ \\
-				$\delta \left( t - \alpha \right)$ & $\laplace$ & $e^{- \alpha s}$\\
+				$\delta \left( t \right)$ & $\; \laplace \;$ & $1\left( s \right)$ \\
+				$\delta \left( t - \alpha \right)$ & $\; \laplace \;$ & $e^{- \alpha s}$\\
 				\hline
 			\end{tabular}
 		\end{center}
@@ -125,33 +128,37 @@
 			
 			
 	\subsection{Lösung linearer Differentialgleichungen}
-		\includegraphics[width=10cm]{./bilder/diffgleichungen2.png}
-		\includegraphics[width=10cm]{./bilder/diffgleichungen.png} \\
-		\renewcommand{\arraystretch}{2}
-		\begin{tabular}{| l | l |}
-			\hline
-				Übertragungsfunktion & $G(s) = \frac{1}{p(s)}$\\
-				& $g(t) \laplace G(s)$ \\
-			\hline
-				Frequenzgang & $G(j\omega) = H(\omega)$ \\
-			\hline
-				Impulsantwort & $y_{\delta}(t) = g(t) \laplace G(s) = \frac{1}{p(s)}=Y_{\delta}(s)$\\
-			\hline
-				Sprungwantwort & $y_{\sigma}(t)=\int\limits_0^t g(u) du \laplace \frac{G(s)}{s} = \frac{1}{s \cdot p(s)} = Y_{\sigma}(s)$\\
-			\hline
-				Eigenschwingung & $\frac{h(s)}{p(s)}$ \\
-			\hline
-				äussere Erregung & $\frac{F(s)}{p(s)}$ \\
-			\hline
-				stationärer Zustand & = ungedämpfte Eigenschwingung\\
-			\hline
-		\end{tabular}
-		\renewcommand{\arraystretch}{\arraystretchOriginal}\\
+		\begin{minipage}{11.5cm}
+			\renewcommand{\arraystretch}{2}
+			\begin{tabular}{| l | l |}
+				\hline
+					Übertragungsfunktion & $G(s) = \frac{1}{p(s)}$\\
+					& $g(t) \; \laplace \; G(s)$ \\
+				\hline
+					Frequenzgang & $G(j\omega) = H(\omega)$ \\
+				\hline
+					Impulsantwort & $y_{\delta}(t) = g(t) = y_{\sigma}'(t) \; \laplace \; G(s) = \frac{1}{p(s)}=Y_{\delta}(s)$\\
+				\hline
+					Sprungwantwort & $y_{\sigma}(t)=\int\limits_0^t g(u) du \; \laplace \; \frac{G(s)}{s} = \frac{1}{s \cdot p(s)} = Y_{\sigma}(s)$\\
+				\hline
+					Eigenschwingung & $\frac{h(s)}{p(s)}$ \\
+				\hline
+					äussere Erregung & $\frac{F(s)}{p(s)}$ \\
+				\hline
+					stationärer Zustand & = ungedämpfte Eigenschwingung\\
+				\hline
+			\end{tabular}
+			\renewcommand{\arraystretch}{\arraystretchOriginal}\\
+		\end{minipage}
+		\begin{minipage}{8cm}
+					\includegraphics[width=8cm]{./bilder/diffgleichungen2.png} \\
+		\end{minipage}
+		
 		
 		\begin{minipage}[l]{16cm}
 				\textbf{Beispiel:} $y'' + 8y' + 25y = \sigma{t} \cdot \sin(2t)$ mit $y(0) = 2, y'(0) = -1$\\
 				
-				$\sin(2t) \laplace \frac{2}{s^2+4}$ \\
+				$\sin(2t) \; \laplace \; \frac{2}{s^2+4}$ \\
 				
 				$\Rightarrow Y(s)(s^2+8s+25) = 2s+15+\frac{2}{s^2+4}$\\
 				
@@ -173,40 +180,7 @@
 			Damit ist das char. Polynom $p(s) = (s-NS_1)(s-NS_2)\ldots(s-NS_n)$ \\\\
 			Der stationäre Zustand ist $\lim\limits_{t\rightarrow\infty}y(t) = \frac{1}{p(0)}$ \\
 				
-		\renewcommand{\arraystretch}{2}
-		\begin{tabular}{| l | l |}
-			\hline
-				Übertragungsfunktion & $G(s) = \frac{1}{p(s)}$\\
-				& $g(t) \laplace G(s)$ \\
-			\hline
-				Frequenzgang & $G(j\omega) = H(\omega)$ \\
-			\hline
-				Impulsantwort & $y_{\delta}(t) = g(t) \laplace G(s) = \frac{1}{p(s)}=Y_{\delta}(s)$\\
-			\hline
-				Sprungwantwort & $y_{\sigma}(t)=\int\limits_0^t g(u) du \laplace \frac{G(s)}{s} = \frac{1}{s \cdot p(s)} = Y_{\sigma}(s)$\\
-			\hline
-				Eigenschwingung & $\frac{h(s)}{p(s)}$ \\
-			\hline
-				äussere Erregung & $\frac{F(s)}{p(s)}$ \\
-			\hline
-				stationärer Zustand & = ungedämpfte Eigenschwingung\\
-			\hline
-		\end{tabular}
-		\renewcommand{\arraystretch}{\arraystretchOriginal}\\
 		
-		\begin{minipage}[l]{16cm}
-				\textbf{Beispiel:} $y'' + 8y' + 25y = \sigma{t} \cdot \sin(2t)$ mit $y(0) = 2, y'(0) = -1$\\
-				
-				$\sin(2t) \laplace \frac{2}{s^2+4}$ \\
-				
-				$\Rightarrow Y(s)(s^2+8s+25) = 2s+15+\frac{2}{s^2+4}$\\
-				
-				$\Leftrightarrow Y(s) = \frac{2s+15}{s^2+8s+25}+\frac{2}{(s^2+4)(s^2+8s+25)}=
-				\underbrace{\frac{2s+15}{s^2+8s+25}}_\text{Eigenschwinung durch Anfangszustand} +
-				\underbrace{\frac{As + B}{s^2+4}}_\text{stationärer Zustand} +
-				\underbrace{\frac{Cs + D}{s^2+8s+25}}_\text{Eigenschwinung durch Einschalten}$
-		\end{minipage}
-
 	\subsection{Eigenschwinung}
 		\begin{minipage}{12cm}
 			spezielle Anfangswerte bei einem System ohne äussere Einflüsse:\\
@@ -214,10 +188,10 @@
 			in diesem Fall wird $h(s) = 1$\\
 		\end{minipage}
 		\begin{minipage}{6cm}
-			$y(t) \laplace \color{green} Y(s)$\\
-			$y'(t) \laplace \color{green} sY(s)\color{red} - y_0$\\
+			$y(t) \; \laplace \; \color{green} Y(s)$\\
+			$y'(t) \; \laplace \; \color{green} sY(s)\color{red} - y_0$\\
 			$\vdots$\\
-			$y^{(n)} \laplace 
+			$y^{(n)} \; \laplace \; 
 			\color{green}\underbrace{s^nY(s)}_{Y(s) \cdot p(s)}
 			\color{red}\underbrace{-s^{n-1}y_0 - \dots - y^{(n-1)}}_{h(s)}$
 		\end{minipage}
