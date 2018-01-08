@@ -79,56 +79,58 @@
 		\renewcommand{\arraystretch}{\arraystretchOriginal}
 	
 	\subsection{Laplace-Tabelle}
+	\renewcommand{\arraystretch}{2}
 	\hrule
-	\begin{multicols}{3}
+	\begin{minipage}{5cm}
 		\begin{center}
-			\begin{tabular}{p{2cm}p{0.75cm}p{2cm}}
+			\begin{tabular}{p{1.5cm}p{0.75cm}p{2cm}}
 				
-				$\sigma \left( t \right)$ & $\; \laplace \;$ & $\frac{1}{s}$ \\
-				$\sigma \left( t \right) \cdot t$ & $\; \laplace \;$ & $\frac{1}{s^2}$\\
-				$\sigma \left( t \right) \cdot t^2$ & $\; \laplace \;$ & $\frac{2}{s^3}$\\
-				$\sigma \left( t \right) \cdot t^n$ & $\; \laplace \;$ & $\frac{n!}{s^{n+1}}$\\
+				$\sigma \left( t \right)$ & $\; \laplace \;$ & $\dfrac{1}{s}$ \\
+				$\sigma \left( t \right) \cdot t$ & $\; \laplace \;$ & $\dfrac{1}{s^2}$\\
+				$\sigma \left( t \right) \cdot t^2$ & $\; \laplace \;$ & $\dfrac{2}{s^3}$\\
+				$\sigma \left( t \right) \cdot t^n$ & $\; \laplace \;$ & $\dfrac{n!}{s^{n+1}}$\\
 				$\sigma \left( t \right) \cdot e^{\alpha t}$ & $\; \laplace \;$ &
-				$\frac{1}{s-\alpha}$\\
+				$\dfrac{1}{s-\alpha}$\\
 			\end{tabular}
 		\end{center}
-	\columnbreak
+	\end{minipage}
+	\begin{minipage}{6.5cm}
 		\begin{center}
 			\begin{tabular}{p{2cm}p{0.75cm}p{2cm}}
 				$\sigma \left( t \right) \cdot t \cdot e^{\alpha t}$ & $\; \laplace \;$ &
-				$\frac{1}{( s - \alpha )^2}$\\
+				$\dfrac{1}{( s - \alpha )^2}$\\
 				$\sigma \left( t \right)\cdot t^2 \cdot e^{\alpha t}$ &
-				$\; \laplace \;$ & $\frac{2}{{( s - \alpha )}^3}$\\
+				$\; \laplace \;$ & $\dfrac{2}{{( s - \alpha )}^3}$\\
 				$\sigma \left( t \right)\cdot t^n \cdot e^{ \alpha t}$ &
-				$\; \laplace \;$ & $\frac{n!}{(s-\alpha)^{n+1}}$\\
+				$\; \laplace \;$ & $\dfrac{n!}{(s-\alpha)^{n+1}}$\\
 				$\sigma \left( t \right) \cdot \sin \left(\omega t \right)$ & $\; \laplace \;$ &
-				$\frac{\omega}{s^2 + {\omega^2}}$\\
+				$\dfrac{\omega}{s^2 + {\omega^2}}$\\
 				$\sigma \left( t \right) \cdot \cos \left( \omega t \right)$ & $\; \laplace \;$ &
-				$\frac{s}{ s^2 + \omega^2}$\\
+				$\dfrac{s}{ s^2 + \omega^2}$\\
 			\end{tabular}
 		\end{center}
-	\columnbreak
+	\end{minipage}
+\begin{minipage}{6.5cm}
 \begin{center}
 	\begin{tabular}{p{3cm}p{0.75cm}p{2cm}}
 		$\delta \left( t \right)$ & $\; \laplace \;$ & $1\left( s \right)$ \\
-		$\delta \left( t - \alpha \right) / \sigma\left( t - \alpha \right)$ & $\; \laplace \;$ & $e^{- \alpha s}$\\
+		$\delta \left( t - \alpha \right)$ & $\; \laplace \;$ & $e^{- \alpha s}$\\
+		$\sigma\left( t - \alpha \right)$ & $\; \laplace \;$ & $ \dfrac{1}{s} \cdot e^{- \alpha s}$\\
 		$\sigma \left( t \right) \cdot  e^{ \alpha t} \cdot \sin \left(\omega t \right)$ & $\; \laplace \;$ 
-		& 	$\frac{\omega}{(s-a)^2 + {\omega^2}}$\\
-		$\sigma \left( t \right) \cdot e^{ \alpha t} \cdot \cos \left( \omega t \right) \cdot $ & $\; \laplace \;$ &
-		$\frac{s-a}{(s-a)^2 + \omega^2}$\\
+		& 	$\dfrac{\omega}{(s-a)^2 + {\omega^2}}$\\
+		$\sigma \left( t \right) \cdot e^{ \alpha t} \cdot \cos \left( \omega t \right) $ & $\; \laplace \;$ &
+		$\dfrac{s-a}{(s-a)^2 + \omega^2}$\\
 	\end{tabular}
 \end{center}
-\end{multicols}
+\end{minipage}
 \hrule
-		
+\renewcommand{\arraystretch}{\arraystretchOriginal}		
 	\subsection{Rücktransformation}
 		\subsubsection{Vorgehen}
-			\begin{tabular}{p{6cm}p{6cm}}
-				1. Kürzen oder vereinfachen &
+				1. Kürzen oder vereinfachen \\
+				2. Partialbruchzerlegung falls nötig \\
 				3. Rücktransformation mittels Laplace-Tabelle \\
-				2. Partialbruchzerlegung falls nötig &
 				4. $h(t)\hspace{0.2cm}\underline{nicht} < 0$ \\
-			\end{tabular}
 			
 		\subsubsection{Residuensatz}
 			Beispiel:\\
@@ -169,16 +171,12 @@
 		\begin{minipage}[l]{16cm}
 				\textbf{Beispiel:} $y'' + 8y' + 25y = \sigma{t} \cdot \sin(2t)$ mit $y(0) = 2, y'(0) = -1$\\
 				
-				$\sin(2t) \; \laplace \; \frac{2}{s^2+4}$ \\
-				
-				$\Rightarrow Y(s)(s^2+8s+25) = 2s+15+\frac{2}{s^2+4}$\\
-				
+				$\sin(2t) \; \laplace \; \frac{2}{s^2+4}$ \\ $Y(s)(s^2+8s+25) = 2s+15+\frac{2}{s^2+4}$
 				$\Leftrightarrow Y(s) = \frac{2s+15}{s^2+8s+25}+\frac{2}{(s^2+4)(s^2+8s+25)}=
 				\underbrace{\frac{2s+15}{s^2+8s+25}}_\text{Eigenschwinung durch Anfangszustand} +
 				\underbrace{\frac{As + B}{s^2+4}}_\text{stationärer Zustand} +
 				\underbrace{\frac{Cs + D}{s^2+8s+25}}_\text{Eigenschwinung durch Einschalten}$
 		\end{minipage}
-		
 		\subsubsection{Eigenschwingungen}
 			Aus der Eigenschwingung können die Nullstellen des charakteristischen Polynom $p(s)$ 
 			direkt abgelesen werden. \\
@@ -188,19 +186,22 @@
 			-e^{\textcolor{red}{-3j}t})}_{NS = EW = \textcolor{red}{-1 \pm 3j}} - 
 			\underbrace{\frac{2}{3} e^{\textcolor{red}{-2}t} \frac{1}{2}(e^{\textcolor{red}{2j}t}
 			+e^{\textcolor{red}{-2j}t})}_{NS = EW = \textcolor{red}{-2 \pm 2j}}$ \\\\
-			Damit ist das char. Polynom $p(s) = (s-NS_1)(s-NS_2)\ldots(s-NS_n)$ \\\\
-			Der stationäre Zustand ist $\lim\limits_{t\rightarrow\infty}y(t) = \frac{1}{p(0)}$ \\
+			Damit ist das char. Polynom $p(s) = (s-NS_1)(s-NS_2)\ldots(s-NS_n)$ \\
+			Bei mehreren gemessenen Eigenschwingungen werden die char. Polynome multipliziert. \\
+			Der stationäre Zustand ist $\lim\limits_{t\rightarrow\infty}y(t) = \frac{1}{p(0)}$ *(Endwertsatz) \\
 				
 		
 	\subsection{Eigenschwingung}
 		\begin{minipage}{12cm}
-			spezielle Anfangswerte bei einem System ohne äussere Einflüsse:\\
+			Spezielle Anfangswerte bei einem System ohne äussere Einflüsse:\\
 			$y(0) = 0, y'(0) = 0, \dots , y^{(n-2)} = 0, y^{(n-1)} = 1$\\
 			in diesem Fall wird $h(s) = 1$\\
 		\end{minipage}
 		\begin{minipage}{6cm}
 			$y(t) \; \laplace \; Y(s)$\\
 			$y'(t) \; \laplace \; sY(s) - y_0$\\
+			$y''(t)\; \laplace \; s^2Y(s) - sy_0 - y'_0$\\ 
+			$y'''(t)\; \laplace \; s^3Y(s) - s^2y_0 - sy'_0 - y''_0$\\ 
 			$\vdots$\\
 			$y^{(n)} \; \laplace \; 
 			\underbrace{s^nY(s)}_{Y(s) \cdot p(s)}
