@@ -1,5 +1,6 @@
 IntTra - Integraltransformationen
 ======
+[![Build Status](https://travis-ci.org/HSR-Stud/IntTra.svg?branch=master)](https://travis-ci.org/HSR-Stud/IntTra)
 
 ## Erlaubte Hilfsmittel (nach Modulprüfung HS2012/13)
 
