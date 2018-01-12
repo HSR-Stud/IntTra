@@ -29,6 +29,7 @@ Partielle Integration: $\int u(x) v'(x) dx = u(x)v(x) - \int u'(x) v(x) dx$
 
 \section{Differentialrechnung}
 \subsection{Einige wichtige Differentiale}
+\begin{multicols}{2}
 	\begin{tabular}{|l|l||l|l|}
     	\hline
     	\textbf{Funktion} & \textbf{Ableitung} & \textbf{Funktion} &
@@ -46,7 +47,18 @@ Partielle Integration: $\int u(x) v'(x) dx = u(x)v(x) - \int u'(x) v(x) dx$
     	$\ln(x)$ & $\frac1x$ & $\sin(x)$ & $\cos(x)$\\
     	\hline
     	$\cos(x)$ & $-\sin(x)$ & $\ln[f(x)]$ & $\frac{f^{'}(x)}{f(x)}$\\
-    	\hline
-		
+    	\hline	
     \end{tabular}
-  	\renewcommand{\arraystretch}{\arraystretchOriginal}
+
+\columnbreak  	
+\subsection{Aufgabenbeispiel}
+$f(t) =\sum_{k=0}^{\infty}\delta (t-k\pi) \cdot cos(t)$ \\
+$ = \sum_{k=0}^{\infty} = \delta (t-k\pi) \cdot cos(\pi t)  \\
+\; \laplace \; 
+F(s) = \sum_{k=0}^{\infty} (-1)^k(e^{-k\pi s}) \\
+= \sum_{k=0}^{\infty} (-1)^k(e^{-\pi s})^k$ 
+\\ \\
+Die Summenformel der geometrischen Reihe liefert: \\
+$F(s) = \dfrac{e^{-\pi s}}{1 +e^{-\pi s}}$
+\end{multicols}
+\renewcommand{\arraystretch}{\arraystretchOriginal} \\
