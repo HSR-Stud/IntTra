@@ -8,7 +8,8 @@ IntTra - Integraltransformationen
 ## Erlaubte Hilfsmittel (nach Modulprüfung HS2012/13)
 
   * Eigene Zusammenfassung
-  * Skripte, Übungen, alte Prüfungen
+  * Skripte, Übungen
+  * Alte Prüfungen (nur selbstgelöste Aufgaben keine Kopien von Prüfungsaufgaben oder Lösungen)
   * Formelsammlung
   * *kein* Taschenrechner
   
