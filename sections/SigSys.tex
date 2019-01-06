@@ -50,8 +50,49 @@
 			$$f_2(t) = h(t) * f_1(t) \; \laplace \; F_2(s) = H(s) \cdot F_1(s)$$
 			$$h(t) \; \laplace \; H(s)$$}
 			& \parbox{4cm}{
-			\includegraphics[width=6cm]{./bilder/utf-theorie.png}}\\
-		\end{tabular} \\
+		%	\includegraphics[width=6cm]{./bilder/utf-theorie.png}}\\
+	%	\end{tabular} \\
+	
+	\begin{tikzpicture}
+	[	inner sep = 2mm,
+	sin/.style={rectangle,minimum width=2cm,minimum height=1cm,rounded corners=5pt,draw=black,top color=white},
+	abl/.style={rectangle}
+	pil/.style={
+		->,
+		thick,
+		shorten <=2pt,
+		shorten >=2pt,}
+	]
+	
+	\node at (3,0) (L) [sin] {$\mathcal{L}$};
+	\node at (3,-1.5) (H) [sin] {$\mathcal{H}$};
+	\node at (-0.3,-0.75) {$\mathcal{F}$};
+	\node at (6.5,-0.75) {$\mathcal{F}^-1$};
+	
+	\node at (0,0) 		(ft) 	{$f(t)$};	
+	\node at (0,-1.5)	(ck)	{$ \{ c_{k} \} $};
+	\node at (6,0)		(yt) 	{$y(t)$};
+	\node at (6.5,-1.5) 	(Hw)	{$ \{ H( \omega) c_{k} \}  $};
+	
+	
+	\draw [shorten >=0.5cm,shorten <=0.5,->,thick](ft) to (L);
+	\draw [->,thick](ft) to (ck);
+
+	\draw [shorten >=0.5cm,shorten <=0.5,->,thick](ck) to (H);
+	
+	\draw [->,thick](6,-1) to (yt);
+	\draw [->,thick](4.5,0) to (5.5,0);
+	\draw [->,thick](4.5,-1.5) to (5.5,-1.5);
+	\end{tikzpicture} }
+\end{tabular} \\
+	
+
+
+
+
+
+
+
 
 	\subsection{Eigenfrequenz, Frequenzgang}
 	Zu jeder Frequenz gehört der eigene Frequenzgang mit $a, b \in \mathbb{C}$\\
