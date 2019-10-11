@@ -1,12 +1,13 @@
  %%%%%%%%%%%%%%%%%%%%%%%%%
 % Dokumentinformationen %
-%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\titleinfo}{Integraltransformationen - Zusammenfassung}
+%Dokumentinformationen	======================================================================
+
+\newcommand{\titleinfo}{IntTra}
 \newcommand{\authorinfo}{Dev4Future, sowie weitere Autoren}
 \newcommand{\versioninfo}{HS / 2019}
 
-%weitere Autoren
-%Dev4Future, Braun \& Co, J\"urg \& Co, Hannes, K\"orner, Gwerder, Niedermann
+%weitere Autoren: ==========================================================================
+%Dev4Future, Braun \& Co, Jürg \& Co, Hannes, Körner, Gwerder, Niedermann
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Standard projektübergreifender Header für
@@ -16,71 +17,49 @@
 %
 % DORT NUR ERGÄNZEN, NICHTS LÖSCHEN
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dokumenteinstellungen	 ======================================================================
+\include{header/header}			% standard header mit den Packages includieren
 
-\include{header/header}
-\usepackage{tikz}
 
-% Möglichst keine Ergänzungen hier, sondern in header.tex
+
+% Sections ======================================================================
 \begin{document}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Einleitung
-
-\section{Varianten der Integraltransformationen}
-\begin{tabular}{|l||l|l|}
-\hline
-\textbf{Signalart}
-	& diskret
-	& kontinuierlich \\
-\hline \hline
-periodisch
-	& Diskrete Fourier-Transformation
-	& Fourierreihe \\
-\hline
-impulsförmig
-	& ``Fourierreihe mit $T = Impulsdauer$''
-	& Fourierintegral \\
-\hline
-kausal
-	& Z-Transformation
-	& Laplace-Transformation \\
-\hline
-\end{tabular}
-
-% Signale und Systeme
-\input{sections/SigSys}
-
-% Diskrete Fourier Transformation
-%\input{sections/DFT}
-%\newpage
-
-%Funktionen
-\input{sections/Funktionen}
-
-% Fourierreihe
-\input{sections/Fourierreihe}
+	% Einleitung/ Varianten der Integraltransformationen
+	\input{sections/Einleitung}
 	
-% Fourier-Integral / Fourier-Transformation
-\input{sections/FourierIntegral}
+	% Signale und Systeme
+	\input{sections/SigSys}
+	
+	% Diskrete Fourier Transformation
+	%\input{sections/DFT}
+	%\newpage
+	
+	%Funktionen
+	\input{sections/Funktionen}
+	
+	% Fourierreihe
+	\input{sections/Fourierreihe}
+		
+	% Fourier-Integral / Fourier-Transformation
+	\input{sections/FourierIntegral}
 \newpage
-% Abtasttheoreme, diskrete Frouriertransformation
-\input{sections/Abtasttheorem}
-
-% LaPlace-Transformation
-\input{sections/LaPlaceTransformation}
-
-% Diverses
-\input{sections/Diverses}
+	% Abtasttheoreme, diskrete Frouriertransformation
+	\input{sections/Abtasttheorem}
+	
+	% LaPlace-Transformation
+	\input{sections/LaPlaceTransformation}
+	
+	% Diverses
+	\input{sections/Diverses}
 %\newpage
-%\input{sections/Tricks}
-
-% Wichtige Formeln
-%\input{idiotenseite/trigo/trigoInclude}
-%\input{sections/Idiotenseite}
-
-% Integraltabelle
-%\input{sections/Integrale}
-%\input{idiotenseite/diverses/subsections/unbestimmteIntegrale}
+	%\input{sections/Tricks}
+	
+	% Wichtige Formeln
+	%\input{idiotenseite/trigo/trigoInclude}
+	%\input{sections/Idiotenseite}
+	
+	% Integraltabelle
+	%\input{sections/Integrale}
+	%\input{idiotenseite/diverses/subsections/unbestimmteIntegrale}
 
 \end{document}
