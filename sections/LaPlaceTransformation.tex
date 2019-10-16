@@ -229,12 +229,16 @@
 			in diesem Fall wird $h(s) = 1$\\
 		\end{minipage}
 		\begin{minipage}{6cm}
-			$y(t) \; \laplace \; Y(s)$\\
-			$y'(t) \; \laplace \; sY(s) - y_0$\\
-			$y''(t)\; \laplace \; s^2Y(s) - sy_0 - y'_0$\\ 
-			$y'''(t)\; \laplace \; s^3Y(s) - s^2y_0 - sy'_0 - y''_0$\\ 
-			$\vdots$\\
-			$y^{(n)} \; \laplace \; 
-			\underbrace{s^nY(s)}_{Y(s) \cdot p(s)}
-			\underbrace{-s^{n-1}y_0 - \dots - y^{(n-1)}}_{h(s)}$
+			\begin{math}
+				\begin{aligned}
+					y(t) \; &\laplace \; Y(s)\\
+					y'(t) \; &\laplace \; sY(s) - y_0\\
+					y''(t)\; &\laplace \; s^2Y(s) - sy_0 - y'_0\\ 
+					y'''(t)\; &\laplace \; s^3Y(s) - s^2y_0 - sy'_0 - y''_0\\ 
+					\vdots&\\
+					y^{(n)} \; &\laplace \; 
+					\underbrace{s^nY(s)}_{Y(s) \cdot p(s)}
+					\underbrace{-s^{n-1}y_0 - \dots - y^{(n-1)}}_{h(s)}
+				\end{aligned}
+			\end{math}
 		\end{minipage}
