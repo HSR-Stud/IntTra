@@ -23,46 +23,47 @@
 
 
 % Sections ======================================================================
+%TODO ersetzen von Bildern mit richtigem Latex Code
 \begin{document}
-	% Einleitung/ Varianten der Integraltransformationen
-	\input{sections/Einleitung}
+		% Einleitung/ Varianten der Integraltransformationen
+		\input{sections/Einleitung}
+		
+		% Signale und Systeme
+		\input{sections/SigSys}
+		
+		% Diskrete Fourier Transformation
+		%\input{sections/DFT}
+		%\newpage
+		
+		%Funktionen
+		\input{sections/Funktionen}			%TODO Funktionen mit Transformierten ergänzen
+		
+	\newpage
+		% Fourierreihe
+		\input{sections/Fourierreihe}
+	\newpage	
 	
-	% Signale und Systeme
-	\input{sections/SigSys}
-	
-	% Diskrete Fourier Transformation
-	%\input{sections/DFT}
-	%\newpage
-	
-	%Funktionen
-	\input{sections/Funktionen}
-	
-\newpage
-	% Fourierreihe
-	\input{sections/Fourierreihe}
-\newpage	
-
-	% Fourier-Integral / Fourier-Transformation
-	\input{sections/FourierIntegral}
-	\input{sections/HilbertTransformation}
-\newpage
-	% Abtasttheoreme, diskrete Frouriertransformation
-	\input{sections/Abtasttheorem}
-	
-	% LaPlace-Transformation
-	\input{sections/LaPlaceTransformation}
-	
-	% Diverses
-	\input{sections/Diverses}
-%\newpage
-	%\input{sections/Tricks}
-	
-	% Wichtige Formeln
-	%\input{idiotenseite/trigo/trigoInclude}
-	%\input{sections/Idiotenseite}
-	
-	% Integraltabelle
-	%\input{sections/Integrale}
-	%\input{idiotenseite/diverses/subsections/unbestimmteIntegrale}
+		% Fourier-Integral / Fourier-Transformation
+		\input{sections/FourierIntegral}
+		\input{sections/HilbertTransformation}
+	\newpage
+		% Abtasttheoreme, diskrete Frouriertransformation
+		\input{sections/Abtasttheorem}
+		
+		% LaPlace-Transformation
+		\input{sections/LaPlaceTransformation}
+		
+		% Diverses
+		\input{sections/Diverses}
+	\newpage
+		%\input{sections/Tricks}
+		
+		% Wichtige Formeln (Idiotenseiten)
+		%\input{idiotenseite/trigo/trigoInclude}
+		%\input{sections/Idiotenseite}
+		
+		% Integraltabelle
+		%\input{sections/Integrale}
+		%\input{idiotenseite/diverses/subsections/unbestimmteIntegrale}
 
 \end{document}
