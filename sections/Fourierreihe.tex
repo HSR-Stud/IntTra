@@ -11,8 +11,6 @@
 	t}dt} \; ; \; c_0 = \frac{a_0}{2}} \qquad \boxed{a_0 = \frac{2}{T}\int\limits_0^{T}
 	f(t)dt, \quad a_k = \frac{2}{T}\int\limits_0^{T} f(t)\cos(k \omega_1 t) dt, \quad b_k =
 	\frac{2}{T}\int\limits_0^{T} f(t)\sin(k \omega_1 t) dt}$$
-
-\subsection{Koeffizienten umrechnen}
 	$a_0$, $c_0$, $A_0$ sind \textit{Konstanten}, $\omega_1$ ist die
 	\textit{Grundkreisfrequenz}, $a_k$ und $b_k$ sind die \textit{reellen
 	Koeffizienten}, $c_k$ ist der \textit{komplexe Koeffizient}, $A_k$ ist die
@@ -36,25 +34,23 @@
 	\end{tabular}
 
 	\subsection{Symmetrie}
-		\begin{tabular}{|p{4.3cm}|p{4.3cm}||p{4.4cm}|p{4.4cm}|}
-	         \hline
-	        	\textbf{gerade Funktion} & \textbf{ungerade Funktion} &
-	        	\textbf{Halbperiode 1} & \textbf{Halbperiode 2}\\
-	        \hline
-	        	\includegraphics[width=3cm,trim=0 0 0 -5]{./bilder/fourierReihe/gerade_funktion.png}&
-	        	\includegraphics[width=3cm]{./bilder/fourierReihe/ungerade_funktion.png}&
-	 			\includegraphics[width=3cm]{./bilder/fourierReihe/halbperiode_1.png}&   
-				\includegraphics[width=3cm]{./bilder/fourierReihe/halbperiode_2.png}\\
-			\hline 
-				Achsen - symmetrisch & Punkt - symmetrisch & & \\			
-	   			$f(-t)=f(t)$ & $f(-t)=-f(t)$ & $f(t)=f(t+\pi)$ & $f(t)=-f(t+\pi)$\\
-	   		\hline
-	   			$b_k=0$ & $a_k=0$ & $a_{2k+1}=0$ & $a_{2k}=0$\\
-	   			$a_k = \frac{4}{T} \int\limits_0^{\frac{T}{2}} f(t) \cdot \cos(k \omega_1
-	   			t) dt$ &
-	   			$b_k =  \frac{4}{T} \int\limits_0^{\frac{T}{2}} f(t) \cdot
-				\sin(k \omega_1 t) dt$ &
-				$b_{2k+1}=0$ & $b_{2k}=0$\\
+		\begin{tabular}{|p{4.3cm}|p{4.3cm}|p{4.4cm}|p{4.4cm}|}
+         	\hline
+        	\textbf{gerade Funktion} & \textbf{ungerade Funktion} &
+        	\textbf{Halbperiode 1} & \textbf{Halbperiode 2}\\
+        	\hline
+        	\includegraphics[width=3cm,trim=0 0 0 -5]{./bilder/gerade_funktion.png}&
+        	\includegraphics[width=3cm]{./bilder/ungerade_funktion.png}&
+ 			\includegraphics[width=3cm]{./bilder/halbperiode_1.png}&   
+			\includegraphics[width=3cm]{./bilder/halbperiode_2.png}\\
+			\hline & & & \\			
+   			$f(-t)=f(t)$ & $f(-t)=-f(t)$ & $f(t)=f(t+\pi)$ & $f(t)=-f(t+\pi)$\\
+   			$b_k=0$ & $a_k=0$ & $a_{2k+1}=0$ & $a_{2k}=0$\\
+   			$a_k = \frac{4}{T} \int\limits_0^{\frac{T}{2}} f(t) \cdot \cos(k \omega_1
+   			t) dt$ &
+   			$b_k =  \frac{4}{T} \int\limits_0^{\frac{T}{2}} f(t) \cdot
+			\sin(k \omega_1 t) dt$ &
+			$b_{2k+1}=0$ & $b_{2k}=0$\\
 			\hline
       	\end{tabular}
 
@@ -65,4 +61,4 @@
 	
 	F"ur Verh"altnisse $\frac{T}{ggT(t_1,T)}=n\in\mathbb{N}$ verschwinden die
 	$n.$ Harmonische und deren Vielfache.\\
-	\includegraphics[width=19cm]{./bilder/fourierReihe/fourierreihe-rechteck.png}
+	\includegraphics[width=19cm]{./bilder/fourierreihe-rechteck.png}
