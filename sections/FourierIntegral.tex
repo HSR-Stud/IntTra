@@ -73,6 +73,7 @@
 				
 		\subsection{Eigenschaften}
 				
+					\renewcommand{\arraystretch}{1}					
 					\begin{tabular}{rcl}
 						\hline 
 							\textbf{Zeitbereich} & \laplace  & \textbf{Frequenzbereich} \\ 
@@ -98,7 +99,9 @@
 						\hline 
 							$f(t)$ nicht periodisch & \laplace & $F(j \omega)$ (frequenz)kontinuierlich\\ 
 						\hline 
-					\end{tabular} 
+					\end{tabular}
+					\renewcommand{\arraystretch}{\arraystretchOriginal}	
+					
 					
 				\begin{tabular}{|p{9cm}|p{8cm}|}
 		        	\hline
@@ -113,6 +116,10 @@
 			  			$f(\alpha t) \; \laplace \; \frac{1}{|\alpha|}F \left (\frac{\omega}{\alpha} \right)
 			  			\quad\alpha \in\mathbb{R}\setminus \{0\}$\\
 							& $F(\alpha\omega) \; \Laplace \; f(\frac{t}{\alpha})$ \\
+					\hline
+						Vertauschungssatz (Dualität) &
+						$f(t) \; \laplace \; F(\omega)\nonumber$ \\
+						& $F(t) \; \laplace \; 2\pi \cdot f(-\omega)$\\
 		  			\hline
 		  			\hline
 			  			Verschiebung im	Zeitbereich &
@@ -141,15 +148,13 @@
 						$\int\limits_{-\infty}^{t}f(\tau)d\tau \; \laplace \;
 						\frac{F(\omega)}{j\omega}+F(0)\pi\delta(\omega)$\\
 					\hline
-						Vertauschungssatz (Dualität) &
-						$f(t) \; \laplace \; F(\omega)\nonumber$ \\
-			 			& $F(t) \; \laplace \; 2\pi \cdot f(-\omega)$\\
 		 			\hline
 			 			Modulation &
 			 			$\cos(\alpha t) \cdot f(t)  \; \laplace \;  \frac{1}{2}\cdot
 			 			\left[F(\omega-\alpha) + F(\omega+\alpha)\right ]$\\
 			 			& $\sin(\alpha t) \cdot f(t) \; \laplace \; \frac{1}{2j}\cdot \left[
 			 			F(\omega-\alpha) - F(\omega+\alpha)\right ]$\\
+		 			\hline
 		 			\hline
 			        	Parseval's Theorem &
 			 			$\int\limits_{-\infty}^{\infty}f(t)g^{\ast}(t)dt = \frac{1}{2\pi}
@@ -158,10 +163,15 @@
 			  			Bessel's Theorem &
 			  			$\int\limits_{-\infty}^{\infty}|f(t)|^2 dt = \frac{1}{2\pi}
 			  			\int\limits_{-\infty}^{\infty}|F(\omega)|^2 d\omega$\\
-		  			\hline 			
+		  			\hline 
+		  			\hline		
 						Anfangswerte &
-						$f(0)=\frac{1}{2\pi}\int\limits_{-\infty}^{\infty}F(\omega)d\omega
-						\hspace*{1cm} F(0)=\int\limits_{-\infty}^{\infty}f(t)dt$\\
+						$\begin{aligned}
+							f(0)&=\frac{1}{2\pi}\int\limits_{-\infty}^{\infty}F(\omega)d\omega
+							\hspace*{1cm}\\
+							F(0)&=\int\limits_{-\infty}^{\infty}f(t)dt
+						\end{aligned}$\\
+					\hline
 					\hline
 						$\infty$ lange Folge von $\delta$-Impulsen &
 						$\sum_{n=-\infty}^{\infty} \delta(t-n\cdot t_0) \; \laplace \;
@@ -169,6 +179,20 @@
 						\frac{2\pi}{t_0})$\\
 					\hline
 		     \end{tabular}
+
+%TODO Dies ist ein Beispiel, wie man die Fouriertransformierten-Tabelle und die Laplace-Tabelle übersichtlicher gestalten könnte
+%	     	\begin{tabular}{|p{3cm}|p{6cm}p{8cm}|}
+%	     		\hline
+%	     		\multirow{2}{*}{Verschiebung} & Zeitbereich & $f(t\pm t_0) \; \laplace \; F(\omega)e^{\pm j\omega t_0}$ \\ \cline{2-3} 
+%	     		& Frequenzbereich & $f(t)e^{\pm j\omega_0 t} \; \laplace \; F(\omega\mp\omega_0)$ \\ 
+%	     		\hline
+%	     		\hline
+%	     		\multicolumn{2}{|l}{Ahnlichkeit / Zeitskalierung} 	 &
+%	     		$\begin{aligned}f(\alpha t) \; &\laplace \; \frac{1}{|\alpha|}F \left (\frac{\omega}{\alpha} \right)
+%	     		\quad\alpha \in\mathbb{R}\setminus \{0\}\\
+%	     		F(\alpha\omega) \; &\Laplace \; f(\frac{t}{\alpha})\end{aligned}$  \\ \hline
+%	     		%\multicolumn{2}{|l|}{} &  \\ \hline
+%	     	\end{tabular}
 		     
 	
 		\subsubsection{Wichtige Fouriertransformierten-Paare}
