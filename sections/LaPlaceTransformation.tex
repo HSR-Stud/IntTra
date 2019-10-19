@@ -19,62 +19,67 @@
 	
  	\subsection{Eigenschaften der Laplace-Transformation}
   		\renewcommand{\arraystretch}{2}
-		\begin{tabular}{|l|l|}
-        	\hline
-        	Linearität & 
- 			$\alpha\cdot f(t) + \beta\cdot g(t) \; \laplace \; \alpha\cdot F(s) + \beta\cdot
- 			G(s)$ \\
- 			\hline
- 			"Ahnlichkeit / Streckung im Zeitbereich &
- 			$f(\alpha t) \; \laplace \; \frac{1}{\alpha}F \left (\frac{s}{\alpha} \right ) \quad 0 <\alpha, \alpha \in\mathbb{R}$ \\
- 			\hline
- 			Faltung im Zeitbereich &
- 			$f(t) \ast g(t) = \int\limits_{0}^{t} f(\tau)g(t-\tau)d\tau \; \laplace \; F(s)
- 			\cdot G(s)$\\
- 			\hline
- 			Faltung im Frequenzbereich &
- 			$f(t) \cdot g(t) \; \laplace \; \frac{1}{2\pi j}\int\limits_{c-j\infty}^{c+j\infty}
- 			F(\xi) G(s-\xi)d\xi$ \\
- 			\hline
- 			1te Ableitung im Zeitbereich &
- 			$\frac{\partial f(t)}{\partial t} \; \laplace \; sF(s)
- 			-f(0^+)$ \\
- 			\hline
- 			2te Ableitung im Zeitbereich &
- 			$\frac{\partial f(t)}{\partial t} \; \laplace \; s^2F(s)
- 			-sf(0^+) -f'(0^+)$ \\
- 			\hline
- 			nte Ableitung im Zeitbereich &
- 			$\frac{\partial^n f(t)}{\partial t^n} \; \laplace \; s^nF(s)
- 			-s^{n-1}f(0^+)-s^{n-2}\frac{\partial f(0^+)}{\partial t}-\ldots
- 			-s^0\frac{\partial^{n-1} f(0^+)}{\partial t^{n-1}}$ \\
- 			\hline
- 			Multiplikation mit $t$ &
- 			$t\cdot f(t)  \; \laplace \; \frac{-\partial F(s)}{\partial s}$ \\
- 			\hline
- 			Ableitung im Frequenzbereich &
- 			$(-t)^n f(t) \; \laplace \;  \frac{\partial^n F(s)}{\partial s^n}$ \\
- 			\hline
- 			Verschiebung im Zeitbereich nach rechts &
- 			$\sigma(t-a)f(t - a) \; \laplace \; F(s)*e^{-as}$ \\
- 			\hline
-			Verschiebung im Zeitbereich nach links &
-			$\sigma(t-a)f(t + a) \; \laplace \; e^{as} \cdot [F(s) - \int\limits_0^{a} f(t) \cdot e^{-st} dt]$\\
+		\begin{tabular}{|ll|}
+	        \hline
+	        	Linearität & 
+	 			$\alpha\cdot f(t) + \beta\cdot g(t) \; \laplace \; \alpha\cdot F(s) + \beta\cdot
+	 			G(s)$ \\
 			\hline
- 			Verschiebung im Frequenzbereich (Dämpfungssatz) &
- 			$f(t)e^{\pm\alpha t} \; \laplace \; F(s\mp\alpha)$ \\
+	 			"Ahnlichkeit / Streckung im Zeitbereich &
+	 			$f(\alpha t) \; \laplace \; \frac{1}{\alpha}F \left (\frac{s}{\alpha} \right ) \quad 0 <\alpha, \alpha \in\mathbb{R}$ \\
+	 		\hline
+	 		\hline
+	 			Faltung im Zeitbereich &
+	 			$f(t) \ast g(t) = \int\limits_{0}^{t} f(\tau)g(t-\tau)d\tau \; \laplace \; F(s)
+	 			\cdot G(s)$\\
+	 		\hline
+	 			Faltung im Frequenzbereich &
+	 			$f(t) \cdot g(t) \; \laplace \; \frac{1}{2\pi j}\int\limits_{c-j\infty}^{c+j\infty}
+	 			F(\xi) G(s-\xi)d\xi$ \\
+	 		\hline
+	 		\hline
+	 			1te Ableitung im Zeitbereich &
+	 			$\frac{\partial f(t)}{\partial t} \; \laplace \; sF(s)
+	 			-f(0^+)$ \\
+	 		\hline
+	 			2te Ableitung im Zeitbereich &
+	 			$\frac{\partial f(t)}{\partial t} \; \laplace \; s^2F(s)
+	 			-sf(0^+) -f'(0^+)$ \\
+	 		\hline
+	 			nte Ableitung im Zeitbereich &
+	 			$\frac{\partial^n f(t)}{\partial t^n} \; \laplace \; s^nF(s)
+	 			-s^{n-1}f(0^+)-s^{n-2}\frac{\partial f(0^+)}{\partial t}-\ldots
+	 			-s^0\frac{\partial^{n-1} f(0^+)}{\partial t^{n-1}}$ \\
+	 		\hline
+	 			Ableitung im Frequenzbereich &
+		 		$(-t)^n f(t) \; \laplace \;  \frac{\partial^n F(s)}{\partial s^n}$ \\
+	 		\hline
+	 		\hline
+	 			Verschiebung im Zeitbereich nach rechts &
+	 			$\sigma(t-a)f(t - a) \; \laplace \; F(s)*e^{-as}$ \\
+	 		\hline
+				Verschiebung im Zeitbereich nach links &
+				$\sigma(t-a)f(t + a) \; \laplace \; e^{as} \cdot [F(s) - \int\limits_0^{a} f(t) \cdot e^{-st} dt]$\\
+			\hline
+	 			Verschiebung im Frequenzbereich (Dämpfungssatz) &
+	 			$f(t)e^{\pm\alpha t} \; \laplace \; F(s\mp\alpha)$ \\
+	 		\hline
+	 		\hline
+	 			Integration im Originalbereich (Sprungantwort)&
+	 			$\int\limits_0^t f(u)du \; \laplace \; \frac{1}{s}\cdot F(s)$ \\
+	 		\hline
+	 			Multiplikation mit $t$ &
+	 			$t\cdot f(t)  \; \laplace \; \frac{-\partial F(s)}{\partial s}$ \\
  			\hline
- 			Integration im Originalbereich (Sprungantwort)&
- 			$\int\limits_0^t f(u)du \; \laplace \; \frac{1}{s}\cdot F(s)$ \\
  			\hline
- 			Anfangswert &
- 			$\lim_{t\rightarrow 0^+} f(t) = \lim_{s\rightarrow \infty} sF(s),\text{~wenn
- 			}  \lim_{t\rightarrow 0} f(t)\text{~existiert}.$ \\
+	 			Anfangswert &
+	 			$\lim_{t\rightarrow 0^+} f(t) = \lim_{s\rightarrow \infty} sF(s),\text{~wenn
+	 			}  \lim_{t\rightarrow 0} f(t)\text{~existiert}.$ \\
  			\hline
- 			Endwert &
- 			$\lim_{t\rightarrow \infty} f(t) = \lim_{s\rightarrow 0} sF(s),\text{~wenn
- 			}  \lim_{t\rightarrow \infty} f(t)\text{~existiert}.$ \\
- 			\hline
+	 			Endwert &
+	 			$\lim_{t\rightarrow \infty} f(t) = \lim_{s\rightarrow 0} sF(s),\text{~wenn
+	 			}  \lim_{t\rightarrow \infty} f(t)\text{~existiert}.$ \\
+	 		\hline
        	\end{tabular}
 		\renewcommand{\arraystretch}{\arraystretchOriginal}
 	
@@ -112,6 +117,7 @@
 			\end{tabular}
 		\end{center}
 	\end{minipage}
+\vline
 \begin{minipage}{9cm}
 \begin{center}
 	\begin{tabular}{p{5cm}p{0.75cm}p{3cm}}
@@ -224,12 +230,16 @@
 			in diesem Fall wird $h(s) = 1$\\
 		\end{minipage}
 		\begin{minipage}{6cm}
-			$y(t) \; \laplace \; Y(s)$\\
-			$y'(t) \; \laplace \; sY(s) - y_0$\\
-			$y''(t)\; \laplace \; s^2Y(s) - sy_0 - y'_0$\\ 
-			$y'''(t)\; \laplace \; s^3Y(s) - s^2y_0 - sy'_0 - y''_0$\\ 
-			$\vdots$\\
-			$y^{(n)} \; \laplace \; 
-			\underbrace{s^nY(s)}_{Y(s) \cdot p(s)}
-			\underbrace{-s^{n-1}y_0 - \dots - y^{(n-1)}}_{h(s)}$
+			\begin{math}
+				\begin{aligned}
+					y(t) \; &\laplace \; Y(s)\\
+					y'(t) \; &\laplace \; sY(s) - y_0\\
+					y''(t)\; &\laplace \; s^2Y(s) - sy_0 - y'_0\\ 
+					y'''(t)\; &\laplace \; s^3Y(s) - s^2y_0 - sy'_0 - y''_0\\ 
+					\vdots&\\
+					y^{(n)} \; &\laplace \; 
+					\underbrace{s^nY(s)}_{Y(s) \cdot p(s)}
+					\underbrace{-s^{n-1}y_0 - \dots - y^{(n-1)}}_{h(s)}
+				\end{aligned}
+			\end{math}
 		\end{minipage}

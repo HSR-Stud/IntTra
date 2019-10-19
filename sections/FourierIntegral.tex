@@ -1,188 +1,199 @@
 \section{Fourier-Transformation}
-\begin{tabular}{|p{6cm} l|} \hline
-	\textbf{Fouriertransformierte:} &
-	$F(j\omega) = \int\limits_{-\infty}^{\infty} f(t)e^{-j\omega t}dt$ \\
-	\textbf{Rücktransformierte:} &
-	$f(t) = \frac{1}{2\pi}\int\limits_{-\infty}^{\infty}F(j\omega)e^{j\omega t}d\omega$ \\ \hline
+	\subsection{Berechnungen}%
+		\begin{tabular}{|p{6cm} l|} \hline
+			\textbf{Fouriertransformierte:} &
+			$F(j\omega) = \int\limits_{-\infty}^{\infty} f(t)e^{-j\omega t}dt$ \\
+			\textbf{Rücktransformierte:} &
+			$f(t) = \frac{1}{2\pi}\int\limits_{-\infty}^{\infty}F(j\omega)e^{j\omega t}d\omega$ \\ \hline
+		
+		Dies ergibt das \textbf{Korespondenzpaar:} & $f(t) \; \laplace \; F(\omega)$ \\
+		mit der \textbf{Symetrie:} & $F(t) \; \laplace \; 2\pi \cdot f(-\omega)$ \\
+		
+		$F(\omega) = R(\omega) -jX(\omega)$ wobei: ($f(t)$ reell!) &
+		$R(\omega) = \int\limits_{-\infty}^\infty f(t)\cdot \cos(\omega t)\,dt \quad\quad X(\omega) =
+		\int\limits_{-\infty}^\infty f(t)\cdot \sin(\omega t)\,dt$
+		\\
+		&$f(t)$ gerade: $X(\omega)$ verschwindet, f(t) ungerade: $R(\omega)$ verschwindet \\
+		\hline
+		\end{tabular}
+		
+		f sei stückweise stetig $\frac{1}{2}(f(t^+) + f(t^-)) = \frac{1}{2\pi} \int\limits_{-\infty}^{\infty}F(\omega)e^{j\omega t} dt$
+		
+		Jede reelle $f(t)$ lässt sich aus Summe einer geraden und einer ungeraden Funktion beschreiben:\\
+		\begin{tabular}{lll}
+		$f(t) = f_e(t) + f_o(t)$ mit & $f_e(t) = \frac{1}{2}[f(t) + f(-t)]$ & $f_o(t) = \frac{1}{2}[f(t) - f(-t)]$ \\
+		
+		Also: & $R(\omega) = 2 \int\limits_0^\infty f_e(t) \cos(\omega t)\,dt$ & $X(\omega) = 2 \int\limits_0^\infty
+		f_o(t) \sin(\omega t)\,dt$ \\
+		
+		Und: & $f_e(t) = \frac{1}{\pi}\int\limits_0^\infty R(\omega)\cos(\omega t)\,d\omega$ & 
+		$f_o(t) = \frac{1}{\pi}\int\limits_0^\infty X(\omega)\sin(\omega t)\,d\omega$ \\
+		\end{tabular}
+		
+		Bei \textbf{kausalen} Funktionen gilt:\\
+		\begin{tabular}{c c c}
+			$f(t) = 0$ falls $t<0$ & 
+			$f_e(t) = f_o(t) = \frac{1}{2}f(t)$ &
+			$f(t) = \frac{2}{\pi}\int\limits_0^\infty R(\omega) \cos(\omega t)\,dt = \frac{2}{\pi}\int\limits_0^\infty X(\omega) \sin(\omega t)\,dt$
+		\end{tabular}
+			
+		\begin{tabular}{|l|l|l|}
+		\hline
+		Spektraldichte / Spektraldarstellung	& $F(\omega)$ 		& KEINE absoluten Werte für Amplitude \& Phase \\
+		\hline
+		Amplitudendichte 						& $|F(\omega)| $		& f reell $\rightarrow$
+		$|F(\omega)|$ symetrisch zur Ordinatenachse
+		\\
+		\hline
+		Phasendichte							& $arg(F(\omega))$	& f reell $\rightarrow$ $arg(F(\omega))$ punktsymetrisch zum Ursprung \\
+		\hline
+		Kosinusamplitudendichte					& $R(\omega)$		& f reell $\rightarrow$ $R(\omega)$ gerade \\
+		\hline
+		Sinusamplitudendichte					& $X(\omega)$ 		& f reell $\rightarrow$ $X(\omega)$ ungerade \\
+		\hline
+		Amplitudengang				& $A(\omega) = |H(\omega)|$ & $= \sqrt{H(\omega)\cdot \overline{H(\omega)}} \qquad$ 
+		
+		$\begin{cases}
+			< 1 \text{ Dämpfung}\\
+			> 1 \text{ Verstärkung}
+		\end{cases}$ \\
+		& & $\overline{H(\omega)}$ bilden durch +/- Tausch vor j-Term  \\
+		\hline
+		Dämpfung & $\dfrac{1}{A(\omega)} = \left|\dfrac{1}{H(\omega)}\right|$ &  \\ 
+		\hline
+		Phasenverschiebung						& $\Phi(\omega) = arg(H(\omega))$ & $= \arctan\left( \dfrac{Im(H(\omega))}{Re(H(\omega))}\right)$ \\
+		\hline
+		Systemantwort							& $H(\omega) = A(\omega) \cdot e^{\jmath \Phi(\omega)}$ & \\
+		\hline
+		\end{tabular}
+		
+		\subsection{Symmetrie}
+			Es gelten die gleichen Symmetrien wie bei der Fourierreihe.
+				
+				
+		\subsection{Eigenschaften}
+				
+					\renewcommand{\arraystretch}{1}					
+					\begin{tabular}{rcl}
+						\hline 
+							\textbf{Zeitbereich} & \laplace  & \textbf{Frequenzbereich} \\ 
+						\hline 
+						\hline
+							$f(t)$ gerade & \laplace & $F(j \omega)$ gerade  \\ 
+						\hline 
+							$f(t)$ reell und gerade & \laplace & $F(j \omega)$ reell und gerade\\ 
+						\hline 
+							$f(t)$ imaginär und gerade & \laplace & $F(j \omega)$ imaginär und gerade \\ 
+						\hline 
+							$f(t)$ ungerade & \laplace & $F(j \omega)$ ungerade \\ 
+						\hline 
+							$f(t)$ reell und ungerade & \laplace & $F(j \omega)$ imaginär und ungerade \\ 
+						\hline 
+							$f(t)$ imaginär und ungerade & \laplace & $F(j \omega)$ reell und ungerade\\ 
+						\hline 
+							$f(t)$ (zeit)kontunierlich & \laplace & $F(j \omega)$ nicht periodisch \\ 
+						\hline 
+							$f(t)$ (zeit)diskret & \laplace & $F(j \omega)$ periodisch \\ 
+						\hline 
+							$f(t)$ periodisch & \laplace & $F(j \omega)$ (frequenz)diskret\\ 
+						\hline 
+							$f(t)$ nicht periodisch & \laplace & $F(j \omega)$ (frequenz)kontinuierlich\\ 
+						\hline 
+					\end{tabular}
+					\renewcommand{\arraystretch}{\arraystretchOriginal}	
+					
+					
+				\begin{tabular}{|p{9cm}|p{8cm}|}
+		        	\hline
+			        	Linearität & 
+			        	$\alpha\cdot f(t) + \beta\cdot g(t) \; \laplace \; \alpha\cdot F(\omega) +
+			        	\beta\cdot G(\omega)$\\
+		        	\hline
+						Zeitumkehrung (Spiegelung an der Y-Achse)&
+						$f(-t) \; \laplace \; F(-\omega) = F^*(w)$ \\
+					\hline        	
+			  			"Ahnlichkeit / Zeitskalierung &
+			  			$f(\alpha t) \; \laplace \; \frac{1}{|\alpha|}F \left (\frac{\omega}{\alpha} \right)
+			  			\quad\alpha \in\mathbb{R}\setminus \{0\}$\\
+							& $F(\alpha\omega) \; \Laplace \; f(\frac{t}{\alpha})$ \\
+					\hline
+						Vertauschungssatz (Dualität) &
+						$f(t) \; \laplace \; F(\omega)\nonumber$ \\
+						& $F(t) \; \laplace \; 2\pi \cdot f(-\omega)$\\
+		  			\hline
+		  			\hline
+			  			Verschiebung im	Zeitbereich &
+			  			$f(t\pm t_0) \; \laplace \; F(\omega)e^{\pm j\omega t_0}$\\
+		  			\hline
+						Verschiebung im Frequenzbereich (Modulationstheorem) &
+						$f(t)e^{\pm j\omega_0 t} \; \laplace \; F(\omega\mp\omega_0)$\\
+					\hline
+					\hline
+						Ableitung im Zeitbereich &
+						$\frac{\partial^n f(t)}{\partial t^n} \; \laplace \; (j\omega)^n F(\omega) \qquad (n \in \mathbb{N}_0)$\\
+					\hline				
+						Ableitung im Frequenzbereich &
+						$t^n f(t) \; \laplace \; j^n \frac{\partial F(\omega)}{\partial \omega^n}$\\
+					\hline
+					\hline		
+						Faltung im Zeitbereich &
+						$f(t) \ast g(t) = \int\limits_{-\infty}^{\infty} f(\tau)g(t-\tau)d\tau \; \laplace \;
+						F(\omega) \cdot G(\omega)$\\
+					\hline
+						Faltung im Frequenzbereich &
+						$f(t) \cdot g(t) \; \laplace \; \frac{1}{2\pi}F(\omega) \ast G(\omega)$\\
+					\hline
+					\hline
+						Integration im Zeitbereich &
+						$\int\limits_{-\infty}^{t}f(\tau)d\tau \; \laplace \;
+						\frac{F(\omega)}{j\omega}+F(0)\pi\delta(\omega)$\\
+					\hline
+		 			\hline
+			 			Modulation &
+			 			$\cos(\alpha t) \cdot f(t)  \; \laplace \;  \frac{1}{2}\cdot
+			 			\left[F(\omega-\alpha) + F(\omega+\alpha)\right ]$\\
+			 			& $\sin(\alpha t) \cdot f(t) \; \laplace \; \frac{1}{2j}\cdot \left[
+			 			F(\omega-\alpha) - F(\omega+\alpha)\right ]$\\
+		 			\hline
+		 			\hline
+			        	Parseval's Theorem &
+			 			$\int\limits_{-\infty}^{\infty}f(t)g^{\ast}(t)dt = \frac{1}{2\pi}
+			  			\int\limits_{-\infty}^{\infty}F(\omega)G^{\ast}(\omega)d\omega$\\
+		  			\hline
+			  			Bessel's Theorem &
+			  			$\int\limits_{-\infty}^{\infty}|f(t)|^2 dt = \frac{1}{2\pi}
+			  			\int\limits_{-\infty}^{\infty}|F(\omega)|^2 d\omega$\\
+		  			\hline 
+		  			\hline		
+						Anfangswerte &
+						$\begin{aligned}
+							f(0)&=\frac{1}{2\pi}\int\limits_{-\infty}^{\infty}F(\omega)d\omega
+							\hspace*{1cm}\\
+							F(0)&=\int\limits_{-\infty}^{\infty}f(t)dt
+						\end{aligned}$\\
+					\hline
+					\hline
+						$\infty$ lange Folge von $\delta$-Impulsen &
+						$\sum_{n=-\infty}^{\infty} \delta(t-n\cdot t_0) \; \laplace \;
+						\sum_{n=-\infty}^{\infty} \frac{2\pi}{t_0}\delta(\omega-n\cdot
+						\frac{2\pi}{t_0})$\\
+					\hline
+		     \end{tabular}
 
-Dies ergibt das \textbf{Korespondenzpaar:} & $f(t) \; \laplace \; F(\omega)$ \\
-mit der \textbf{Symetrie:} & $F(t) \; \laplace \; 2\pi \cdot f(-\omega)$ \\
-
-$F(\omega) = R(\omega) -jX(\omega)$ wobei: ($f(t)$ reell!) &
-$R(\omega) = \int\limits_{-\infty}^\infty f(t)\cdot \cos(\omega t)\,dt \quad\quad X(\omega) =
-\int\limits_{-\infty}^\infty f(t)\cdot \sin(\omega t)\,dt$
-\\
-&$f(t)$ gerade: $X(\omega)$ verschwindet, f(t) ungerade: $R(\omega)$ verschwindet \\
-\hline
-\end{tabular}
-
-f sei stückweise stetig $\frac{1}{2}(f(t^+) + f(t^-)) = \frac{1}{2\pi} \int\limits_{-\infty}^{\infty}F(\omega)e^{j\omega t} dt$
-
-Jede reelle $f(t)$ lässt sich aus Summe einer geraden und einer ungeraden Funktion beschreiben:\\
-\begin{tabular}{lll}
-$f(t) = f_e(t) + f_o(t)$ mit & $f_e(t) = \frac{1}{2}[f(t) + f(-t)]$ & $f_o(t) = \frac{1}{2}[f(t) - f(-t)]$ \\
-
-Also: & $R(\omega) = 2 \int\limits_0^\infty f_e(t) \cos(\omega t)\,dt$ & $X(\omega) = 2 \int\limits_0^\infty
-f_o(t) \sin(\omega t)\,dt$ \\
-
-Und: & $f_e(t) = \frac{1}{\pi}\int\limits_0^\infty R(\omega)\cos(\omega t)\,d\omega$ & 
-$f_o(t) = \frac{1}{\pi}\int\limits_0^\infty X(\omega)\sin(\omega t)\,d\omega$ \\
-\end{tabular}
-
-Bei \textbf{kausalen} Funktionen gilt:\\
-\begin{tabular}{c c c}
-	$f(t) = 0$ falls $t<0$ & 
-	$f_e(t) = f_o(t) = \frac{1}{2}f(t)$ &
-	$f(t) = \frac{2}{\pi}\int\limits_0^\infty R(\omega) \cos(\omega t)\,dt = \frac{2}{\pi}\int\limits_0^\infty X(\omega) \sin(\omega t)\,dt$
-\end{tabular}
+%TODO Dies ist ein Beispiel, wie man die Fouriertransformierten-Tabelle und die Laplace-Tabelle übersichtlicher gestalten könnte
+%	     	\begin{tabular}{|p{3cm}|p{6cm}p{8cm}|}
+%	     		\hline
+%	     		\multirow{2}{*}{Verschiebung} & Zeitbereich & $f(t\pm t_0) \; \laplace \; F(\omega)e^{\pm j\omega t_0}$ \\ \cline{2-3} 
+%	     		& Frequenzbereich & $f(t)e^{\pm j\omega_0 t} \; \laplace \; F(\omega\mp\omega_0)$ \\ 
+%	     		\hline
+%	     		\hline
+%	     		\multicolumn{2}{|l}{Ahnlichkeit / Zeitskalierung} 	 &
+%	     		$\begin{aligned}f(\alpha t) \; &\laplace \; \frac{1}{|\alpha|}F \left (\frac{\omega}{\alpha} \right)
+%	     		\quad\alpha \in\mathbb{R}\setminus \{0\}\\
+%	     		F(\alpha\omega) \; &\Laplace \; f(\frac{t}{\alpha})\end{aligned}$  \\ \hline
+%	     		%\multicolumn{2}{|l|}{} &  \\ \hline
+%	     	\end{tabular}
+		     
 	
-\begin{tabular}{|l|l|l|}
-\hline
-Spektraldichte / Spektraldarstellung	& $F(\omega)$ 		& KEINE absoluten Werte für Amplitude \& Phase \\
-\hline
-Amplitudendichte 						& $|F(\omega)| $		& f reell $\rightarrow$
-$|F(\omega)|$ symetrisch zur Ordinatenachse
-\\
-\hline
-Phasendichte							& $arg(F(\omega))$	& f reell $\rightarrow$ $arg(F(\omega))$ punktsymetrisch zum Ursprung \\
-\hline
-Kosinusamplitudendichte					& $R(\omega)$		& f reell $\rightarrow$ $R(\omega)$ gerade \\
-\hline
-Sinusamplitudendichte					& $X(\omega)$ 		& f reell $\rightarrow$ $X(\omega)$ ungerade \\
-\hline
-Amplitudengang				& $A(\omega) = |H(\omega)|$ & $= \sqrt{H(\omega)\cdot \overline{H(\omega)}} \qquad$ 
-
-$\begin{cases}
-	< 1 \text{ Dämpfung}\\
-	> 1 \text{ Verstärkung}
-\end{cases}$ \\
-& & $\overline{H(\omega)}$ bilden durch +/- Tausch vor j-Term  \\
-\hline
-Dämpfung & $\dfrac{1}{A(\omega)} = \left|\dfrac{1}{H(\omega)}\right|$ &  \\ 
-\hline
-Phasenverschiebung						& $\Phi(\omega) = arg(H(\omega))$ & $= \arctan(\dfrac{Im(H(\omega))}{Re(H(\omega))})$ \\
-\hline
-Systemantwort							& $H(\omega) = A(\omega) \cdot e^{\jmath \Phi(\omega)}$ & \\
-\hline
-\end{tabular}
-
-\subsection{Symmetrie}
-	Es gelten die gleichen Symmetrien wie bei der Fourierreihe.
-
-\newpage
-
-
-%\subsection{Hilbert-Transformation}
-%Das folgende Paar heisst \textit{Hilbert-Transformationspaar} und ermöglicht die Berechnung von Real- und Imaginärteil
-%einer Fouriertransformation auseinander. \\ 
-%
-%\begin{tabular}{|l|} \hline
-%$\Re(\omega) = \frac{1}{\pi} \cdot \int\limits_{-\infty}^{\infty} \frac{\Im(u)}{\omega-u}du$ \\
-%$\Im(\omega) = -\frac{1}{\pi} \cdot \int\limits_{-\infty}^{\infty} \frac{\Re(u)}{\omega-u}du$ \\ \hline
-%\end{tabular}
-%\hspace{5mm}bzw. für analytische Signale: \hspace{5mm}
-%\begin{tabular}{|l|} \hline
-%$s_R(t) = - \frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{s_I(u)}{t-u} du$ \\
-%$s_I(t) = \frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{s_R(u)}{t-u} du$ \\ \hline
-%\end{tabular} \\
-%
-%Allgemein ist die Hilbert-Transformation $\mathcal{H}$ folgendermassen definiert: \\
-%$\mathcal{H}(f(t)) := \frac{1}{\pi} \cdot \int\limits_{-\infty}^{\infty} \frac{f(u)}{t-u}du$ \\
-%Die Hilbert-Transformation eines Signals $s(t)$ ist gegeben durch die Faltung: \\
-%$\mathcal{H}(s(t)) = s(t) * \frac{1}{\pi t}$ mit $\frac{1}{\pi t} \: \; \laplace \; \: -j \cdot sgn(\omega)$ \\
-
-\subsection{Eigenschaften}
-		\begin{tabular}{|p{9cm}|p{8cm}|}
-        	\hline
-        	Linearität & 
-        	$\alpha\cdot f(t) + \beta\cdot g(t) \; \laplace \; \alpha\cdot F(\omega) +
-        	\beta\cdot G(\omega)$\\
-        	\hline
-			Zeitumkehrung (Spiegelung an der Y-Achse)&
-			$f(-t) \; \laplace \; F(-\omega) = F^*(w)$ \\
-			\hline        	
-  			"Ahnlichkeit / Zeitskalierung &
-  			$f(\alpha t) \; \laplace \; \frac{1}{|\alpha|}F \left (\frac{\omega}{\alpha} \right)
-  			\quad\alpha \in\mathbb{R}\setminus \{0\}$\\
-				& $F(\alpha\omega) \; \Laplace \; f(\frac{t}{\alpha})$ \\
-  			\hline
-  			Verschiebung im	Zeitbereich &
-  			$f(t\pm t_0) \; \laplace \; F(\omega)e^{\pm j\omega t_0}$\\
-  			\hline
-			Verschiebung im Frequenzbereich (Modulationstheorem) &
-			$f(t)e^{\pm j\omega_0 t} \; \laplace \; F(\omega\mp\omega_0)$\\
-			\hline
-			Ableitung im Zeitbereich &
-			$\frac{\partial^n f(t)}{\partial t^n} \; \laplace \; (j\omega)^n F(\omega) \qquad (n \in \mathbb{N}_0)$\\
-			\hline
-			Integration im Zeitbereich &
-			$\int\limits_{-\infty}^{t}f(\tau)d\tau \; \laplace \;
-			\frac{F(\omega)}{j\omega}+F(0)\pi\delta(\omega)$\\
-			\hline				
-			Ableitung im Frequenzbereich &
-			$t^n f(t) \; \laplace \; j^n \frac{\partial F(\omega)}{\partial \omega^n}$\\
-			\hline		
-			Faltung im Zeitbereich &
-			$f(t) \ast g(t) = \int\limits_{-\infty}^{\infty} f(\tau)g(t-\tau)d\tau \; \laplace \;
-			F(\omega) \cdot G(\omega)$\\
-			\hline
-			Faltung im Frequenzbereich &
-			$f(t) \cdot g(t) \; \laplace \; \frac{1}{2\pi}F(\omega) \ast G(\omega)$\\
-			\hline
-			Vertauschungssatz (Dualität) &
-			$f(t) \; \laplace \; F(\omega)\nonumber$ \\
- 			& $F(t) \; \laplace \; 2\pi \cdot f(-\omega)$\\
- 			\hline
- 			Modulation &
- 			$\cos(\alpha t) \cdot f(t)  \; \laplace \;  \frac{1}{2}\cdot
- 			\left[F(\omega-\alpha) + F(\omega+\alpha)\right ]$\\
- 			& $\sin(\alpha t) \cdot f(t) \; \laplace \; \frac{1}{2j}\cdot \left[
- 			F(\omega-\alpha) - F(\omega+\alpha)\right ]$\\
- 			\hline
-        	Parseval's Theorem &
- 			$\int\limits_{-\infty}^{\infty}f(t)g^{\ast}(t)dt = \frac{1}{2\pi}
-  			\int\limits_{-\infty}^{\infty}F(\omega)G^{\ast}(\omega)d\omega$\\
-  			\hline
-  			Bessel's Theorem &
-  			$\int\limits_{-\infty}^{\infty}|f(t)|^2 dt = \frac{1}{2\pi}
-  			\int\limits_{-\infty}^{\infty}|F(\omega)|^2 d\omega$\\
-  			\hline 			
-			Anfangswerte &
-			$f(0)=\frac{1}{2\pi}\int\limits_{-\infty}^{\infty}F(\omega)d\omega
-			\hspace*{1cm} F(0)=\int\limits_{-\infty}^{\infty}f(t)dt$\\
-			\hline
-			$\infty$ lange Folge von $\delta$-Impulsen &
-			$\sum_{n=-\infty}^{\infty} \delta(t-n\cdot t_0) \; \laplace \;
-			\sum_{n=-\infty}^{\infty} \frac{2\pi}{t_0}\delta(\omega-n\cdot
-			\frac{2\pi}{t_0})$\\
-			\hline
-        \end{tabular}
-        
-\subsection{Beispiele}
-\begin{tabular}{l l l}
-Rechteckimpuls $r_T$ der Breite $2T$ & $r_T \; \laplace \; \frac{2 \cdot \sin(\omega T}{\omega}$ \\
-Signum-Funktion & $\frac{1}{\pi \cdot t} \; \laplace \; -j \cdot sgn(\omega)$ 	& $sgn(t) \; \laplace \; \frac{2}{j\omega}$ \\
-\end{tabular}
-
-
-\subsection{Hilbertransformation}
-	\begin{tabular}{| l | l l |}
-		\hline
-			Fourier-Transformierte: & $F(\omega) = \mathfrak{R}(\omega) + \im \mathfrak{I}(\omega)
-			= \frac{1}{\pi \im} \int\limits_{-\infty}^{\infty}\frac{\mathfrak{R}(u) + \im \mathfrak{I}(u)}{\omega - u} du$ & \\
-		\hline
-			Hilbert-Transformationspaar: & $\mathfrak{R}(\omega) = \frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{\mathfrak{I}(u)}{\omega - u} du$ & (Realteil)\\
-			& $\mathfrak{I}(\omega) = -\frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{\mathfrak{R}(u)}{\omega - u} du$ & (Imaginärteil)\\
-		\hline
-			Hilbert-Transformation $\mathcal{H}$: & $\mathcal{H}(f(t)) = \frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{f(u)}{t-u} du
-			= f(t) * \frac{1}{\pi t}$ & \\
-		\hline
-			Analytisches Signal: & $s_R(t) = - \frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{s_I(u)}{t-u} du$ & (Realteil)\\
-			& $s_I(t) = \frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{s_R(u)}{t-u} du$ & (Imaginärteil)\\
-		\hline
-	\end{tabular}
-
-	Die Hilbert-Transformation eines Signals $s(t)$ ist gegeben durch die Faltung $s(t) * \frac{1}{\pi t}$ mit $\frac{1}{\pi t} \; \laplace \; -j sgn(\omega)$.\\
-	Durch die Hilbert-Transformation lässt es sich einfach die Fourier-Transformierte berechnen, wenn der Realteil oder der Imaginärteil gegeben
-	ist.
-	
+		\subsubsection{Wichtige Fouriertransformierten-Paare}
+			\includegraphics[width=0.7\textwidth]{./bilder/fourierTransPaare.png}\\		
