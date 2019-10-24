@@ -118,13 +118,16 @@
 	Bei einer Faltung mit einer $\delta\left(t\right)$Funktion
 	gilt:$f\left(t\right) \ast \delta\left(t\right) = f\left(t\right)$
 	
-	\begin{multicols}{2}
-		\begin{tabular}{|l | l |}
-				\hline
-					Faltungssatz: & $f(t)\cdot g(t) \; \laplace \; F(\omega) \ast G(\omega)$ \\
-					& $f(t) \ast g(t) \; \laplace \; \frac{1}{2\pi}F(\omega) \cdot G(\omega)$ \\
-				\hline
-			\end{tabular}\\ \\
+	\subsubsection{Faltungssatz \skript{52}}
+				\begin{math}
+				\boxed{
+					\begin{aligned}
+						f(t)\cdot g(t) \; &\laplace \; \frac{1}{2\pi} \, F(\omega) \ast G(\omega) \\
+						f(t) \ast g(t) \; &\laplace \; F(\omega) \cdot G(\omega) \\
+					\end{aligned}
+				}
+				\end{math}
+		\begin{multicols}{2}
 		\textbf{Grafische Interpretation:}
 		\begin{enumerate}
   			\item Einfacheres Signal ($g(t)$) an der Y-Achse spiegeln

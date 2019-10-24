@@ -2,7 +2,7 @@
 	\subsection{Berechnungen}%
 		\begin{tabular}{|p{6cm} l|} \hline
 			\textbf{Fouriertransformierte:} &
-			$F(j\omega) = \int\limits_{-\infty}^{\infty} f(t)e^{-j\omega t}dt$ \\
+			$F(\omega) = \int\limits_{-\infty}^{\infty} f(t)e^{-j\omega t}dt$ \\
 			\textbf{Rücktransformierte:} &
 			$f(t) = \frac{1}{2\pi}\int\limits_{-\infty}^{\infty}F(j\omega)e^{j\omega t}d\omega$ \\ \hline
 		
@@ -179,6 +179,56 @@
 						\frac{2\pi}{t_0})$\\
 					\hline
 		     \end{tabular}
+	     
+	     
+	\begin{tabular}{|p{3cm}|p{7cm}p{9cm}|}
+		\hline
+			\multicolumn{2}{|l}{Linearität}                                & $\alpha\cdot f(t) + \beta\cdot g(t) \; \laplace \; \alpha\cdot F(\omega) +\beta\cdot G(\omega)$                                                                                             \\ 
+		\hline
+			\multicolumn{2}{|l}{Zeitumkehrung (Spiegelung an der Y-Achse)} & $f(-t) \; \laplace \; F(-\omega) = F^*(w)$                                                                                                                                                  \\ 
+		\hline
+			\multicolumn{2}{|l}{"Ahnlichkeit / Zeitskalierung}             &      		$\begin{aligned}f(\alpha t) \; &\laplace \; \frac{1}{|\alpha|}F \left (\frac{\omega}{\alpha} \right)
+				     		\quad\alpha \in\mathbb{R}\setminus \{0\}\\
+				     		F(\alpha\omega) \; &\Laplace \; f(\frac{t}{\alpha})\end{aligned}$\\ 
+		\hline
+			\multicolumn{2}{|l}{Vertauschungssatz (Dualität)}              & $f(t) \; \laplace \; F(\omega)\nonumber$ \newline $F(t) \; \laplace \; 2\pi \cdot f(-\omega)$ \\ 
+		\hline
+		\hline
+			\multirow{2}{*}{Verschiebung} & Zeitbereich & $f(t\pm t_0) \; \laplace \; F(\omega)e^{\pm j\omega t_0}$ \\ 
+			\cline{2-3} 
+			& Frequenzbereich & $f(t)e^{\pm j\omega_0 t} \; \laplace \; F(\omega\mp\omega_0)$ \\ 
+   		\hline
+   		\hline
+	   		\multirow{2}{*}{Ableitung} & Zeitbereich & \\ 
+	   		\cline{2-3} 
+	   		& Frequenzbereich &  \\ 
+   		\hline
+   		\hline
+	   		\multirow{2}{*}{Faltung} & Zeitbereich & \\ 
+	   		\cline{2-3} 
+	   		& Frequenzbereich &  \\ 
+   		\hline
+   		\hline
+			\multicolumn{2}{|l}{Integration im Zeitbereich}              & \\ 
+   		\hline
+   		\hline
+   			\multicolumn{2}{|l}{Modulation}              & \\ 
+   		\hline
+   		\hline
+   			\multirow{2}{*}{Theorem} & Parseval's & \\ 
+   			\cline{2-3} 
+   			& Bessel's &  \\ 
+   		\hline
+   		\hline
+		   	\multicolumn{2}{|l}{Anfangswerte}              & \\ 
+		\hline
+		\hline
+		   	\multicolumn{2}{|l}{.....d-Impulse}              & \\ 
+		\hline
+		\hline
+	\end{tabular}
+
+
 
 %TODO Dies ist ein Beispiel, wie man die Fouriertransformierten-Tabelle und die Laplace-Tabelle übersichtlicher gestalten könnte
 %	     	\begin{tabular}{|p{3cm}|p{7cm}p{9cm}|}
@@ -193,7 +243,8 @@
 %	     		F(\alpha\omega) \; &\Laplace \; f(\frac{t}{\alpha})\end{aligned}$  \\ 
 %	     		\hline
 %	     	\end{tabular}
-		     
+
+
 	
 		\subsubsection{Wichtige Fouriertransformierten-Paare}
 			\includegraphics[width=0.7\textwidth]{./bilder/fourierTransPaare.png}\\		
