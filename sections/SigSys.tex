@@ -103,9 +103,10 @@
 	\rightarrow \sum_{k=-\infty}^{\infty} c_k H(\omega k) e^{jk\omega t}$$			
 	
 	\subsection{Faltung}
-	$y(t) = f(t)\ast g(t) = g(t) \ast f(t) = (f \ast g)(t) :=
-	\int\limits_{-\infty}^\infty f(u) \cdot g(t-u)\,du =
+	$y(t) = f(t)\ast g(t) = g(t) \ast f(t) = \boxed{ (f \ast g)(t) :=
+	\int\limits_{-\infty}^\infty f(u) \cdot g(t-u) \, du} =
 	\int\limits_{-\infty}^\infty f(t-u) \cdot g(u)\,du $ \\
+	\\
 	($g(t-u)$ entspricht einer Spiegelung an der Y-Achse und ist um t nach rechts geschoben)\\
 	
 	Hat $g\left(t\right)$ \textbf{keine negative} Argumente dann gilt :
@@ -114,24 +115,31 @@
 	Hat $f\left(t\right)$ keine negative Argumente (Einschaltvorgang) dann gilt :
 	$\left(g \ast f \right)\left(t\right)=\int\limits_{0}^t f(u) \cdot
 	g(t-u)\,du$\\
-	Bei einer Faltung mit einer $\delta\left(t\right)$Funktion
-	gilt:$f\left(t\right) \ast \delta\left(t\right) = f\left(t\right)$
+	Bei einer Faltung mit einer $\delta\left(t\right)$ Funktion
+	gilt: $f\left(t\right) \ast \delta\left(t\right) = f\left(t\right)$
 	
-	\begin{multicols}{2}
-		\begin{tabular}{|l | l |}
-				\hline
-					Faltungssatz: & $f(t)\cdot g(t) \; \laplace \; F(\omega) \ast G(\omega)$ \\
-					& $f(t) \ast g(t) \; \laplace \; \frac{1}{2\pi}F(\omega) \cdot G(\omega)$ \\
-				\hline
-			\end{tabular}\\ \\
-		\textbf{Grafische Interpretation:}
+	\subsubsection{Faltungssatz \skript{52}}
+		\begin{minipage}{.45\textwidth}
+				\begin{math}
+				\boxed{
+					\begin{aligned}
+						f(t)\cdot g(t) \; &\laplace \; \frac{1}{2\pi} \, F(\omega) \ast G(\omega) \\
+						f(t) \ast g(t) \; &\laplace \; F(\omega) \cdot G(\omega) \\
+					\end{aligned}
+				}
+				\end{math}\\
+				\\
+	
+		\textbf{Grafische Interpretation}
 		\begin{enumerate}
-  			\item Einfacheres Signal ($g(t)$) an der Y-Achse spiegeln
-  			\item Verschiebung um t nach rechts
-  			\item Multiplikation und Integration der beiden Signale
+			\item Einfacheres Signal ($g(t)$) an der Y-Achse spiegeln
+			\item Verschiebung um t nach rechts
+			\item Multiplikation und Integration der beiden Signale
 		\end{enumerate}
-		\columnbreak
-		\textbf{Bestimmung der Grenzen bei $\int\limits_{-\infty}^\infty f(u) \cdot g(t-u)\,du$:}
+	\end{minipage}%
+	\hspace{.1\textwidth}
+	\begin{minipage}{.45\textwidth}
+		\textbf{Bestimmung der Grenzen bei $\int\limits_{-\infty}^\infty f(u) \cdot g(t-u)\,du$}
 		\begin{enumerate}
 		  \item Koordinatensystem: X-Achse: t, Y-Achse: u\\ 
 		  Funktion auf X-Achse: $t = t - u$, \\
@@ -140,7 +148,8 @@
 		  \item $g(t-u)$ $\rightarrow$ Streifen parallel zur $45^{\circ}$-Geraden
 		  \item In u-Richtung sind die Integralgrenzen für ein \\ bestimmtes t abzulesen
 		\end{enumerate}
-	\end{multicols}
-	(Beispiel 4.2, Skript S.33)
+		(siehe: Beispiel 4.2, Skript S.33)
+	\end{minipage}
+	
 	
 
