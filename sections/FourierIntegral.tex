@@ -19,15 +19,15 @@
 		
 		f sei stückweise stetig $\frac{1}{2}(f(t^+) + f(t^-)) = \frac{1}{2\pi} \int\limits_{-\infty}^{\infty}F(\omega)e^{j\omega t} dt$
 		
-		Jede reelle $f(t)$ lässt sich aus Summe einer geraden und einer ungeraden Funktion beschreiben:\\
+		Jede reelle $f(t)$ lässt sich aus Summe einer geraden und einer ungeraden Funktion beschreiben:\\[3mm]
 		\begin{tabular}{lll}
-		$f(t) = f_e(t) + f_o(t)$ mit & $f_e(t) = \frac{1}{2}[f(t) + f(-t)]$ & $f_o(t) = \frac{1}{2}[f(t) - f(-t)]$ \\
-		
-		Also: & $R(\omega) = 2 \int\limits_0^\infty f_e(t) \cos(\omega t)\,dt$ & $X(\omega) = 2 \int\limits_0^\infty
-		f_o(t) \sin(\omega t)\,dt$ \\
-		
-		Und: & $f_e(t) = \frac{1}{\pi}\int\limits_0^\infty R(\omega)\cos(\omega t)\,d\omega$ & 
-		$f_o(t) = \frac{1}{\pi}\int\limits_0^\infty X(\omega)\sin(\omega t)\,d\omega$ \\
+			$f(t) = f_e(t) + f_o(t)$ mit & $f_e(t) = \frac{1}{2}[f(t) + f(-t)]$ & $f_o(t) = \frac{1}{2}[f(t) - f(-t)]$ \\[3mm]
+			
+			Also: & $R(\omega) = 2 \int\limits_0^\infty f_e(t) \cos(\omega t)\,dt$ & $X(\omega) = 2 \int\limits_0^\infty
+			f_o(t) \sin(\omega t)\,dt$ \\[3mm]
+			
+			Und: & $f_e(t) = \frac{1}{\pi}\int\limits_0^\infty R(\omega)\cos(\omega t)\,d\omega$ & 
+			$f_o(t) = \frac{1}{\pi}\int\limits_0^\infty X(\omega)\sin(\omega t)\,d\omega$ \\[3mm]
 		\end{tabular}
 		
 		Bei \textbf{kausalen} Funktionen gilt:\\
@@ -103,85 +103,85 @@
 					\renewcommand{\arraystretch}{\arraystretchOriginal}	
 					
 					
-				\begin{tabular}{|p{9cm}|p{8cm}|}
-		        	\hline
-			        	Linearität & 
-			        	$\alpha\cdot f(t) + \beta\cdot g(t) \; \laplace \; \alpha\cdot F(\omega) +
-			        	\beta\cdot G(\omega)$\\
-		        	\hline
-						Zeitumkehrung (Spiegelung an der Y-Achse)&
-						$f(-t) \; \laplace \; F(-\omega) = F^*(w)$ \\
-					\hline        	
-			  			"Ahnlichkeit / Zeitskalierung &
-			  			$f(\alpha t) \; \laplace \; \frac{1}{|\alpha|}F \left (\frac{\omega}{\alpha} \right)
-			  			\quad\alpha \in\mathbb{R}\setminus \{0\}$\\
-							& $F(\alpha\omega) \; \Laplace \; f(\frac{t}{\alpha})$ \\
-					\hline
-						Vertauschungssatz (Dualität) &
-						$f(t) \; \laplace \; F(\omega)\nonumber$ \\
-						& $F(t) \; \laplace \; 2\pi \cdot f(-\omega)$\\
-		  			\hline
-		  			\hline
-			  			Verschiebung im	Zeitbereich &
-			  			$f(t\pm t_0) \; \laplace \; F(\omega)e^{\pm j\omega t_0}$\\
-		  			\hline
-						Verschiebung im Frequenzbereich (Modulationstheorem) &
-						$f(t)e^{\pm j\omega_0 t} \; \laplace \; F(\omega\mp\omega_0)$\\
-					\hline
-					\hline
-						Ableitung im Zeitbereich &
-						$\frac{\partial^n f(t)}{\partial t^n} \; \laplace \; (j\omega)^n F(\omega) \qquad (n \in \mathbb{N}_0)$\\
-					\hline				
-						Ableitung im Frequenzbereich &
-						$t^n f(t) \; \laplace \; j^n \frac{\partial F(\omega)}{\partial \omega^n}$\\
-					\hline
-					\hline		
-						Faltung im Zeitbereich &
-						$f(t) \ast g(t) = \int\limits_{-\infty}^{\infty} f(\tau)g(t-\tau)d\tau \; \laplace \;
-						F(\omega) \cdot G(\omega)$\\
-					\hline
-						Faltung im Frequenzbereich &
-						$f(t) \cdot g(t) \; \laplace \; \frac{1}{2\pi}F(\omega) \ast G(\omega)$\\
-					\hline
-					\hline
-						Integration im Zeitbereich &
-						$\int\limits_{-\infty}^{t}f(\tau)d\tau \; \laplace \;
-						\frac{F(\omega)}{j\omega}+F(0)\pi\delta(\omega)$\\
-					\hline
-		 			\hline
-			 			Modulation &
-			 			$\cos(\alpha t) \cdot f(t)  \; \laplace \;  \frac{1}{2}\cdot
-			 			\left[F(\omega-\alpha) + F(\omega+\alpha)\right ]$\\
-			 			& $\sin(\alpha t) \cdot f(t) \; \laplace \; \frac{1}{2j}\cdot \left[
-			 			F(\omega-\alpha) - F(\omega+\alpha)\right ]$\\
-		 			\hline
-		 			\hline
-			        	Parseval's Theorem &
-			 			$\int\limits_{-\infty}^{\infty}f(t)g^{\ast}(t)dt = \frac{1}{2\pi}
-			  			\int\limits_{-\infty}^{\infty}F(\omega)G^{\ast}(\omega)d\omega$\\
-		  			\hline
-			  			Bessel's Theorem &
-			  			$\int\limits_{-\infty}^{\infty}|f(t)|^2 dt = \frac{1}{2\pi}
-			  			\int\limits_{-\infty}^{\infty}|F(\omega)|^2 d\omega$\\
-		  			\hline 
-		  			\hline		
-						Anfangswerte &
-						$\begin{aligned}
-							f(0)&=\frac{1}{2\pi}\int\limits_{-\infty}^{\infty}F(\omega)d\omega
-							\hspace*{1cm}\\
-							F(0)&=\int\limits_{-\infty}^{\infty}f(t)dt
-						\end{aligned}$\\
-					\hline
-					\hline
-						$\infty$ lange Folge von $\delta$-Impulsen &
-						$\sum_{n=-\infty}^{\infty} \delta(t-n\cdot t_0) \; \laplace \;
-						\sum_{n=-\infty}^{\infty} \frac{2\pi}{t_0}\delta(\omega-n\cdot
-						\frac{2\pi}{t_0})$\\
-					\hline
-		     \end{tabular}
+%				\begin{tabular}{|p{9cm}|p{8cm}|}
+%		        	\hline
+%			        	Linearität & 
+%			        	$\alpha\cdot f(t) + \beta\cdot g(t) \; \laplace \; \alpha\cdot F(\omega) +
+%			        	\beta\cdot G(\omega)$\\
+%		        	\hline
+%						Zeitumkehrung (Spiegelung an der Y-Achse)&
+%						$f(-t) \; \laplace \; F(-\omega) = F^*(w)$ \\
+%					\hline        	
+%			  			"Ahnlichkeit / Zeitskalierung &
+%			  			$f(\alpha t) \; \laplace \; \frac{1}{|\alpha|}F \left (\frac{\omega}{\alpha} \right)
+%			  			\quad\alpha \in\mathbb{R}\setminus \{0\}$\\
+%							& $F(\alpha\omega) \; \Laplace \; f(\frac{t}{\alpha})$ \\
+%					\hline
+%						Vertauschungssatz (Dualität) &
+%						$f(t) \; \laplace \; F(\omega)\nonumber$ \\
+%						& $F(t) \; \laplace \; 2\pi \cdot f(-\omega)$\\
+%		  			\hline
+%		  			\hline
+%			  			Verschiebung im	Zeitbereich &
+%			  			$f(t\pm t_0) \; \laplace \; F(\omega)e^{\pm j\omega t_0}$\\
+%		  			\hline
+%						Verschiebung im Frequenzbereich (Modulationstheorem) &
+%						$f(t)e^{\pm j\omega_0 t} \; \laplace \; F(\omega\mp\omega_0)$\\
+%					\hline
+%					\hline
+%						Ableitung im Zeitbereich &
+%						$\frac{\partial^n f(t)}{\partial t^n} \; \laplace \; (j\omega)^n F(\omega) \qquad (n \in \mathbb{N}_0)$\\
+%					\hline				
+%						Ableitung im Frequenzbereich &
+%						$t^n f(t) \; \laplace \; j^n \frac{\partial F(\omega)}{\partial \omega^n}$\\
+%					\hline
+%					\hline		
+%						Faltung im Zeitbereich &
+%						$f(t) \ast g(t) = \int\limits_{-\infty}^{\infty} f(\tau)g(t-\tau)d\tau \; \laplace \;
+%						F(\omega) \cdot G(\omega)$\\
+%					\hline
+%						Faltung im Frequenzbereich &
+%						$f(t) \cdot g(t) \; \laplace \; \frac{1}{2\pi}F(\omega) \ast G(\omega)$\\
+%					\hline
+%					\hline
+%						Integration im Zeitbereich &
+%						$\int\limits_{-\infty}^{t}f(\tau)d\tau \; \laplace \;
+%						\frac{F(\omega)}{j\omega}+F(0)\pi\delta(\omega)$\\
+%					\hline
+%		 			\hline
+%			 			Modulation &
+%			 			$\cos(\alpha t) \cdot f(t)  \; \laplace \;  \frac{1}{2}\cdot
+%			 			\left[F(\omega-\alpha) + F(\omega+\alpha)\right ]$\\
+%			 			& $\sin(\alpha t) \cdot f(t) \; \laplace \; \frac{1}{2j}\cdot \left[
+%			 			F(\omega-\alpha) - F(\omega+\alpha)\right ]$\\
+%		 			\hline
+%		 			\hline
+%			        	Parseval's Theorem &
+%			 			$\int\limits_{-\infty}^{\infty}f(t)g^{\ast}(t)dt = \frac{1}{2\pi}
+%			  			\int\limits_{-\infty}^{\infty}F(\omega)G^{\ast}(\omega)d\omega$\\
+%		  			\hline
+%			  			Bessel's Theorem &
+%			  			$\int\limits_{-\infty}^{\infty}|f(t)|^2 dt = \frac{1}{2\pi}
+%			  			\int\limits_{-\infty}^{\infty}|F(\omega)|^2 d\omega$\\
+%		  			\hline 
+%		  			\hline		
+%						Anfangswerte &
+%						$\begin{aligned}
+%							f(0)&=\frac{1}{2\pi}\int\limits_{-\infty}^{\infty}F(\omega)d\omega
+%							\hspace*{1cm}\\
+%							F(0)&=\int\limits_{-\infty}^{\infty}f(t)dt
+%						\end{aligned}$\\
+%					\hline
+%					\hline
+%						$\infty$ lange Folge von $\delta$-Impulsen &
+%						$\sum_{n=-\infty}^{\infty} \delta(t-n\cdot t_0) \; \laplace \;
+%						\sum_{n=-\infty}^{\infty} \frac{2\pi}{t_0}\delta(\omega-n\cdot
+%						\frac{2\pi}{t_0})$\\
+%					\hline
+%		     \end{tabular}
 	     
 	     
-	\begin{tabular}{|p{3cm}|p{7cm}p{9cm}|}
+	\begin{tabular}{|p{3cm}|p{6.5cm}p{9cm}|}
 		\hline
 			\multicolumn{2}{|l}{Linearität}                                & $\alpha\cdot f(t) + \beta\cdot g(t) \; \laplace \; \alpha\cdot F(\omega) +\beta\cdot G(\omega)$                                                                                             \\ 
 		\hline
@@ -191,46 +191,71 @@
 				     		\quad\alpha \in\mathbb{R}\setminus \{0\}\\
 				     		F(\alpha\omega) \; &\Laplace \; f(\frac{t}{\alpha})\end{aligned}$\\ 
 		\hline
-			\multicolumn{2}{|l}{Vertauschungssatz (Dualität)}              & $f(t) \; \laplace \; F(\omega)\nonumber$ \newline $F(t) \; \laplace \; 2\pi \cdot f(-\omega)$ \\ 
+			\multicolumn{2}{|l}{Vertauschungssatz (Dualität)}              & 
+			\begin{math}
+				\begin{aligned}
+					f(t) \; &\laplace \; F(\omega)\nonumber \\ 
+					F(t) \; &\laplace \; 2\pi \cdot f(-\omega)
+				\end{aligned}
+			\end{math}\\ 
 		\hline
 		\hline
 			\multirow{2}{*}{Verschiebung} & Zeitbereich & $f(t\pm t_0) \; \laplace \; F(\omega)e^{\pm j\omega t_0}$ \\ 
 			\cline{2-3} 
-			& Frequenzbereich & $f(t)e^{\pm j\omega_0 t} \; \laplace \; F(\omega\mp\omega_0)$ \\ 
+			& Frequenzbereich (Modulationstheorem) & $f(t)e^{\pm j\omega_0 t} \; \laplace \; F(\omega\mp\omega_0)$ \\ 
    		\hline
    		\hline
-	   		\multirow{2}{*}{Ableitung} & Zeitbereich & \\ 
+	   		\multirow{2}{*}{Ableitung} & Zeitbereich & $\frac{\partial^n f(t)}{\partial t^n} \; \laplace \; (j\omega)^n F(\omega) \qquad (n \in \mathbb{N}_0)$ \\ 
 	   		\cline{2-3} 
-	   		& Frequenzbereich &  \\ 
+	   		& Frequenzbereich &  $t^n f(t) \; \laplace \; j^n \frac{\partial F(\omega)}{\partial \omega^n}$\\ 
    		\hline
    		\hline
-	   		\multirow{2}{*}{Faltung} & Zeitbereich & \\ 
+   			\multicolumn{2}{|l}{Integration im Zeitbereich} & $\int\limits_{-\infty}^{t}f(\tau)d\tau \; \laplace \;
+   			\frac{F(\omega)}{j\omega}+F(0)\pi\delta(\omega)$\\ 
+   		\hline
+   		\hline
+	   		\multirow{2}{*}{Faltung} & Zeitbereich & $f(t) \ast g(t) = \int\limits_{-\infty}^{\infty} f(\tau)g(t-\tau)d\tau \; \laplace \;
+	   		F(\omega) \cdot G(\omega)$ \\ 
 	   		\cline{2-3} 
-	   		& Frequenzbereich &  \\ 
+	   		& Frequenzbereich & $f(t) \cdot g(t) \; \laplace \; \frac{1}{2\pi}F(\omega) \ast G(\omega)$ \\ 
    		\hline
    		\hline
-			\multicolumn{2}{|l}{Integration im Zeitbereich}              & \\ 
+   			\multicolumn{2}{|l}{Modulation} & 
+   				\begin{math}
+   					\begin{aligned}
+	   					\cos(\alpha t) \cdot f(t)  \; &\laplace \;  \frac{1}{2}\cdot
+	   					\left[F(\omega-\alpha) + F(\omega+\alpha)\right]\\
+	   					\sin(\alpha t) \cdot f(t) \; &\laplace \; \frac{1}{2j}\cdot \left[F(\omega-\alpha) - F(\omega+\alpha)\right]
+   					\end{aligned}
+   				\end{math}	\\ 
    		\hline
    		\hline
-   			\multicolumn{2}{|l}{Modulation}              & \\ 
-   		\hline
-   		\hline
-   			\multirow{2}{*}{Theorem} & Parseval's & \\ 
+   			\multirow{2}{*}{Theorem} & Parseval's & 			 			$\int\limits_{-\infty}^{\infty}f(t)g^{\ast}(t)dt = \frac{1}{2\pi}
+   			\int\limits_{-\infty}^{\infty}F(\omega)G^{\ast}(\omega)d\omega$\\ 
    			\cline{2-3} 
-   			& Bessel's &  \\ 
+   			& Bessel's & $\int\limits_{-\infty}^{\infty}|f(t)|^2 dt = \frac{1}{2\pi}
+   			\int\limits_{-\infty}^{\infty}|F(\omega)|^2 d\omega$ \\ 
    		\hline
    		\hline
-		   	\multicolumn{2}{|l}{Anfangswerte}              & \\ 
+		   	\multicolumn{2}{|l}{Anfangswerte} & 
+		   	\begin{math}
+			   	\begin{aligned}
+				   	f(0)&=\frac{1}{2\pi}\int\limits_{-\infty}^{\infty}F(\omega)d\omega
+				   	\hspace*{1cm}\\
+				   	F(0)&=\int\limits_{-\infty}^{\infty}f(t)dt
+			   	\end{aligned}
+		   	\end{math} \\
 		\hline
 		\hline
-		   	\multicolumn{2}{|l}{.....d-Impulse}              & \\ 
-		\hline
+		   	\multicolumn{2}{|l}{$\infty$ lange Folge von $\delta$-Impulsen} & $\sum_{n=-\infty}^{\infty} \delta(t-n\cdot t_0) \; \laplace \;
+		   	\sum_{n=-\infty}^{\infty} \frac{2\pi}{t_0}\delta(\omega-n\cdot
+		   	\frac{2\pi}{t_0})$ \\ 
 		\hline
 	\end{tabular}
 
 
 
-%TODO Dies ist ein Beispiel, wie man die Fouriertransformierten-Tabelle und die Laplace-Tabelle übersichtlicher gestalten könnte
+
 %	     	\begin{tabular}{|p{3cm}|p{7cm}p{9cm}|}
 %	     		\hline
 %	     		\multirow{2}{*}{Verschiebung} & Zeitbereich & $f(t\pm t_0) \; \laplace \; F(\omega)e^{\pm j\omega t_0}$ \\ \cline{2-3} 
