@@ -74,30 +74,30 @@
 		\subsection{Eigenschaften}
 				
 					\renewcommand{\arraystretch}{1}					
-					\begin{tabular}{rcl}
+					\begin{tabular}{|rcl|}
 						\hline 
 							\textbf{Zeitbereich} & \laplace  & \textbf{Frequenzbereich} \\ 
 						\hline 
 						\hline
-							$f(t)$ gerade & \laplace & $F(j \omega)$ gerade  \\ 
+							$f(t)$ gerade & \laplace & $F(\omega)$ gerade  \\ 
 						\hline 
-							$f(t)$ reell und gerade & \laplace & $F(j \omega)$ reell und gerade\\ 
+							$f(t)$ reell und gerade & \laplace & $F(\omega)$ reell und gerade\\ 
 						\hline 
-							$f(t)$ imaginär und gerade & \laplace & $F(j \omega)$ imaginär und gerade \\ 
+							$f(t)$ imaginär und gerade & \laplace & $F(\omega)$ imaginär und gerade \\ 
 						\hline 
-							$f(t)$ ungerade & \laplace & $F(j \omega)$ ungerade \\ 
+							$f(t)$ ungerade & \laplace & $F(\omega)$ ungerade \\ 
 						\hline 
-							$f(t)$ reell und ungerade & \laplace & $F(j \omega)$ imaginär und ungerade \\ 
+							$f(t)$ reell und ungerade & \laplace & $F(\omega)$ imaginär und ungerade \\ 
 						\hline 
-							$f(t)$ imaginär und ungerade & \laplace & $F(j \omega)$ reell und ungerade\\ 
+							$f(t)$ imaginär und ungerade & \laplace & $F(\omega)$ reell und ungerade\\ 
 						\hline 
-							$f(t)$ (zeit)kontunierlich & \laplace & $F(j \omega)$ nicht periodisch \\ 
+							$f(t)$ (zeit)kontunierlich & \laplace & $F(\omega)$ nicht periodisch \\ 
 						\hline 
-							$f(t)$ (zeit)diskret & \laplace & $F(j \omega)$ periodisch \\ 
+							$f(t)$ (zeit)diskret & \laplace & $F(\omega)$ periodisch \\ 
 						\hline 
-							$f(t)$ periodisch & \laplace & $F(j \omega)$ (frequenz)diskret\\ 
+							$f(t)$ periodisch & \laplace & $F(\omega)$ (frequenz) diskret\\ 
 						\hline 
-							$f(t)$ nicht periodisch & \laplace & $F(j \omega)$ (frequenz)kontinuierlich\\ 
+							$f(t)$ nicht periodisch & \laplace & $F(\omega)$ (frequenz) kontinuierlich\\ 
 						\hline 
 					\end{tabular}
 					\renewcommand{\arraystretch}{\arraystretchOriginal}	
@@ -183,11 +183,11 @@
 	     
 	\begin{tabular}{|p{3cm}|p{6.5cm}p{9cm}|}
 		\hline
-			\multicolumn{2}{|l}{Linearität}                                & $\alpha\cdot f(t) + \beta\cdot g(t) \; \laplace \; \alpha\cdot F(\omega) +\beta\cdot G(\omega)$                                                                                             \\ 
+			\multicolumn{2}{|l}{Linearität} & $\alpha\cdot f(t) + \beta\cdot g(t) \; \laplace \; \alpha\cdot F(\omega) +\beta\cdot G(\omega) \qquad (\alpha, \beta \in \mathbb{C})$  \\ 
 		\hline
-			\multicolumn{2}{|l}{Zeitumkehrung (Spiegelung an der Y-Achse)} & $f(-t) \; \laplace \; F(-\omega) = F^*(w)$                                                                                                                                                  \\ 
+			\multicolumn{2}{|l}{Zeitumkehrung (Spiegelung an der Y-Achse)} & $f(-t) \; \laplace \; F(-\omega)$ \\
 		\hline
-			\multicolumn{2}{|l}{"Ahnlichkeit / Zeitskalierung}             &      		$\begin{aligned}f(\alpha t) \; &\laplace \; \frac{1}{|\alpha|}F \left (\frac{\omega}{\alpha} \right)
+			\multicolumn{2}{|l}{"Ahnlichkeit / (Zeitskalierung)}             &      		$\begin{aligned}f(\alpha t) \; &\laplace \; \frac{1}{|\alpha|}F \left (\frac{\omega}{\alpha} \right)
 				     		\quad\alpha \in\mathbb{R}\setminus \{0\}\\
 				     		F(\alpha\omega) \; &\Laplace \; f(\frac{t}{\alpha})\end{aligned}$\\ 
 		\hline
@@ -247,8 +247,9 @@
 		   	\end{math} \\
 		\hline
 		\hline
-		   	\multicolumn{2}{|l}{$\infty$ lange Folge von $\delta$-Impulsen} & $\sum_{n=-\infty}^{\infty} \delta(t-n\cdot t_0) \; \laplace \;
-		   	\sum_{n=-\infty}^{\infty} \frac{2\pi}{t_0}\delta(\omega-n\cdot
+		   	\multicolumn{2}{|l}{unendlich lange Folge von $\delta$-Impulsen (im Zeit und Frequenzbereich)} 
+               & $\sum\limits_{n=-\infty}^{\infty} \delta(t-n\cdot t_0) \; \laplace \;
+		   	\sum\limits_{n=-\infty}^{\infty} \frac{2\pi}{t_0}\delta(\omega-n\cdot
 		   	\frac{2\pi}{t_0})$ \\ 
 		\hline
 	\end{tabular}

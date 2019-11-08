@@ -1,36 +1,36 @@
 
 \section{Laplace-Transformation}
 	$$\boxed{f(t) \; \laplace \; F(s)=\int\limits_0^\infty f(t)e^{-st}dt} \qquad \boxed{ s=\sigma+j\omega}$$\\
-	\begin{tabular}{p{0.5cm}p{17.5cm}}
-		$\bullet$ & Definitionsbereich nur für kausale Systeme $t\geq 0$\\
-		%$\bullet$ & Integrierbar über das Intervall $(0,\infty)$\\
-		$\bullet$ & Wachstum kleiner als der von einer Exponentialfunktion\\ 
-		$\bullet$ & Gegen"uber $j\omega$ bei der Fourier-Transformation ist bei der
+	\begin{itemize}
+		\item Originalfunktion $ f(t) \; \laplace \; F(s) Bildfunktion $ 
+		\item Definitionsbereich nur für kausale Systeme $t\geq 0$
+		%\item Integrierbar über das Intervall $(0,\infty)$\\
+		\item  Wachstum kleiner als der von einer Exponentialfunktion
+		\item  Gegen"uber $j\omega$ bei der Fourier-Transformation ist bei der
 			Laplace-Transformation $s$ verallgemeinert zu $s=\sigma + j\omega$. Das
 			bedeutet, dass die Fourier-Transformierte $F(j\omega)$ durch die
-			Laplace-Transformation $F(s)$ ausgedr\"uckt werden kann. \\
-		$\bullet$ & mit 
+			Laplace-Transformation $F(s)$ ausgedr\"uckt werden kann.
+		\item  mit 
 		$\begin{cases} 
 		\sigma = 0 & \rightarrow \text{Amplitude bleibt konstant} \\ 
 		\sigma > 0 & \rightarrow \text{explodiert die Amplitude f\"ur } 0 < t \rightarrow \infty \\
 		\sigma < 0 & \rightarrow \text{klingt die Amplidute für } 0 < t \rightarrow \infty \text{ auf $0$ ab} \
 		 \end{cases} $ \\   
-	\end{tabular}
+	\end{itemize}
 	
  	\subsection{Eigenschaften der Laplace-Transformation}
   		\renewcommand{\arraystretch}{2}
 		\begin{tabular}{|ll|}
 	        \hline
 	        	Linearität & 
-	 			$\alpha\cdot f(t) + \beta\cdot g(t) \; \laplace \; \alpha\cdot F(s) + \beta\cdot
-	 			G(s)$ \\
+	 			$\alpha\cdot f(t) + \beta\cdot g(t) \; \laplace \; \alpha\cdot F(s) + \beta\cdot G(s) \qquad\qquad (\alpha, \beta \in\mathbb{C})$ \\
 			\hline
 	 			"Ahnlichkeit / Streckung im Zeitbereich &
-	 			$f(\alpha t) \; \laplace \; \frac{1}{\alpha}F \left (\frac{s}{\alpha} \right ) \quad 0 <\alpha, \alpha \in\mathbb{R}$ \\
+	 			$f(\alpha t) \; \laplace \; \frac{1}{\alpha}F \left (\frac{s}{\alpha} \right ) \hspace{4cm} (0 <\alpha, \alpha \in\mathbb{R})$ \\
 	 		\hline
 	 		\hline
 	 			Faltung im Zeitbereich &
-	 			$f(t) \ast g(t) = \int\limits_{0}^{t} f(\tau)g(t-\tau)d\tau \; \laplace \; F(s)
+	 			$f(t) \ast g(t) = \int\limits_{0}^{t} f(\tau) \cdot g(t-\tau) \; d\tau \; \laplace \; F(s)
 	 			\cdot G(s)$\\
 	 		\hline
 	 			Faltung im Frequenzbereich &
@@ -39,46 +39,46 @@
 	 		\hline
 	 		\hline
 	 			1te Ableitung im Zeitbereich &
-	 			$\frac{\partial f(t)}{\partial t} \; \laplace \; sF(s)
+	 			$\frac{d f(t)}{d t} \; \laplace \; sF(s)
 	 			-f(0^+)$ \\
 	 		\hline
 	 			2te Ableitung im Zeitbereich &
-	 			$\frac{\partial f(t)}{\partial t} \; \laplace \; s^2F(s)
+	 			$\frac{d f(t)}{d t} \; \laplace \; s^2F(s)
 	 			-sf(0^+) -f'(0^+)$ \\
 	 		\hline
 	 			nte Ableitung im Zeitbereich &
-	 			$\frac{\partial^n f(t)}{\partial t^n} \; \laplace \; s^nF(s)
-	 			-s^{n-1}f(0^+)-s^{n-2}\frac{\partial f(0^+)}{\partial t}-\ldots
-	 			-s^0\frac{\partial^{n-1} f(0^+)}{\partial t^{n-1}}$ \\
+	 			$\frac{d^n f(t)}{d t^n} \; \laplace \; s^nF(s)
+	 			-s^{n-1}f(0^+)-s^{n-2}\frac{d f(0^+)}{d t}-\ldots
+	 			-s^0\frac{d^{n-1} f(0^+)}{d t^{n-1}}$ \\
 	 		\hline
 	 			Ableitung im Frequenzbereich &
-		 		$(-t)^n f(t) \; \laplace \;  \frac{\partial^n F(s)}{\partial s^n}$ \\
+		 		$(-t)^n \cdot f(t) \; \laplace \;  \frac{d^n F(s)}{d s^n} \qquad \hspace{2cm} (n \in \mathbb{N}_0)$\\
 	 		\hline
 	 		\hline
 	 			Verschiebung im Zeitbereich nach rechts &
-	 			$\sigma(t-a)f(t - a) \; \laplace \; F(s)*e^{-as}$ \\
+	 			$\sigma(t-a) \cdot f(t - a) \; \laplace \; F(s)*e^{-as}$ \\
 	 		\hline
 				Verschiebung im Zeitbereich nach links &
-				$\sigma(t-a)f(t + a) \; \laplace \; e^{as} \cdot [F(s) - \int\limits_0^{a} f(t) \cdot e^{-st} dt]$\\
+				$\sigma(t-a) \cdot f(t + a) \; \laplace \; e^{as} \cdot [F(s) - \int\limits_0^{a} f(t) \cdot e^{-st} dt]$\\
 			\hline
 	 			Verschiebung im Frequenzbereich (Dämpfungssatz) &
-	 			$f(t)e^{\pm\alpha t} \; \laplace \; F(s\mp\alpha)$ \\
+	 			$f(t) \cdot e^{\pm\alpha t} \; \laplace \; F(s\mp\alpha)$ \\
 	 		\hline
 	 		\hline
 	 			Integration im Originalbereich (Sprungantwort)&
-	 			$\int\limits_0^t f(u)du \; \laplace \; \frac{1}{s}\cdot F(s)$ \\
+	 			$\int\limits_0^t f(u) \; du \; \laplace \; \frac{1}{s}\cdot F(s)$ \\
 	 		\hline
 	 			Multiplikation mit $t$ &
-	 			$t\cdot f(t)  \; \laplace \; \frac{-\partial F(s)}{\partial s}$ \\
+	 			$t\cdot f(t)  \; \laplace \; \frac{-d F(s)}{d s}$ \\
  			\hline
  			\hline
 	 			Anfangswert &
-	 			$\lim_{t\rightarrow 0^+} f(t) = \lim_{s\rightarrow \infty} sF(s),\text{~wenn
-	 			}  \lim_{t\rightarrow 0} f(t)\text{~existiert}.$ \\
+	 			$\lim\limits_{t\rightarrow 0^+} f(t) = \lim\limits_{s\rightarrow \infty} sF(s),\text{~wenn
+	 			}  \lim\limits_{t\rightarrow 0} f(t)\text{~existiert}.$ \\
  			\hline
 	 			Endwert &
-	 			$\lim_{t\rightarrow \infty} f(t) = \lim_{s\rightarrow 0} sF(s),\text{~wenn
-	 			}  \lim_{t\rightarrow \infty} f(t)\text{~existiert}.$ \\
+	 			$\lim\limits_{t\rightarrow \infty} f(t) = \lim_{s\rightarrow 0} sF(s),\text{~wenn
+	 			}  \lim\limits_{t\rightarrow \infty} f(t)\text{~existiert}.$ \\
 	 		\hline
        	\end{tabular}
 		\renewcommand{\arraystretch}{\arraystretchOriginal}
@@ -152,9 +152,9 @@
 		$\dfrac{s}{ s^2 + \omega^2}$\\
 		
 		$\sigma \left( t \right) \cdot  e^{ \alpha t} \cdot \sin \left(\omega t \right)$ & $\; \laplace \;$ 
-		& 	$\dfrac{\omega}{(s-a)^2 + {\omega^2}}$\\
+		& 	$\dfrac{\omega}{(s-\alpha)^2 + {\omega^2}}$\\
 		$\sigma \left( t \right) \cdot e^{ \alpha t} \cdot \cos \left( \omega t \right) $ & $\; \laplace \;$ &
-		$\dfrac{s-a}{(s-a)^2 + \omega^2}$\\
+		$\dfrac{s-\alpha}{(s-\alpha)^2 + \omega^2}$\\
 		
 		$\sigma \left( t \right)\cdot t \cdot \dfrac{\sin \left( \alpha t \right)} { 2 \alpha }$ & $\; \laplace \;$ & $\dfrac{s}{ \left(s^ {2}+ \alpha ^{2} \right)^{2}}$ \\
 		

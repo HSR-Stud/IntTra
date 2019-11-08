@@ -44,15 +44,20 @@
 \subsection{Alias-Effekt}
 
 	Ist die Abtastfrequenz zu klein, k\"onnen die Frequenzen nicht mehr sauber getrennt werden, der sogenannte Alias-Effekt tritt auf:
-	die Anteile aller Frequenzen werden der jeweils betragsm\"assig kleinsten passenden Frequenz zugeordnet.
-	
-	\begin{minipage}[c]{8.5cm}
+	die Anteile aller Frequenzen werden der jeweils betragsm\"assig kleinsten passenden Frequenz zugeordnet.\\
+	%	
+	Summeneigenschaft: \qquad $\boxed{\hat{c_k} = \sum\limits_{m=-\infty}^{\infty} c_{k+mN}}$\\
+	%
+	\begin{minipage}[t]{8.5cm}
+        \textbf{Beispiel:}\\
 		\includegraphics[width=8cm]{./bilder/Alias-effekt.png}
 	\end{minipage}
-	\begin{minipage}[c]{8cm}
-		Summeneigenschaft: $\hat{c_k} = \sum\limits_{m=-\infty}^{\infty} c_{k+mN}$
+	\qquad
+	\begin{minipage}[t]{10cm}
+		\textbf{technische Anpassungsmöglichkeiten}\\
+		\begin{itemize}
+			\item Abtastfrequenz erhöhen
+			\item Tiefpass $\Rightarrow$ obere Frequenzen werden abgeschnitten
+		\end{itemize}
 	\end{minipage}
-	%\begin{tabular}{p{8.5cm} p{5cm}}
-	%	\includegraphics[width=8cm]{./bilder/Alias-effekt.png} & Summeneigenschaft: $\hat{c_k} = \sum\limits_{m=-\infty}^{\infty} c_{k+mN}$
-	%\end{tabular}
 	

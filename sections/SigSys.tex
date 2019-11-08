@@ -10,13 +10,7 @@
     	$\mathcal{L}(c\cdot x)=c\cdot \mathcal{L}(x)$ & $\mathcal{L}(x(t-t_0)) = y(t-t_0)$ \\
 		\hline    
     \end{tabular}
-  	
-	\subsection{Amplitudengang}
-		$|H(\omega)| = \begin{cases}
-			< 1 \text{ Dämpfung} \\
-			> 1 \text{ Verstärkung}
-		\end{cases}$
-		
+  			
 		
 	\subsection{Lineare Systeme}
 		\textbf{Basissignale}
@@ -34,7 +28,7 @@
 		Anregung}\\
 		1. Eingangssignal $x$ als Linearkombination der Basisvektoren darstellen
 		$\Rightarrow$ lineares Gleichungssystem\\
-		$\Rightarrow x=r\cdot a + s\cdot b + t\cdot c\qquad$ ($x=$
+		\qquad $\Rightarrow x=r\cdot a + s\cdot b + t\cdot c\qquad$ ($x=$
 		Eingangssignal; $a,b,c=$ Basisvektoren; $r,s,t=$
 		Linearkombinationsparameter)\\ 
 		2. Systemantwort $y=r\cdot \mathcal{L}(a) + s\cdot \mathcal{L}(b) + t\cdot \mathcal{L}(c); \qquad (\mathcal{L}(a)=$
@@ -90,17 +84,23 @@
 	
 
 
-
-
-
-
-
+    \subsection{Amplitudengang}
+        \begin{minipage}{0.3\textwidth}
+            $|H(\omega)| = \begin{cases}
+            < 1 \text{ Dämpfung} \\
+            > 1 \text{ Verstärkung}
+            \end{cases}$
+        \end{minipage}    
+        \qquad
+        \begin{minipage}{0.4\textwidth}
+            $|H(\omega)| =$ Änderung Amplitude
+        \end{minipage}
 
 	\subsection{Eigenfrequenz, Frequenzgang}
-	Zu jeder Frequenz gehört der eigene Frequenzgang mit $a, b \in \mathbb{C}$\\
-	$$a e^{j\omega_1 t} + b e^{j\omega_2 t} \rightarrow a H(\omega_1) e^{j\omega_1 t} + b H(\omega_2) e^{j\omega_2 t}$$
-	Frequenzgang bei Spektraldarstellung: $$\sum_{k=-\infty}^{\infty} c_k e^{jk\omega t} \rightarrow \boxed{H(\omega)}
-	\rightarrow \sum_{k=-\infty}^{\infty} c_k H(\omega k) e^{jk\omega t}$$			
+    	Zu jeder Frequenz gehört der eigene Frequenzgang mit $a, b \in \mathbb{C}$\\
+    	$$a e^{j\omega_1 t} + b e^{j\omega_2 t} \rightarrow a H(\omega_1) e^{j\omega_1 t} + b H(\omega_2) e^{j\omega_2 t}$$
+    	Frequenzgang bei Spektraldarstellung: $$\sum_{k=-\infty}^{\infty} c_k e^{jk\omega t} \rightarrow \boxed{H(\omega)}
+    	\rightarrow \sum_{k=-\infty}^{\infty} c_k H(\omega k) e^{jk\omega t}$$			
 	
 	\subsection{Faltung}
 	$y(t) = f(t)\ast g(t) = g(t) \ast f(t) = \boxed{ (f \ast g)(t) :=
@@ -109,22 +109,20 @@
 	\\
 	($g(t-u)$ entspricht einer Spiegelung an der Y-Achse und ist um t nach rechts geschoben)\\
 	
-	Hat $g\left(t\right)$ \textbf{keine negative} Argumente dann gilt :
+	Hat $g\left(t\right)$ \textbf{\underline{keine} negative} Argumente dann gilt :
 	$\left(g \ast f \right)\left(t\right)=\int\limits_{-\infty}^t f(u) \cdot
 	g(t-u)\,du$\\
-	Hat $f\left(t\right)$ keine negative Argumente (Einschaltvorgang) dann gilt :
+	Hat $f\left(t\right)$ \underline{keine} negative Argumente (Einschaltvorgang) dann gilt :
 	$\left(g \ast f \right)\left(t\right)=\int\limits_{0}^t f(u) \cdot
 	g(t-u)\,du$\\
-	Bei einer Faltung mit einer $\delta\left(t\right)$ Funktion
-	gilt: $f\left(t\right) \ast \delta\left(t\right) = f\left(t\right)$
 	
 	\subsubsection{Faltungssatz \skript{52}}
 		\begin{minipage}{.45\textwidth}
 				\begin{math}
 				\boxed{
 					\begin{aligned}
-						f(t)\cdot g(t) \; &\laplace \; \frac{1}{2\pi} \, F(\omega) \ast G(\omega) \\
-						f(t) \ast g(t) \; &\laplace \; F(\omega) \cdot G(\omega) \\
+						\text{Zeitbereich: \quad} f(t)\cdot g(t) \; &\laplace \; \frac{1}{2\pi} \, F(\omega) \ast G(\omega) \\
+						\text{Frequenzbereich: \quad} f(t) \ast g(t) \; &\laplace \; F(\omega) \cdot G(\omega) \\
 					\end{aligned}
 				}
 				\end{math}\\
