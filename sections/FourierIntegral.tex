@@ -180,7 +180,7 @@
 %					\hline
 %		     \end{tabular}
 	     
-	     
+	\renewcommand{\arraystretch}{2}
 	\begin{tabular}{|p{3cm}|p{6.5cm}p{9cm}|}
 		\hline
 			\multicolumn{2}{|l}{Linearität} & $\alpha\cdot f(t) + \beta\cdot g(t) \; \laplace \; \alpha\cdot F(\omega) +\beta\cdot G(\omega) \qquad (\alpha, \beta \in \mathbb{C})$  \\ 
@@ -203,21 +203,21 @@
 			\multirow{2}{*}{Verschiebung} & Zeitbereich & $f(t\pm t_0) \; \laplace \; F(\omega)e^{\pm j\omega t_0}$ \\ 
 			\cline{2-3} 
 			& Frequenzbereich (Modulationstheorem) & $f(t)e^{\pm j\omega_0 t} \; \laplace \; F(\omega\mp\omega_0)$ \\ 
+		\hline
+		\hline
+			\multirow{2}{*}{Faltung} & Zeitbereich & $f(t) \ast g(t) = \int\limits_{-\infty}^{\infty} f(\tau)g(t-\tau)d\tau \; \laplace \;
+			F(\omega) \cdot G(\omega)$ \\ 
+			\cline{2-3} 
+			& Frequenzbereich & $f(t) \cdot g(t) \; \laplace \; \frac{1}{2\pi}F(\omega) \ast G(\omega)$ \\ 
    		\hline
    		\hline
-	   		\multirow{2}{*}{Ableitung} & Zeitbereich & $\frac{\partial^n f(t)}{\partial t^n} \; \laplace \; (j\omega)^n F(\omega) \qquad (n \in \mathbb{N}_0)$ \\ 
+   	   		\multirow{2}{*}{Ableitung} & Zeitbereich & $\frac{\partial^n f(t)}{\partial t^n} \; \laplace \; (j\omega)^n F(\omega) \qquad (n \in \mathbb{N}_0)$ \\ 
 	   		\cline{2-3} 
 	   		& Frequenzbereich &  $t^n f(t) \; \laplace \; j^n \frac{\partial F(\omega)}{\partial \omega^n}$\\ 
    		\hline
    		\hline
    			\multicolumn{2}{|l}{Integration im Zeitbereich} & $\int\limits_{-\infty}^{t}f(\tau)d\tau \; \laplace \;
    			\frac{F(\omega)}{j\omega}+F(0)\pi\delta(\omega)$\\ 
-   		\hline
-   		\hline
-	   		\multirow{2}{*}{Faltung} & Zeitbereich & $f(t) \ast g(t) = \int\limits_{-\infty}^{\infty} f(\tau)g(t-\tau)d\tau \; \laplace \;
-	   		F(\omega) \cdot G(\omega)$ \\ 
-	   		\cline{2-3} 
-	   		& Frequenzbereich & $f(t) \cdot g(t) \; \laplace \; \frac{1}{2\pi}F(\omega) \ast G(\omega)$ \\ 
    		\hline
    		\hline
    			\multicolumn{2}{|l}{Modulation} & 
@@ -253,6 +253,7 @@
 		   	\frac{2\pi}{t_0})$ \\ 
 		\hline
 	\end{tabular}
+	\renewcommand{\arraystretch}{\arraystretchOriginal}
 
 
 
