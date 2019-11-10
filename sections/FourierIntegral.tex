@@ -1,5 +1,31 @@
-\section{Fourier-Transformation}
+%TODO 1: hier und am Schluss von diesem Abschnitt müsste die globale Einstellung, bezüglich des Abstandes nach einer Section ausgesetzt werden und lokal verändert werden. Ansonsten muss bei jeder Änderung dieses Abschnitts die \vspaces manuell ausprobiert werden. Sehr unschöner Code!!
+
+\section{Fourier-Transformation}%
+	\subsection{Bedingung Existenz}%
+		\vspace{-3mm}	%TODO 1: siehe TODO1 (oben)
+		Die Fourier-Transformation von $f(t)$
+		die inverse Fourier-Transformation existieren  wenn:
+		
+		\textbf{Bedingung 1}\\
+			$\int\limits_{-\infty}^{\infty}|f(t)| \; d t<\infty \quad \rightarrow f(t)$ ist absolut integrierbar.
+			
+		Man sollte beachten, dass die Bedingung 1 hinreichend, aber nicht notwendig ist. Es gibt Funktionen $f(t)$ die Bedingung 1 nicht erfüllen und trotzdem fouriertransformierbar sind. Diese Funktionen werden mit Bedingungen 2 \& 3 erfasst. 
+		
+		\textbf{Bedingung 2}\\
+			$\int\limits_{-\infty}^{\infty}|F(\omega)| \; d \omega<\infty$ \quad
+			$\rightarrow$ Die Fourier-Transformation $F(j \omega)$ ist absolut integrierbar.
+			
+		\textbf{Bedingung 3}\\
+			$f(t)$ eine Linearkombination absolut integrierbarer Funktionen
+			$f_{i}(t)$ und inverser Fourier-Transformationen $F_{j}(j \omega),$ die selber
+			absolut integrierbar sind, ist.
+			
+	\subsection{Symmetrie}%
+		\vspace{-3mm}	%TODO 1: siehe TODO1 (oben)
+		Es gelten die gleichen Symmetrien wie bei der Fourierreihe.
+
 	\subsection{Berechnungen}%
+		\vspace{-2mm}	%TODO 1: siehe TODO1 (oben)
 		\begin{tabular}{|p{6cm} l|} \hline
 			\textbf{Fouriertransformierte:} &
 			$F(\omega) = \int\limits_{-\infty}^{\infty} f(t)e^{-j\omega t}dt$ \\
@@ -67,8 +93,6 @@
 		\hline
 		\end{tabular}
 		
-		\subsection{Symmetrie}
-			Es gelten die gleichen Symmetrien wie bei der Fourierreihe.
 				
 				
 		\subsection{Eigenschaften}
@@ -189,7 +213,7 @@
 		\hline
 			\multicolumn{2}{|l}{"Ahnlichkeit / (Zeitskalierung)}             &      		$\begin{aligned}f(\alpha t) \; &\laplace \; \frac{1}{|\alpha|}F \left (\frac{\omega}{\alpha} \right)
 				     		\quad\alpha \in\mathbb{R}\setminus \{0\}\\
-				     		F(\alpha\omega) \; &\Laplace \; f(\frac{t}{\alpha})\end{aligned}$\\ 
+				     		F(\alpha\omega) \; &\Laplace \; f\left(\frac{t}{\alpha}\right)\end{aligned}$\\ 
 		\hline
 			\multicolumn{2}{|l}{Vertauschungssatz (Dualität)}              & 
 			\begin{math}
@@ -249,8 +273,8 @@
 		\hline
 		   	\multicolumn{2}{|l}{unendlich lange Folge von $\delta$-Impulsen (im Zeit und Frequenzbereich)} 
                & $\sum\limits_{n=-\infty}^{\infty} \delta(t-n\cdot t_0) \; \laplace \;
-		   	\sum\limits_{n=-\infty}^{\infty} \frac{2\pi}{t_0}\delta(\omega-n\cdot
-		   	\frac{2\pi}{t_0})$ \\ 
+		   	\sum\limits_{n=-\infty}^{\infty} \frac{2\pi}{t_0}\cdot\delta\left(\omega-n\cdot
+		   	\frac{2\pi}{t_0}\right)$ \\ 
 		\hline
 	\end{tabular}
 	\renewcommand{\arraystretch}{\arraystretchOriginal}
