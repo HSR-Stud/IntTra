@@ -209,51 +209,67 @@
 \renewcommand{\arraystretch}{\arraystretchOriginal}		
 	\subsection{Rücktransformation}
 		\subsubsection{Vorgehen}
-				1. Kürzen oder vereinfachen \\
-				2. Partialbruchzerlegung falls nötig \\
-				3. Rücktransformation mittels Laplace-Tabelle \\
-				4. $h(t)\hspace{0.2cm}\underline{nicht} < 0$ \\
+			\begin{enumerate}
+				\item Kürzen oder vereinfachen
+				\item Partialbruchzerlegung falls nötig 
+				\item Rücktransformation mittels Laplace-Tabelle
+				\item $h(t)\hspace{0.2cm}\underline{nicht} < 0$
+			\end{enumerate}
 			
 		\subsubsection{Residuensatz}
-			Beispiel:\\
-			$F(s) = \frac{1}{(s+\alpha)(s+\beta)}, \qquad (0 < \alpha,\beta \in \mathbf{R}, \alpha \neq \beta)$\\
-			$f(t) = \frac{1}{2\pi j} \int\limits_{-j\infty}^{j\infty} F(s)e^{st} ds = \sum\limits_{i=1}^k Res(F(s_k)e^{s_kt})$\\
-			$=\lim_{s \to -\alpha} ((s+\alpha)F(s)e^{st}) + \lim_{s \to -\beta}((s+\beta)F(s)e^{st})$\\
-			$=\frac{e^{-\alpha t}}{\beta - \alpha} + \frac{e^{-\beta t}}{\alpha - \beta} = \frac{e^{-\alpha t}-e^{-\beta t}}{\beta - \alpha}$
+			\textbf{Beispiel:}\\[2mm]
+			$F(s) = \dfrac{1}{(s+\alpha)(s+\beta)}, \qquad (0 < \alpha,\beta \in \mathbf{R}, \alpha \neq \beta)$\\[2mm]
+			$f(t) = \frac{1}{2\pi j} \int\limits_{-j\infty}^{j\infty} F(s)e^{st} ds = \sum\limits_{i=1}^k Res(F(s_k)e^{s_kt})$\\[2mm]
+			$=\lim_{s \to -\alpha} ((s+\alpha)F(s)e^{st}) + \lim_{s \to -\beta}((s+\beta)F(s)e^{st})$\\[2mm]
+			$=\dfrac{e^{-\alpha t}}{\beta - \alpha} + \dfrac{e^{-\beta t}}{\alpha - \beta} = \dfrac{e^{-\alpha t}-e^{-\beta t}}{\beta - \alpha}$
 			
+
+	
+	\subsection{Lösung linearer Differentialgleichungen \skript{88-105}}
 			
-	\subsection{Lösung linearer Differentialgleichungen}
-		\begin{minipage}{11.5cm}
-			\renewcommand{\arraystretch}{2}
-			\begin{tabular}{| l | l |}
-				\hline
-					Übertragungsfunktion & $G(s) = \frac{1}{p(s)}$\\
-					& $g(t) \; \laplace \; G(s)$ \\
-				\hline
-					Frequenzgang & $G(j\omega) = H(\omega)$ \\
-				\hline
-					Impulsantwort & $y_{\delta}(t) = g(t) = y_{\sigma}'(t) \; \laplace \; G(s) = \frac{1}{p(s)}=Y_{\delta}(s)$\\
-				\hline
-					Sprungwantwort & $y_{\sigma}(t)=\int\limits_0^t g(u) du \; \laplace \; \frac{G(s)}{s} = \frac{1}{s \cdot p(s)} = Y_{\sigma}(s)$\\
-				\hline
-					Eigenschwingung & $\frac{h(s)}{p(s)}$ \\
-				\hline
-					äussere Erregung & $\frac{F(s)}{p(s)}$ \\
-				\hline
-					stationärer Zustand & = ungedämpfte Eigenschwingung\\
-				\hline
-			\end{tabular}
-			\renewcommand{\arraystretch}{\arraystretchOriginal}\\
-		\end{minipage}
-		\begin{minipage}{8cm}
-					\includegraphics[width=8cm]{./bilder/diffgleichungen2.png} \\
-		\end{minipage}
+			\begin{minipage}{12cm}
+
+				\renewcommand{\arraystretch}{2}
+					\begin{tabular}{| l | l |}
+						\hline
+							Übertragungsfunktion & $G(s) = \dfrac{1}{p(s)}$\\
+							& $g(t) \; \laplace \; G(s)$ \\
+						\hline
+							Frequenzgang & $G(j\omega) = H(\omega)$ \\
+						\hline
+							Impulsantwort & $y_{\delta}(t) = g(t) = y_{\sigma}'(t) \; \laplace \; G(s) = \dfrac{1}{p(s)}=Y_{\delta}(s)$\\
+						\hline
+							Sprungwantwort & $y_{\sigma}(t)=\int\limits_0^t g(u) \; du \; \laplace \; \dfrac{G(s)}{s} = \dfrac{1}{s \cdot p(s)} = Y_{\sigma}(s)$\\
+						\hline
+							Eigenschwingung & $Y(s) = \dfrac{h(s)}{p(s)}$ \\
+						\hline
+							äussere Erregung & $ Y(s) = F(s) \cdot \dfrac{1}{p(s)}$ \\
+						\hline
+							stationärer Zustand & = ungedämpfte Eigenschwingung\\
+						\hline
+						\hline
+							Satz von Durhamel & $y(t) = y_{\sigma}'(t) * f(t)$\\
+						\hline
+					\end{tabular}
+				\renewcommand{\arraystretch}{\arraystretchOriginal}\\
+			
+			\end{minipage}
+			\begin{minipage}{8cm}
+				\includegraphics[width=8cm]{./bilder/diffgleichungen2.png} \\[10mm]
+
+				$ \hspace{3cm} y(t) \; \laplace \; Y(s) = F(s) \cdot \dfrac{1}{p(s)}$	
+			\end{minipage}
+		
+		\newpage
+			
+
 		
 		
 		\begin{minipage}[l]{16cm}
-				\textbf{Beispiel:} $y'' + 8y' + 25y = \sigma{t} \cdot \sin(2t)$ mit $y(0) = 2, y'(0) = -1$\\
+				\textbf{Beispiel:} \\
+				$y'' + 8y' + 25y = \sigma{t} \cdot \sin(2t)$ mit $y(0) = 2, y'(0) = -1$\\
 				
-				$\sin(2t) \; \laplace \; \frac{2}{s^2+4}$ \\ $Y(s)(s^2+8s+25) = 2s+15+\frac{2}{s^2+4}$
+				$\sin(2t) \; \laplace \; \dfrac{2}{s^2+4}$ \\ $Y(s)(s^2+8s+25) = 2s+15+\frac{2}{s^2+4}$
 				$\Leftrightarrow Y(s) = \frac{2s+15}{s^2+8s+25}+\frac{2}{(s^2+4)(s^2+8s+25)}=
 				\underbrace{\frac{2s+15}{s^2+8s+25}}_\text{Eigenschwinung durch Anfangszustand} +
 				\underbrace{\frac{As + B}{s^2+4}}_\text{stationärer Zustand} +
@@ -261,7 +277,7 @@
 		\end{minipage}
 		\subsubsection{Eigenschwingungen}
 			Aus der Eigenschwingung können die Nullstellen des charakteristischen Polynom $p(s)$ 
-			direkt abgelesen werden. \\
+			direkt abgelesen werden. \\[5mm]
 			\textbf{Beispiel:} \\
 			$y(t) = \frac{1}{2} e^{-t} \sin(3t) - \frac{2}{3} e^{-2t} \cos(2t) = 
 			\underbrace{\frac{1}{2} e^{\textcolor{red}{-t}} \frac{1}{2j}(e^{\textcolor{red}{3j}t}
