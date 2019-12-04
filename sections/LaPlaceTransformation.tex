@@ -235,7 +235,7 @@
 							Übertragungsfunktion & $G(s) = \dfrac{1}{p(s)}$\\
 							& $g(t) \; \laplace \; G(s)$ \\
 						\hline
-							Frequenzgang & $G(j\omega) = H(\omega)$ \\
+							Frequenzgang \& \\ Übertragungsfunktion  & $H(\omega) = \dfrac{1}{p(j\omega)} = G(j\omega) $ \\
 						\hline
 							Impulsantwort & $y_{\delta}(t) = g(t) = y_{\sigma}'(t) \; \laplace \; G(s) = \dfrac{1}{p(s)}=Y_{\delta}(s)$\\
 						\hline
@@ -254,10 +254,17 @@
 				\renewcommand{\arraystretch}{\arraystretchOriginal}\\
 			
 			\end{minipage}
-			\begin{minipage}{8cm}
-				\includegraphics[width=8cm]{./bilder/diffgleichungen2.png} \\[10mm]
+			\begin{minipage}[b]{8cm}
+				\includegraphics[width=8cm]{./bilder/diffgleichungen2.png} \\[7mm]
 
-				$ \hspace{3cm} y(t) \; \laplace \; Y(s) = F(s) \cdot \dfrac{1}{p(s)}$	
+					\hspace{3cm}\begin{minipage}{4cm}
+						$
+						\begin{aligned}
+							y(t) \; &\laplace \; Y(s) = F(s) \cdot \dfrac{1}{p(s)}\\
+							g(t) \; &\laplace \; G(s) \\
+						\end{aligned}
+						$
+					\end{minipage}	
 			\end{minipage}
 		
 		\newpage
