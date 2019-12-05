@@ -1,6 +1,6 @@
 %TODO 1: hier und am Schluss von diesem Abschnitt müsste die globale Einstellung, bezüglich des Abstandes nach einer Section ausgesetzt werden und lokal verändert werden. Ansonsten muss bei jeder Änderung dieses Abschnitts die \vspaces manuell ausprobiert werden. Sehr unschöner Code!!
 
-\section{Fourier-Transformation}%
+\section{Fourier-Transformation \small{\textcolor{red}{Skript S.17}}}%
 	\subsection{Bedingung Existenz}%
 		\vspace{-3mm}	%TODO 1: siehe TODO1 (oben)
 		Die Fourier-Transformation von $f(t)$
@@ -24,7 +24,7 @@
 		\vspace{-3mm}	%TODO 1: siehe TODO1 (oben)
 		Es gelten die gleichen Symmetrien wie bei der Fourierreihe.
 
-	\subsection{Berechnungen}%
+	\subsection{Berechnungen \small{\textcolor{red}{Skript S.21}}}%
 		\vspace{-2mm}	%TODO 1: siehe TODO1 (oben)
 		\begin{tabular}{|p{6cm} l|} \hline
 			\textbf{Fouriertransformierte:} &
@@ -95,7 +95,7 @@
 		
 				
 				
-		\subsection{Eigenschaften}
+		\subsection{Eigenschaften \skript{29}}
 				
 					\renewcommand{\arraystretch}{1}					
 					\begin{tabular}{|rcl|}
@@ -105,105 +105,37 @@
 						\hline
 							$f(t)$ gerade & \laplace & $F(\omega)$ gerade  \\ 
 						\hline 
+							$f(t)$ ungerade & \laplace & $F(\omega)$ ungerade \\ 
+						\hline 
+						\hline 
 							$f(t)$ reell und gerade & \laplace & $F(\omega)$ reell und gerade\\ 
 						\hline 
 							$f(t)$ imaginär und gerade & \laplace & $F(\omega)$ imaginär und gerade \\ 
 						\hline 
-							$f(t)$ ungerade & \laplace & $F(\omega)$ ungerade \\ 
 						\hline 
 							$f(t)$ reell und ungerade & \laplace & $F(\omega)$ imaginär und ungerade \\ 
 						\hline 
 							$f(t)$ imaginär und ungerade & \laplace & $F(\omega)$ reell und ungerade\\ 
 						\hline 
+						\hline 
 							$f(t)$ (zeit)kontunierlich & \laplace & $F(\omega)$ nicht periodisch \\ 
 						\hline 
 							$f(t)$ (zeit)diskret & \laplace & $F(\omega)$ periodisch \\ 
+						\hline 
 						\hline 
 							$f(t)$ periodisch & \laplace & $F(\omega)$ (frequenz) diskret\\ 
 						\hline 
 							$f(t)$ nicht periodisch & \laplace & $F(\omega)$ (frequenz) kontinuierlich\\ 
 						\hline 
+						\hline 
+							$f(t)$ reell & \laplace & $F(\omega)$ konjugiert-komplex\\ 
+						\hline 
+							$f(t)$ konjugiert-komplex & \laplace & $F(\omega)$ reell\\ 
+						\hline 
 					\end{tabular}
 					\renewcommand{\arraystretch}{\arraystretchOriginal}	
-					
-					
-%				\begin{tabular}{|p{9cm}|p{8cm}|}
-%		        	\hline
-%			        	Linearität & 
-%			        	$\alpha\cdot f(t) + \beta\cdot g(t) \; \laplace \; \alpha\cdot F(\omega) +
-%			        	\beta\cdot G(\omega)$\\
-%		        	\hline
-%						Zeitumkehrung (Spiegelung an der Y-Achse)&
-%						$f(-t) \; \laplace \; F(-\omega) = F^*(w)$ \\
-%					\hline        	
-%			  			"Ahnlichkeit / Zeitskalierung &
-%			  			$f(\alpha t) \; \laplace \; \frac{1}{|\alpha|}F \left (\frac{\omega}{\alpha} \right)
-%			  			\quad\alpha \in\mathbb{R}\setminus \{0\}$\\
-%							& $F(\alpha\omega) \; \Laplace \; f(\frac{t}{\alpha})$ \\
-%					\hline
-%						Vertauschungssatz (Dualität) &
-%						$f(t) \; \laplace \; F(\omega)\nonumber$ \\
-%						& $F(t) \; \laplace \; 2\pi \cdot f(-\omega)$\\
-%		  			\hline
-%		  			\hline
-%			  			Verschiebung im	Zeitbereich &
-%			  			$f(t\pm t_0) \; \laplace \; F(\omega)e^{\pm j\omega t_0}$\\
-%		  			\hline
-%						Verschiebung im Frequenzbereich (Modulationstheorem) &
-%						$f(t)e^{\pm j\omega_0 t} \; \laplace \; F(\omega\mp\omega_0)$\\
-%					\hline
-%					\hline
-%						Ableitung im Zeitbereich &
-%						$\frac{\partial^n f(t)}{\partial t^n} \; \laplace \; (j\omega)^n F(\omega) \qquad (n \in \mathbb{N}_0)$\\
-%					\hline				
-%						Ableitung im Frequenzbereich &
-%						$t^n f(t) \; \laplace \; j^n \frac{\partial F(\omega)}{\partial \omega^n}$\\
-%					\hline
-%					\hline		
-%						Faltung im Zeitbereich &
-%						$f(t) \ast g(t) = \int\limits_{-\infty}^{\infty} f(\tau)g(t-\tau)d\tau \; \laplace \;
-%						F(\omega) \cdot G(\omega)$\\
-%					\hline
-%						Faltung im Frequenzbereich &
-%						$f(t) \cdot g(t) \; \laplace \; \frac{1}{2\pi}F(\omega) \ast G(\omega)$\\
-%					\hline
-%					\hline
-%						Integration im Zeitbereich &
-%						$\int\limits_{-\infty}^{t}f(\tau)d\tau \; \laplace \;
-%						\frac{F(\omega)}{j\omega}+F(0)\pi\delta(\omega)$\\
-%					\hline
-%		 			\hline
-%			 			Modulation &
-%			 			$\cos(\alpha t) \cdot f(t)  \; \laplace \;  \frac{1}{2}\cdot
-%			 			\left[F(\omega-\alpha) + F(\omega+\alpha)\right ]$\\
-%			 			& $\sin(\alpha t) \cdot f(t) \; \laplace \; \frac{1}{2j}\cdot \left[
-%			 			F(\omega-\alpha) - F(\omega+\alpha)\right ]$\\
-%		 			\hline
-%		 			\hline
-%			        	Parseval's Theorem &
-%			 			$\int\limits_{-\infty}^{\infty}f(t)g^{\ast}(t)dt = \frac{1}{2\pi}
-%			  			\int\limits_{-\infty}^{\infty}F(\omega)G^{\ast}(\omega)d\omega$\\
-%		  			\hline
-%			  			Bessel's Theorem &
-%			  			$\int\limits_{-\infty}^{\infty}|f(t)|^2 dt = \frac{1}{2\pi}
-%			  			\int\limits_{-\infty}^{\infty}|F(\omega)|^2 d\omega$\\
-%		  			\hline 
-%		  			\hline		
-%						Anfangswerte &
-%						$\begin{aligned}
-%							f(0)&=\frac{1}{2\pi}\int\limits_{-\infty}^{\infty}F(\omega)d\omega
-%							\hspace*{1cm}\\
-%							F(0)&=\int\limits_{-\infty}^{\infty}f(t)dt
-%						\end{aligned}$\\
-%					\hline
-%					\hline
-%						$\infty$ lange Folge von $\delta$-Impulsen &
-%						$\sum_{n=-\infty}^{\infty} \delta(t-n\cdot t_0) \; \laplace \;
-%						\sum_{n=-\infty}^{\infty} \frac{2\pi}{t_0}\delta(\omega-n\cdot
-%						\frac{2\pi}{t_0})$\\
-%					\hline
-%		     \end{tabular}
-	     
+				
+	
 	\renewcommand{\arraystretch}{2}
 	\begin{tabular}{|p{3cm}|p{6.5cm}p{8.5cm}|}
 		\hline
