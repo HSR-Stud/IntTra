@@ -13,6 +13,7 @@
   			
 		
 	\subsection{Lineare Systeme}
+  
 		\subsubsection{Basissignale}
 			\begin{list}{$\bullet$}{\setlength{\itemsep}{0cm} \setlength{\parsep}{0cm} \setlength{\topsep}{0cm}} 
 	          \item Lineare Systeme sind durch die Antworten auf die
@@ -31,11 +32,14 @@
 				\quad $\Rightarrow x=r\cdot a + s\cdot b + t\cdot c\qquad$ ($x=$ Eingangssignal; $a,b,c=$ Basisvektoren; $r,s,t=$ Linearkombinationsparameter)\\ 
 				\item Systemantwort: \quad $y=r\cdot \mathcal{L}(a) + s\cdot \mathcal{L}(b) + t\cdot \mathcal{L}(c)$ \qquad\quad $(\mathcal{L}(a)=$ Systemantwort der Basis $a$)
 			\end{enumerate}
+
+
 	
 	\subsection{Lineare zeitinvariante Systeme (LTI-Systeme) \skript{1-5}}
 		\includegraphics[width=0.9\textwidth]{./bilder/LTIAntwort.png} \\
 	
 	
+  
 %		LTI-Systeme sind durch ihre Impulsantwort $h$ vollständig bestimmt\\ \\	
 %		\textbf{Berechnung der Systemantwort von diskreten LTI-Systemen}\\
 %		$\; y=x*h \qquad$ ($y=$ Systemantwort; $x=$ Eingangssignal; $h=$
@@ -102,6 +106,7 @@
 %    	$$a e^{j\omega_1 t} + b e^{j\omega_2 t} \rightarrow a H(\omega_1) e^{j\omega_1 t} + b H(\omega_2) e^{j\omega_2 t}$$
 %    	Frequenzgang bei Spektraldarstellung: $$\sum_{k=-\infty}^{\infty} c_k e^{jk\omega t} \rightarrow \boxed{H(\omega)}
 %    	\rightarrow \sum_{k=-\infty}^{\infty} c_k H(\omega k) e^{jk\omega t}$$			
+
 	
 	\subsection{Faltung \skript{43}}
 	$y(t) = f(t)\ast g(t) = g(t) \ast f(t) = \boxed{ (f \ast g)(t) :=
@@ -117,7 +122,7 @@
 	$\left(g \ast f \right)\left(t\right)=\int\limits_{0}^t f(u) \cdot
 	g(t-u)\,du$\\
 	
-	\subsubsection{Faltungssatz \skript{52}}
+	\subsubsection{Faltungssatz \skript{51}}
 		\begin{minipage}{.45\textwidth}
 				\begin{math}
 				\boxed{
