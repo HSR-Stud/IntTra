@@ -17,73 +17,12 @@
 		\sigma < 0 & \rightarrow \text{klingt die Amplidute für } 0 < t \rightarrow \infty \text{ auf $0$ ab} \
 		 \end{cases} $ \\   
 	\end{itemize}
-	
- 	\subsection{Eigenschaften der Laplace-Transformation \skript{79}}
 
-%		\begin{tabular}{|ll|}
-%	        \hline
-%	        	Linearität & 
-%	 			$\alpha\cdot f(t) + \beta\cdot g(t) \; \laplace \; \alpha\cdot F(s) + \beta\cdot G(s) \qquad\qquad (\alpha, \beta \in\mathbb{C})$ \\
-%			\hline
-%	 			"Ahnlichkeit / Streckung im Zeitbereich &
-%	 			$f(\alpha t) \; \laplace \; \frac{1}{\alpha}F \left (\frac{s}{\alpha} \right ) \hspace{4cm} (0 <\alpha, \alpha \in\mathbb{R})$ \\
-%	 		\hline
-%	 		\hline
-%	 			Faltung im Zeitbereich &
-%	 			$f(t) \ast g(t) = \int\limits_{0}^{t} f(\tau) \cdot g(t-\tau) \; d\tau \; \laplace \; F(s)
-%	 			\cdot G(s)$\\
-%	 		\hline
-%	 			Faltung im Frequenzbereich &
-%	 			$f(t) \cdot g(t) \; \laplace \; \frac{1}{2\pi j}\int\limits_{c-j\infty}^{c+j\infty}
-%	 			F(\xi) G(s-\xi)d\xi$ \\
-%	 		\hline
-%	 		\hline
-%	 			1te Ableitung im Zeitbereich &
-%	 			$\frac{d f(t)}{d t} \; \laplace \; sF(s)
-%	 			-f(0^+)$ \\
-%	 		\hline
-%	 			2te Ableitung im Zeitbereich &
-%	 			$\frac{d^2 f(t)}{d t^2} \; \laplace \; s^2F(s)
-%	 			-sf(0^+) -f'(0^+)$ \\
-%	 		\hline
-%	 			nte Ableitung im Zeitbereich &
-%	 			$\frac{d^n f(t)}{d t^n} \; \laplace \; s^nF(s)
-%	 			-s^{n-1}f(0^+)-s^{n-2}\frac{d f(0^+)}{d t}-\ldots
-%	 			-s^0\frac{d^{n-1} f(0^+)}{d t^{n-1}}$ \\
-%	 		\hline
-%	 			Ableitung im Frequenzbereich &
-%		 		$(-t)^n \cdot f(t) \; \laplace \;  \frac{d^n F(s)}{d s^n} \qquad \hspace{2cm} (n \in \mathbb{N}_0)$\\
-%	 		\hline
-%	 		\hline
-%	 			Verschiebung im Zeitbereich nach rechts &
-%	 			$\sigma(t-a) \cdot f(t - a) \; \laplace \; F(s)*e^{-as}$ \\
-%	 		\hline
-%				Verschiebung im Zeitbereich nach links &
-%				$\sigma(t-a) \cdot f(t + a) \; \laplace \; e^{as} \cdot [F(s) - \int\limits_0^{a} f(t) \cdot e^{-st} dt]$\\
-%			\hline
-%	 			Verschiebung im Frequenzbereich (Dämpfungssatz) &
-%	 			$f(t) \cdot e^{\pm\alpha t} \; \laplace \; F(s\mp\alpha)$ \\
-%	 		\hline
-%	 		\hline
-%	 			Integration im Originalbereich (Sprungantwort)&
-%	 			$\int\limits_0^t f(u) \; du \; \laplace \; \frac{1}{s}\cdot F(s)$ \\
-%	 		\hline
-%	 			Multiplikation mit $t$ &
-%	 			$t\cdot f(t)  \; \laplace \; \frac{-d F(s)}{d s}$ \\
-% 			\hline
-% 			\hline
-%	 			Anfangswert &
-%	 			$\lim\limits_{t\rightarrow 0^+} f(t) = \lim\limits_{s\rightarrow \infty} sF(s),\text{~wenn
-%	 			}  \lim\limits_{t\rightarrow 0} f(t)\text{~existiert}.$ \\
-% 			\hline
-%	 			Endwert &
-%	 			$\lim\limits_{t\rightarrow \infty} f(t) = \lim_{s\rightarrow 0} sF(s),\text{~wenn
-%	 			}  \lim\limits_{t\rightarrow \infty} f(t)\text{~existiert}.$ \\
-%	 		\hline
-%       	\end{tabular}
+
+
 	
-		
-		
+ 	\subsection{Eigenschaften der Laplace-Transformation \skript{74}}
+ 	
 	  \renewcommand{\arraystretch}{2}
 		\begin{tabular}{|p{2.5cm}|p{3cm}|p{2.5cm}p{10cm}|}
 			\hline
@@ -103,12 +42,12 @@
 				F(\xi) \cdot G(s-\xi) \; d\xi$\\ 
 			\hline
 			\hline
-				\multirow{4}{*}{Ableitung} & \multirow{3}{*}{Zeitbereich} & 1te & 	$\frac{d f(t)}{d t} \; \laplace \; sF(s)-f(0^+)$ \\ \cline{3-4}
-				&  & 2te  &  $\frac{d^2 f(t)}{d t^2} \; \laplace \; s^2F(s)		-sf(0^+) -f'(0^+)$\\ \cline{3-4}
-				&  & nte  &  $\frac{d^n f(t)}{d t^n} \; \laplace \; s^nF(s)
-				-s^{n-1}f(0^+)-s^{n-2}\frac{d f(0^+)}{d t}-\ldots
-				-s^0\frac{d^{n-1} f(0^+)}{d t^{n-1}}$\\ \cline{2-4} 
-				& \multicolumn{2}{l}{Frequenzbereich} & $(-t)^n \cdot f(t) \; \laplace \;  \frac{d^n F(s)}{d s^n} \qquad \hspace{2cm} (n \in \mathbb{N}_0)$\\
+				\multirow{4}{*}{Ableitung} & \multirow{3}{*}{Zeitbereich} & 1te & 	$\frac{\partial f(t)}{\partial t} \; \laplace \; sF(s)-f(0^+)$ \\ \cline{3-4}
+				&  & 2te  &  $\frac{\partial^2 f(t)}{\partial t^2} \; \laplace \; s^2F(s)		-sf(0^+) -f'(0^+)$\\ \cline{3-4}
+				&  & nte  &  $\frac{\partial^n f(t)}{\partial t^n} \; \laplace \; s^nF(s)
+				-s^{n-1}f(0^+)-s^{n-2}\frac{\partial f(0^+)}{\partial t}-\ldots
+				-s^0\frac{\partial^{n-1} f(0^+)}{\partial t^{n-1}}$\\ \cline{2-4} 
+				& \multicolumn{2}{l}{Frequenzbereich} & $(-t)^n \cdot f(t) \; \laplace \;  \frac{\partial^n F(s)}{\partial s^n} \qquad \hspace{2cm} (n \in \mathbb{N}_0)$\\
 			\hline
 			\hline
 				\multicolumn{3}{|l}{Integration im Originalbereich (Sprungantwort)}   &  $\int\limits_0^t f(u) \; du \; \laplace \; \frac{1}{s}\cdot F(s)$ \\
@@ -133,7 +72,7 @@
 		
 		
 	
-	\subsection{Laplace-Tabelle}
+	\subsection{Laplace-Tabelle \bronstein{1127-1132}}
 	\renewcommand{\arraystretch}{2}
 	\hrule
 	\begin{minipage}{9cm}
@@ -209,68 +148,66 @@
 \renewcommand{\arraystretch}{\arraystretchOriginal}		
 	\subsection{Rücktransformation \skript{85}}
 		\subsubsection{Vorgehen}
-				1. Kürzen oder vereinfachen \\
-				2. Partialbruchzerlegung falls nötig \\
-				3. Rücktransformation mittels Laplace-Tabelle \\
-				4. $h(t)\hspace{0.2cm}\underline{nicht} < 0$ \\
+			\begin{enumerate}
+				\item Kürzen oder vereinfachen
+				\item Partialbruchzerlegung falls nötig 
+				\item Rücktransformation mittels Laplace-Tabelle
+				\item $h(t)\hspace{0.2cm}\underline{nicht} < 0$
+			\end{enumerate}
 			
 		\subsubsection{Residuensatz}
-			Beispiel:\\
-			$F(s) = \frac{1}{(s+\alpha)(s+\beta)}, \qquad (0 < \alpha,\beta \in \mathbf{R}, \alpha \neq \beta)$\\
-			$f(t) = \frac{1}{2\pi j} \int\limits_{-j\infty}^{j\infty} F(s)e^{st} ds = \sum\limits_{i=1}^k Res(F(s_k)e^{s_kt})$\\
-			$=\lim_{s \to -\alpha} ((s+\alpha)F(s)e^{st}) + \lim_{s \to -\beta}((s+\beta)F(s)e^{st})$\\
-			$=\frac{e^{-\alpha t}}{\beta - \alpha} + \frac{e^{-\beta t}}{\alpha - \beta} = \frac{e^{-\alpha t}-e^{-\beta t}}{\beta - \alpha}$
+			\textbf{Beispiel:}\\[2mm]
+			$F(s) = \dfrac{1}{(s+\alpha)(s+\beta)}, \qquad (0 < \alpha,\beta \in \mathbf{R}, \alpha \neq \beta)$\\[2mm]
+			$f(t) = \frac{1}{2\pi j} \int\limits_{-j\infty}^{j\infty} F(s)e^{st} ds = \sum\limits_{i=1}^k Res(F(s_k)e^{s_kt})$\\[2mm]
+			$=\lim_{s \to -\alpha} ((s+\alpha)F(s)e^{st}) + \lim_{s \to -\beta}((s+\beta)F(s)e^{st})$\\[2mm]
+			$=\dfrac{e^{-\alpha t}}{\beta - \alpha} + \dfrac{e^{-\beta t}}{\alpha - \beta} = \dfrac{e^{-\alpha t}-e^{-\beta t}}{\beta - \alpha}$
 			
+
+	
+	\subsection{Lösung linearer Differentialgleichungen \skript{88-105}}
 			
-	\subsection{Lösung linearer Differentialgleichungen \skript{88}}
-		\begin{minipage}{11.5cm}
-			\renewcommand{\arraystretch}{2}
-			\begin{tabular}{| l | l |}
-				\hline
-					Übertragungsfunktion & $G(s) = \frac{1}{p(s)}$\\
-					& $g(t) \; \laplace \; G(s)$ \\
-				\hline
-					Frequenzgang & $G(j\omega) = H(\omega)$ \\
-				\hline
-					Impulsantwort & $y_{\delta}(t) = g(t) = y_{\sigma}'(t) \; \laplace \; G(s) = \frac{1}{p(s)}=Y_{\delta}(s)$\\
-				\hline
-					Sprungwantwort & $y_{\sigma}(t)=\int\limits_0^t g(u) du \; \laplace \; \frac{G(s)}{s} = \frac{1}{s \cdot p(s)} = Y_{\sigma}(s)$\\
-				\hline
-					Eigenschwingung & $\frac{h(s)}{p(s)}$ \\
-				\hline
-					äussere Erregung & $\frac{F(s)}{p(s)}$ \\
-				\hline
-					stationärer Zustand & = ungedämpfte Eigenschwingung\\
-				\hline
-			\end{tabular}
-			\renewcommand{\arraystretch}{\arraystretchOriginal}\\
-		\end{minipage}
-		\begin{minipage}{8cm}
-					\includegraphics[width=8cm]{./bilder/diffgleichungen2.png} \\
-		\end{minipage}
+			\begin{minipage}{12cm}
+
+				\renewcommand{\arraystretch}{2}
+					\begin{tabular}{| l | l |}		%TODO Tabelle, Paragraph für schönere Darstellung
+						\hline
+							Übertragungsfunktion & $G(s) = \dfrac{1}{p(s)}$\\
+							& $g(t) \; \laplace \; G(s)$ \\
+						\hline
+							Frequenzgang \& \\ Übertragungsfunktion  & $H(\omega) = \dfrac{1}{p(j\omega)} = G(j\omega) $ \\
+						\hline
+							Impulsantwort & $y_{\delta}(t) = y_{\sigma}'(t) = g(t) \; \laplace \; G(s) = \dfrac{1}{p(s)}=Y_{\delta}(s)$\\
+						\hline
+							Sprungwantwort & $y_{\sigma}(t)=\int\limits_0^t g(u) \; du \; \laplace \; \dfrac{G(s)}{s} = \dfrac{1}{s \cdot p(s)} = Y_{\sigma}(s)$\\
+						\hline
+							Eigenschwingung & $Y(s) = \dfrac{h(s)}{p(s)} \quad \iff \quad p(s) \cdot Y(s)-h(s) = 0$ \\
+						\hline
+							äussere Erregung & $ Y(s) = F(s) \cdot \dfrac{1}{p(s)}$ \\
+						\hline
+							stationärer Zustand & = ungedämpfte Eigenschwingung\\
+						\hline
+						\hline
+							Satz von Durhamel & $y(t) = y_{\sigma}'(t) * f(t)$\\
+						\hline
+					\end{tabular}
+				\renewcommand{\arraystretch}{\arraystretchOriginal}\\
+			
+			\end{minipage}
+			\begin{minipage}[b]{8cm}
+				\includegraphics[width=8cm]{./bilder/diffgleichungen2.png} \\[7mm]
+
+					\hspace{3cm}\begin{minipage}{4cm}
+						$
+						\begin{aligned}
+							y(t) \; &\laplace \; Y(s) = F(s) \cdot \dfrac{1}{p(s)}\\
+							g(t) \; &\laplace \; G(s) \\
+						\end{aligned}
+						$
+					\end{minipage}	
+			\end{minipage}
+
 		
-		
-		\begin{minipage}[l]{16cm}
-				\textbf{Beispiel:} $y'' + 8y' + 25y = \sigma{t} \cdot \sin(2t)$ mit $y(0) = 2, y'(0) = -1$\\
-				
-				$\sin(2t) \; \laplace \; \frac{2}{s^2+4}$ \\ $Y(s)(s^2+8s+25) = 2s+15+\frac{2}{s^2+4}$
-				$\Leftrightarrow Y(s) = \frac{2s+15}{s^2+8s+25}+\frac{2}{(s^2+4)(s^2+8s+25)}=
-				\underbrace{\frac{2s+15}{s^2+8s+25}}_\text{Eigenschwinung durch Anfangszustand} +
-				\underbrace{\frac{As + B}{s^2+4}}_\text{stationärer Zustand} +
-				\underbrace{\frac{Cs + D}{s^2+8s+25}}_\text{Eigenschwinung durch Einschalten}$
-		\end{minipage}
-		\subsubsection{Eigenschwingungen}
-			Aus der Eigenschwingung können die Nullstellen des charakteristischen Polynom $p(s)$ 
-			direkt abgelesen werden. \\
-			\textbf{Beispiel:} \\
-			$y(t) = \frac{1}{2} e^{-t} \sin(3t) - \frac{2}{3} e^{-2t} \cos(2t) = 
-			\underbrace{\frac{1}{2} e^{\textcolor{red}{-t}} \frac{1}{2j}(e^{\textcolor{red}{3j}t}
-			-e^{\textcolor{red}{-3j}t})}_{NS = EW = \textcolor{red}{-1 \pm 3j}} - 
-			\underbrace{\frac{2}{3} e^{\textcolor{red}{-2}t} \frac{1}{2}(e^{\textcolor{red}{2j}t}
-			+e^{\textcolor{red}{-2j}t})}_{NS = EW = \textcolor{red}{-2 \pm 2j}}$ \\\\
-			Damit ist das char. Polynom $p(s) = (s-NS_1)(s-NS_2)\ldots(s-NS_n)$ \\
-			Bei mehreren gemessenen Eigenschwingungen werden die char. Polynome multipliziert. \\
-			Der stationäre Zustand ist $\lim\limits_{t\rightarrow\infty}y(t) = \frac{1}{p(0)}$ *(Endwertsatz) \\
+
 				
 		
 	\subsection{Eigenschwingung \skript{95}}
