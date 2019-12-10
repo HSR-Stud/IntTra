@@ -4,11 +4,11 @@
 
 		$y'' + 8y' + 25y = \sigma{t} \cdot \sin(2t)$ mit $y(0) = 2, y'(0) = -1$\\
 		
-		$\sin(2t) \; \laplace \; \dfrac{2}{s^2+4}$ \\ $Y(s)(s^2+8s+25) = 2s+15+\frac{2}{s^2+4}$
-		$\Leftrightarrow Y(s) = \frac{2s+15}{s^2+8s+25}+\frac{2}{(s^2+4)(s^2+8s+25)}=
-		\underbrace{\frac{2s+15}{s^2+8s+25}}_\text{Eigenschwinung durch Anfangszustand} +
-		\underbrace{\frac{As + B}{s^2+4}}_\text{stationärer Zustand} +
-		\underbrace{\frac{Cs + D}{s^2+8s+25}}_\text{Eigenschwinung durch Einschalten}$
+		$\sin(2t) \; \laplace \; \dfrac{2}{s^2+4}$ \\ $Y(s)(s^2+8s+25) = 2s+15+\dfrac{2}{s^2+4}$
+		$\Leftrightarrow Y(s) = \dfrac{2s+15}{s^2+8s+25}+\dfrac{2}{(s^2+4)(s^2+8s+25)}=\\
+		\underbrace{\dfrac{2s+15}{s^2+8s+25}}_\text{Eigenschwinung durch Anfangszustand} +
+		\underbrace{\dfrac{As + B}{s^2+4}}_\text{stationärer Zustand} +
+		\underbrace{\dfrac{Cs + D}{s^2+8s+25}}_\text{Eigenschwinung durch Einschalten}$
 		
 	\subsection{Eigenschwingungen}
 		Aus der Eigenschwingung können die Nullstellen des charakteristischen Polynom $p(s)$ 
