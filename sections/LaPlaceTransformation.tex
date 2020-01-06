@@ -31,8 +31,8 @@
 				\multicolumn{3}{|l}{"Ahnlichkeit / Streckung im Zeitbereich}   &  $f(\alpha t) \; \laplace \; \frac{1}{\alpha}F \left (\frac{s}{\alpha} \right ) \hspace{4cm} (0 <\alpha, \alpha \in\mathbb{R})$ \\
 			\hline
 			\hline
-				\multirow{3}{*}{Verschiebung} & \multirow{2}{*}{Zeitbereich} & nach links &  $\sigma(t-a) \cdot f(t + a) \; \laplace \; e^{as} \cdot [F(s) - \int\limits_0^{a} f(t) \cdot e^{-st} dt]$	 \\ \cline{3-4} 
-				&  & nach rechts  & $\sigma(t-a) \cdot f(t - a) \; \laplace \; F(s)*e^{-as}$ \\ \cline{2-4}
+				\multirow{3}{*}{Verschiebung} & \multirow{2}{*}{Zeitbereich} & nach links &  $\sigma(t+a) \cdot f(t + a) \; \laplace \; e^{as} \cdot [F(s) - \int\limits_0^{a} f(t) \cdot e^{-st} dt]$	 \\ \cline{3-4} 
+				&  & nach rechts  & $\sigma(t-a) \cdot f(t - a) \; \laplace \; F(s) \cdot e^{-as}$ \\ \cline{2-4}
 				& \multicolumn{2}{l}{Frequenzbereich (Dämpfungssatz)} & $f(t) \cdot e^{\pm\alpha t} \; \laplace \; F(s\mp\alpha)$\\ 
 			\hline
 			\hline
