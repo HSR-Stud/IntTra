@@ -1,80 +1,52 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Dokumentinformationen %
-%Dokumentinformationen	======================================================================
+% !TeX program = xelatex
+% !TeX encoding = utf8
+% !TeX root = IntTra.tex
 
-\newcommand{\titleinfo}{IntTra}
-\newcommand{\authorinfo}{Dev4Future, Braun \& Co, Jürg \& Co, Hannes, Körner, Gwerder, Niedermann} %{Autoren: Studenten der HSR}		%siehe: Infos, Contributors
-\newcommand{\versioninfo}{HS / 2019}
+%% TODO: publish to CTAN
+\documentclass[]{tex/hsrzf}
 
-%weitere Autoren: ==========================================================================
-%Dev4Future, Braun \& Co, Jürg \& Co, Hannes, Körner, Gwerder, Niedermann
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Standard projektübergreifender Header für
-% - Makros 
-% - Farben
-% - Mathematische Operatoren
-%
-% DORT NUR ERGÄNZEN, NICHTS LÖSCHEN
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Dokumenteinstellungen	 ======================================================================
-\include{header/header}			% standard header mit den Packages includieren
+%% TODO: publish to CTAN
+\usepackage{tex/hsrstud}
 
+%% Language configuration
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=swiss]{german}
 
+%% License configuration
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={4.0},
+    lang={german},
+]{doclicense}
 
-% Sections ======================================================================
-%TODO ersetzen von Bildern mit richtigem Latex Code (Kap. 2.2, 3.1 und 5.3.1) 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Metadata
+
+\course{Elektrotechnik}
+\module{IntTra}
+\semester{Herbstsemester 2020}
+
+\authoremail{naoki.pross@ost.ch}
+\author{\textsl{Naoki Pross} -- \texttt{\theauthoremail}}
+
+\title{\texttt{\themodule} Zusammenfassung}
+\date{\thesemester}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
+
 \begin{document}
-		% Einleitung/ Varianten der Integraltransformationen
-		\input{sections/Einleitung}
-		
-		% Signale und Systeme
-		\input{sections/SigSys}
-		
-		% Diskrete Fourier Transformation
-		%\input{sections/DFT}
-		%\newpage
-		
-	\newpage
-		%Funktionen
-		\input{sections/Funktionen}
-		
-	\newpage
-		% Fourierreihe
-		\input{sections/Fourierreihe}
-	\newpage	
-	
-		% Fourier-Integral / Fourier-Transformation
-		\input{sections/FourierIntegral}
-		\input{sections/HilbertTransformation}
-	\newpage
-	
-		% Abtasttheoreme, diskrete Frouriertransformation
-		\input{sections/Abtasttheorem}
-		
-		% LaPlace-Transformation
-		\input{sections/LaPlaceTransformation}
-	\newpage
-	
-		%Beispiele Aufgaben/ Lösungsweg
-		\input{sections/Beispiele}
-	\newpage
-	
-		% Diverses
-		\input{sections/Diverses}
-	\newpage
-	
-		% Anhang
-		\input{sections/AnhangFunktionen}
-		
-		%\input{sections/Tricks}
-		
-		% Wichtige Formeln (Idiotenseiten)
-		%\input{idiotenseite/trigo/trigoInclude}
-		%\input{sections/Idiotenseite}
-		
-		% Integraltabelle
-		%\input{sections/Integrale}
-		%\input{idiotenseite/diverses/subsections/unbestimmteIntegrale}
+
+\maketitle
+\tableofcontents
+
+
+\section{Lizenz}
+\doclicenseThis
+
 
 \end{document}
