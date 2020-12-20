@@ -23,6 +23,14 @@
     lang={german},
 ]{doclicense}
 
+%% Nicer tables
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{booktabs}
+
+%% Pretty drawings
+\usepackage{tikz}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Metadata
 
@@ -43,10 +51,16 @@
 
 \maketitle
 \tableofcontents
-
-
 \section{Lizenz}
 \doclicenseThis
+
+\newpage
+
+\input{tex/00-fourier}
+\input{tex/01-laplace}
+\input{tex/02-ode}
+\input{tex/03-lti}
+
 
 
 \end{document}
