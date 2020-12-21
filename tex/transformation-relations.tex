@@ -1,6 +1,5 @@
-﻿\usetikzlibrary{calc}
+﻿\begin{tikzpicture}[semithick]
 
-\begin{tikzpicture}[semithick]
   \node[fill=blue!20,
         minimum height=5cm,
         minimum width=5cm] (time) at (0,0) {};
@@ -10,28 +9,26 @@
         minimum width=4cm,
         anchor=east] (freq) at (-3,0) {};
 
-  \node[fill=green!20,
-        %bottom color=green!30,
-        %top color=teal!40,
+  \node[fill=magenta!20,
         minimum height=5cm,
         minimum width=4cm,
         anchor=west] (cfreq) at (3,0) {};
 
   \node[blue!80!black, above] at (time.north) {Zeitbereich};
   \node[red!80!black, above] at (freq.north) {Frequenzbereich};
-  \node[green!60!black, above] at (cfreq.north) {Bildbereich};
+  \node[magenta!60!black, above] at (cfreq.north) {Bildbereich};
 
-  \node[anchor=south west, rotate=-90, green!60!black]
+  \node[anchor=south west, rotate=-90, magenta!80!black]
     at (cfreq.north east) {\(z\)-Ebene};
-  \node[anchor=south east, rotate=-90, green!60!black]
+  \node[anchor=south east, rotate=-90, magenta!80!black]
     at (cfreq.south east) {\(s\)-Ebene};
 
   \node (xt) at ($(time)  - (0,1.75)$) {\(x(t)\)};
-  \node (xn) at ($(time)  + (0,1.75)$) {\(x_n\)};
+  \node (xn) at ($(time)  + (0,1.75)$) {\(\big(x_k\big)_{k=0}^{\infty}\)};
 
   \node (Xo) at ($(freq)  + (-.75,-1.75)$) {\(X(\omega)\)};
-  \node (Xn) at ($(freq)  + (-.75,1.75)$) {\(\hat{c}_n\)};
-  \node (cn) at ($(freq)  + (-.75,0)$)    {\(c_n\)};
+  \node (Xn) at ($(freq)  + (-.75,1.75)$) {\(\hat{c}_k\)};
+  \node (cn) at ($(freq)  + (-.75,0)$)    {\(c_k\)};
 
   \node (Xs) at ($(cfreq) - (0,1.75)$) {\(X(s)\)};
   \node (Xz) at ($(cfreq) + (0,1.75)$) {\(X(z)\)};
@@ -48,7 +45,8 @@
     node[midway, left, anchor=east] {\(\displaystyle\lim_{N \to \infty}\)} (cn);
 
   \draw[<->] (xt) to[out=135, in=10]
-    node[midway, sloped, above] {\(\mathcal{F}\)-Reihe} (cn);
+    node[near end, sloped, above] {\(\mathcal{F}_T\)}
+    node[near start, sloped, above] {\(\mathcal{F}_T^{-1}\)} (cn);
 
   \draw[<->] (xt) to
     node[near end, above] {\(\mathcal{F}\)}
