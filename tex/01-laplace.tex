@@ -1,2 +1,11 @@
 \section{Laplace Transformation}
-\subsection{Z-Transformation}
+\[
+  f(t) = \ilaplace \laplace f =
+    \lim_{\gamma\to\infty} \frac{1}{2\pi j} \int\limits_{x - j\gamma}^{x + j\gamma}
+      \Bigg(
+      \underbrace{
+        \int\limits_{-\infty}^{\infty} f(t) e^{-st} \di{t}
+      }_{F = \laplace f}
+      \Bigg)
+    e^{st} \di{s}
+\]

@@ -3,13 +3,14 @@
 % !TeX root = IntTra.tex
 
 %% TODO: publish to CTAN
-\documentclass[]{tex/hsrzf}
+\documentclass[header]{tex/hsrzf}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Packages
 
 %% TODO: publish to CTAN
 \usepackage{tex/hsrstud}
+\usepackage{tex/inttra}
 
 %% Language configuration
 \usepackage{polyglossia}
@@ -23,13 +24,17 @@
     lang={german},
 ]{doclicense}
 
+%% Place figures
+\usepackage{float}
+
 %% Nicer tables
 \usepackage{tabularx}
 \usepackage{array}
 \usepackage{booktabs}
 
-%% Pretty drawings
+%% Pretty drawings and equations
 \usepackage{tikz}
+\usepackage[norndcorners]{hf-tikz}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Metadata
@@ -51,10 +56,15 @@
 
 \maketitle
 \tableofcontents
-\section{Lizenz}
+\section*{Lizenz}
 \doclicenseThis
 
 \newpage
+
+\section{Zusammenhang zwischen Integraltransformationen}
+\begin{figure}[H] \centering
+  \input{tex/transformation-relations}
+\end{figure}
 
 \input{tex/00-fourier}
 \input{tex/01-laplace}
