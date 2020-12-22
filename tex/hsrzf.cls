@@ -144,7 +144,7 @@
 \RequirePackage{geometry}
 \RequirePackage{fancyhdr}
 \RequirePackage{titling}
-\RequirePackage{lastpage}
+\RequirePackage{totpages}
 \RequirePackage{array}
 
 %% Insert metadata in the pdf
@@ -247,6 +247,8 @@
   % \ClassError{hsrzf}{Invalid margin size}
   % \setlength\hsr@hmarginwidth{30mm}
   % \setlength\hsr@vmarginheight{30mm}
+
+  \ClassWarning{hsrzf}{Setting margin size to \hsr@vmarginwidth}
 \fi
 
 
@@ -266,7 +268,7 @@
 
     \fancyfoot[L]{\href{https://github.com/HSR-Stud/}{\texttt{HSR-Stud}}}
     \fancyfoot[C]{\texttt{CC BY-NC-SA}}
-    \fancyfoot[R]{\thepage ~/ \pageref{LastPage}}
+    \fancyfoot[R]{\thepage ~/ \pageref{TotPages}}
 
     \renewcommand{\headrulewidth}{.5pt}
     \renewcommand{\footrulewidth}{.5pt}
@@ -280,7 +282,7 @@
 
     \fancyfoot[L]{\href{https://github.com/HSR-Stud/}{\texttt{HSR-Stud}}}
     \fancyfoot[C]{\texttt{CC BY-NC-SA}}
-    \fancyfoot[R]{\thepage ~/ \pageref{LastPage}}
+    \fancyfoot[R]{\thepage ~/ \pageref{TotPages}}
 
     \renewcommand{\headrulewidth}{0pt}
     \renewcommand{\footrulewidth}{0pt}
