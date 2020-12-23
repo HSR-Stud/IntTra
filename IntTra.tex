@@ -3,7 +3,7 @@
 % !TeX root = IntTra.tex
 
 %% TODO: publish to CTAN
-\documentclass[header]{tex/hsrzf}
+\documentclass[header, margin=minimal]{tex/hsrzf}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Packages
@@ -37,9 +37,6 @@
 \usetikzlibrary{backgrounds}
 \usetikzlibrary{calc}
 
-\usepackage[norndcorners]{hf-tikz}
-\usepackage{pgfplots}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Metadata
 
@@ -63,7 +60,8 @@
 \section*{Lizenz}
 \doclicenseThis
 
-\newpage
+\clearpage
+\pagestyle{hsrzf}
 
 \section{Zusammenhang zwischen Integraltransformationen}
 \begin{figure}[H] \centering
