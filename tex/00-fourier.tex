@@ -1,32 +1,28 @@
 \section{Fourier}
-\subsection{Reihe}
+\subsection{Reihe, Transformation und Diskrete Transformation}
 \[
-  f(t) = \ifourier_T \fourier_T f =
-  \sum_{k=-\infty}^{\infty}
-    \Bigg( \underbrace{
-      \frac{1}{T} \int\limits_{-T/2}^{T/2} f(t) \, e^{-jk\omega_0 t} \di{t}
-    }_{c_k = \fourier_T f} \Bigg) \cdot
-  e^{jk\omega_0 t}
-\]
+  \everymath={\displaystyle}
+  \begin{array}{l l @{\hspace{1cm}} l l}
+    c_k = \fourier_T f &=
+    \frac{1}{T} \int\limits_{-T/2}^{T/2} f(t) \, e^{-jk\omega_0 t} \di{t}
+    &
+      f(t) = \ifourier_T \left( c_k \right)_{k\in\mathbf{Z}} &=
+      \sum_{k=-\infty}^{\infty} c_k e^{jk\omega_0 t}
+      \\
 
-\subsection{Transformation}
-\[
-  f(t) = \ifourier \fourier f =
-  \frac{1}{2\pi} \int\limits_{-\infty}^\infty
-    \Bigg( \underbrace{
-      \int\limits_{-\infty}^{\infty} f(t) \, e^{-j\omega t} \di{t}
-    }_{F = \fourier f} \Bigg)
-  e^{j\omega t} \di{\omega}
-\]
+    F(\omega) = \fourier f &=
+    \int\limits_{-\infty}^{\infty} f(t) \, e^{-j\omega t} \di{t}
+    &
+      f(t) = \ifourier F &=
+      \frac{1}{2\pi} \int\limits_{-\infty}^\infty F(t) e^{j\omega t} \di{\omega}
+      \\
 
-\subsection{Diskrete und schnelle Fouriertransformation}
-\[
-  y_n = \mathtt{IDFT}_N\left[\mathtt{DFT}_N(y_n) \right] =
-  \sum_{k=0}^{N-1}
-    \Bigg( \underbrace{
+    \hat{c}_k = \mathtt{DFT}_N \left( y_n \right) &=
+    \sum_{k=0}^{N-1} \hat{c}_k e^{-jkn2\pi /N}
+      &
+      y_n = \mathtt{IDFT}_N \left( \hat{c}_k \right) &=
       \frac{1}{N}\sum_{n=0}^{N-1} y_n e^{jkn2\pi /N}
-    }_{\hat{c}_k = \mathtt{DFT}_N (y_n)} \Bigg) \cdot
-  e^{jkn2\pi /N}
+  \end{array}
 \]
 
 \subsection{Hilbertstransformation}

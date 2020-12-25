@@ -23,15 +23,15 @@
   \node[anchor=south east, rotate=-90, magenta!80!black]
     at (cfreq.south east) {\(s\)-Ebene};
 
-  \node (xt) at ($(time)  - (0,1.75)$) {\(x(t)\)};
-  \node (xn) at ($(time)  + (0,1.75)$) {\(\big(x_k\big)_{k=0}^{\infty}\)};
+  \node (xt) at ($(time)  - (0,1.75)$) {\(f(t)\)};
+  \node (xn) at ($(time)  + (0,1.75)$) {\(y_k\)};
 
-  \node (Xo) at ($(freq)  + (-.75,-1.75)$) {\(X(\omega)\)};
+  \node (Xo) at ($(freq)  + (-.75,-1.75)$) {\(F(\omega)\)};
   \node (Xn) at ($(freq)  + (-.75,1.75)$) {\(\hat{c}_k\)};
   \node (cn) at ($(freq)  + (-.75,0)$)    {\(c_k\)};
 
-  \node (Xs) at ($(cfreq) - (0,1.75)$) {\(X(s)\)};
-  \node (Xz) at ($(cfreq) + (0,1.75)$) {\(X(z)\)};
+  \node (Xs) at ($(cfreq) - (0,1.75)$) {\(F(s)\)};
+  \node (Xz) at ($(cfreq) + (0,1.75)$) {\(F(z)\)};
 
   \draw[->] (xt) to node[midway, right] {\(\mathcal{S}_\delta\)} (xn);
 
@@ -39,7 +39,7 @@
 
   \draw[<->] (cn) to
     node[near end, left, anchor=east] {\(\displaystyle\lim_{T \to \infty}\)}
-    node[near start, right] {\(X(n\omega_0) = 2Tc_n\)} (Xo);
+    node[near start, right] {\(F(k\omega_0) = 2Tc_k\)} (Xo);
 
   \draw[->] (Xn) to
     node[midway, left, anchor=east] {\(\displaystyle\lim_{N \to \infty}\)} (cn);
