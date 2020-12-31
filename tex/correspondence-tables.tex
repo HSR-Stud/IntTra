@@ -1,0 +1,59 @@
+\section{Tabellen}
+\begin{sidewaystable}
+{
+  \renewcommand{\arraystretch}{2}
+  \begin{tabularx}{\textwidth}{l *{2}{
+      >{\(\displaystyle}r<{\)}
+      @{\(\hspace{2mm}\corresponds\hspace{2mm}\)}
+      >{\(\displaystyle}l<{\)}}
+  }
+    &
+      f(t) &
+      F(\omega) &
+      f(t) &
+      F(s) \\
+
+    Verschiebung &
+      f(t - \tau) &
+      F(\omega) \cdot e^{-j\omega\tau} &
+      \sigma(t - \tau) f(t - \tau) &
+      F(s) \cdot e^{-s\tau} \\
+
+    Modulation &
+      f(t) \cdot e^{j\Omega t} &
+      F(\omega - \Omega) &
+      f(t) \cdot e^{at} &
+      F(s - a) \\
+
+    Streckung &
+      f(\lambda t) &
+      \frac{1}{|\lambda|} F(\frac{\omega}{\lambda}) &
+      f(\lambda t) &
+      \frac{1}{\lambda} F(\frac{s}{\lambda}) \\
+
+    Differentiation &
+      f^{(k)}(t) &
+      (j\omega)^k F(\omega) &
+      f^{(k)}(t) &
+      s^k F(s) - s^{k-1} f(0^+) - \cdots - f^{(k-1)}(0^+) \\
+
+    Dirac Delta &
+      \delta(t) &
+      1 &
+      \delta(t) &
+      1 \\
+
+    Heaviside &
+      \sigma(t) &
+      \frac{1}{j\omega} &
+      \sigma(t) &
+      \frac{1}{s} \\
+
+   Sinus &
+    \sin (\omega_c t) &
+    -j\pi\left( \delta(\omega - \omega_c) - \delta(\omega + \omega_c) \right) &
+    \\
+
+  \end{tabularx}
+}
+\end{sidewaystable}
