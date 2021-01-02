@@ -1,0 +1,45 @@
+\begin{tikzpicture}[
+    system/.style = {draw, thick, inner sep = 4mm, outer sep = 1mm}
+  ]
+  \matrix[row sep=3mm, column sep=1.5cm] (M) {
+    \node (x) {\(x(t)\)}; &
+    \node (g) {\(g(t) = y_\delta (t)\)}; &
+    \node (y) {\(y(t) = g(t) * x(t)\)}; \\
+
+    &
+    \node (h) {\(h(t)\)}; &
+    \node (yw) {\(y_\omega(t) = h(t) * x(t)\)}; \\
+
+    \node (in) {Anregung}; &
+    \node[system, fill=white] (sys) {LTI-System \(\mathcal{S}\)}; &
+    \node (out) {Antwort}; \\
+
+    \node (X) {\(X(s)\)}; &
+    \node (G) {\(G(s) = 1/p(s)\)}; &
+    \node (Y) {\(Y(s) = G(s) \cdot X(s)\)}; \\
+
+    \node (Xw) {\(X(\omega)\)}; &
+    \node (H)  {\(H(\omega) = G(j\omega)\)}; &
+    \node (Yw) {\(Y_\omega (\omega) = H(\omega) \cdot X(\omega)\)}; \\
+  };
+
+  \draw[thick, ->] (in) to (sys);
+  \draw[thick, ->] (sys) to (out);
+
+  \begin{pgfonlayer}{background}
+    \coordinate (T1) at ($(x.north west) - (.8,-.1)$);
+    \coordinate (T2) at ($(yw.south east) + (.8,-.1)$);
+
+    \coordinate (B1) at ($(X.north west) - (0,-.1)$);
+    \coordinate (B2) at ($(Y.south east) + (0,-.1)$);
+
+    \coordinate (F1) at ($(Xw.north west) - (0,-.1)$);
+    \coordinate (F2) at ($(Yw.south east) + (0,-.1)$);
+
+    \fill[color=blue!20] (T1) rectangle (T2);
+    \fill[color=magenta!20] (B1 -| T1) rectangle (B2 -| T2);
+    \fill[color=red!20] (F1 -| T1) rectangle (F2 -| T2);
+    % \fill[top color=blue!20, bottom color=magenta!20]
+      % (T1) rectangle (B2);
+  \end{pgfonlayer}
+\end{tikzpicture}
