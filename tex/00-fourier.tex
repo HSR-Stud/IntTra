@@ -25,13 +25,13 @@ F\"ur die Fourier Reihe ist \(\omega_0 = 2\pi / T\), und \(k > 0 : c_{-k} = \ove
       \frac{1}{N}\sum_{n=0}^{N-1} y_n e^{jkn2\pi /N}
   \end{array}
 \]
-Seltener benutzte Varianten der Fourier Reihe, wobei \(c_k = (a_k + jb_k) / 2\)
+Seltener benutzte Varianten der Fourier Reihe, mit \(c_k = (a_k + jb_k) / 2\)
 \[
   \everymath={\displaystyle}
   \begin{array}{l l @{\hspace{1cm}} l l}
-    a_k = \real(c_k) &= \frac{2}{T} \int\limits_0^T f(t) \cos(k\omega_0 t) \di{t}
+    a_k = \real(2 c_k) &= \frac{2}{T} \int\limits_0^T f(t) \cos(k\omega_0 t) \di{t}
     &
-    b_k = \imag(c_k) &= \frac{2}{T} \int f(t) \sin(k\omega_0 t) \di{t}
+    b_k = \imag(2 c_k) &= \frac{2}{T} \int f(t) \sin(k\omega_0 t) \di{t}
   \end{array}
 \]
 \[
@@ -47,14 +47,14 @@ Seltener benutzte Varianten der Fourier Reihe, wobei \(c_k = (a_k + jb_k) / 2\)
   \end{array}
 \]
 \begin{center}
-  \begin{tabular}{l >{\(}l<{\)} >{\(}l<{\)}}
-    Eigenschaft von \(f(t)\) & \\
+  \begin{tabularx}{\textwidth}{l >{\(}X<{\)} >{\(}l<{\)}}
+    Eigenschaft von \(f(t)\) \\
     \midrule
-    Achsen-symmetrisch, Gerade    & f(-t) =  f(t) & \imag(c_k) = b_k = 0 \\
-    Punkt-symmetrisch, Ungerade   & f(-t) = -f(t) & \real(c_k) = a_k = 0 \\
-    Halbperiod Achsen-symmetrisch & f(t + T/2) = f(t) & c_{2k+1} = 0 \\
-    Halbperiod Punkt-symmetrisch & f(t + T/2) = -f(t) & c_{2k} = 0 \\
-  \end{tabular}
+    Achsen-symmetrisch, Gerade    & f(-t) =  f(t)      & \imag(2 c_k) = b_k = 0 \\
+    Punkt-symmetrisch, Ungerade   & f(-t) = -f(t)      & \real(2 c_k) = a_k = 0 \\
+    Halbperiod Achsen-symmetrisch & f(t + T/2) = f(t)  & c_{2k+1} = 0 \\
+    Halbperiod Punkt-symmetrisch  & f(t + T/2) = -f(t) & c_{2k} = 0 \\
+  \end{tabularx}
 \end{center}
 
 \subsection{Hilbertstransformation}
