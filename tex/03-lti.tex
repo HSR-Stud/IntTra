@@ -1,11 +1,49 @@
 \section{Lineare Zeitinvariante Systeme}
 \begin{center}
   \begin{tikzpicture}[
-      system/.style = {draw, thick, inner sep = .4cm}
+      system/.style = {draw, thick, inner sep = 4mm, outer sep = 1mm}
     ]
-    \node[system] (lti) {LTI-System \(\mathcal{S}\)};
-    \draw[thick, ->] (lti.east) to ++(.7,0) node[right] {Antwort \(y(t) = \mathcal{S}x(t)\)};
-    \draw[thick, ->] (lti.west) ++(-.7,0) node[left] {Anregung \(x(t)\)} to (lti.west);
+    \matrix[row sep=3mm, column sep=1.5cm] (M) {
+      \node (x) {\(x(t)\)}; &
+      \node (g) {\(g(t) = y_\delta (t)\)}; &
+      \node (y) {\(y(t) = g(t) * x(t)\)}; \\
+
+      &
+      \node (h) {\(h(t)\)}; &
+      \node (yw) {\(y_\omega(t) = h(t) * x(t)\)}; \\
+
+      \node (in) {Anregung}; &
+      \node[system, fill=white] (sys) {LTI-System \(\mathcal{S}\)}; &
+      \node (out) {Antwort}; \\
+
+      \node (X) {\(X(s)\)}; &
+      \node (G) {\(G(s) = 1/p(s)\)}; &
+      \node (Y) {\(Y(s) = G(s) \cdot X(s)\)}; \\
+
+      \node (Xw) {\(X(\omega)\)}; &
+      \node (H)  {\(H(\omega) = G(j\omega)\)}; &
+      \node (Yw) {\(Y_\omega (\omega) = H(\omega) \cdot X(\omega)\)}; \\
+    };
+
+    \draw[thick, ->] (in) to (sys);
+    \draw[thick, ->] (sys) to (out);
+
+    \begin{pgfonlayer}{background}
+      \coordinate (T1) at ($(x.north west) - (.8,-.1)$);
+      \coordinate (T2) at ($(yw.south east) + (.8,-.1)$);
+
+      \coordinate (B1) at ($(X.north west) - (0,-.1)$);
+      \coordinate (B2) at ($(Y.south east) + (0,-.1)$);
+
+      \coordinate (F1) at ($(Xw.north west) - (0,-.1)$);
+      \coordinate (F2) at ($(Yw.south east) + (0,-.1)$);
+
+      \fill[color=blue!20] (T1) rectangle (T2);
+      \fill[color=magenta!20] (B1 -| T1) rectangle (B2 -| T2);
+      \fill[color=red!20] (F1 -| T1) rectangle (F2 -| T2);
+      % \fill[top color=blue!20, bottom color=magenta!20]
+        % (T1) rectangle (B2);
+    \end{pgfonlayer}
   \end{tikzpicture}
 \end{center}
 Ein System mit der folgenden Eigenschaften ist als LTI bezeichnet.
@@ -15,16 +53,9 @@ Ein System mit der folgenden Eigenschaften ist als LTI bezeichnet.
     Zeitinvariant & \mathcal{S} x(t + t_0) = y(t + t_0) \\
   \end{tabularx}
 \end{center}
-LTI Systeme sind mit linearer DGL mit konstanten Koeffizienten mathematisch beschreibt.
+LTI Systeme sind matematisch mit linearer DGL mit konstanten Koeffizienten beschreibt.
 \[
   x = \sum_{k=0}^n a_k y^{(k)} = a_n y^{(n)} + a_{n-1} y^{(n-1)}+ \cdots + a_0 y
-\]
-Der \(\mathcal{S}\) Operator entspricht mathematisch zu einer Faltung in
-Zeitbereich mit der \emph{Gewichtsfunktion} \(g(t)\) oder einem Produkt im
-Bildbereich mit der \emph{\"Ubertragungsfunktion} \(G(s) = \mathcal{F} g(t)\)
-(Faltungssatz).
-\[
-  \mathcal{S}x(t) \equiv g(t) * x(s) \qquad \mathcal{S}X(s) \equiv G(s) \cdot X(s)
 \]
 
 \subsection{Impulsantwort}
