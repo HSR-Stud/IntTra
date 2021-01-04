@@ -17,4 +17,17 @@ LTI Systeme sind matematisch mit linearer DGL mit konstanten Koeffizienten besch
 \subsection{Impulsantwort}
 \subsection{Frequenzgang}
 \subsection{Eigenschwingungen}
+Die \emph{Eigenschwingung} ist die Antwort des Systems \emph{ohne} Anregung (\(x(t) = 0\)),
+d. h. die homogene L\"oesung von der DGL.
+Sie ist die Reaktion des Systems auf gegebene Anfangsbedingungen.
+Seien die Anfangsbedingungen \(y(0) = c_0, \dots, y^{(n-1)}(0) = c_{n-1}\)
+\[
+  0 = \sum_{k=0}^n a_k y^{(k)}
+  \quad\stackrel{\laplace}{\implies}\quad
+  0 = \underbrace{(a_n s^n + \cdots + a_0)}_{p(s)} Y(s) 
+    - \underbrace{(s^{n-1} c_0 + \cdots + c_{n-1})}_{r(s)}
+  \quad\iff\quad
+  Y(s) = \frac{r(s)}{p(s)}
+\]
+
 \subsection{Station\"are L\"osung}
