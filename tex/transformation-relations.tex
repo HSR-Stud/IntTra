@@ -1,4 +1,5 @@
-﻿\begin{tikzpicture}[semithick]
+﻿
+\begin{tikzpicture}[semithick]
 
   \node[fill=blue!20,
         minimum height=5cm,
@@ -6,7 +7,7 @@
 
   \node[fill=red!20,
         minimum height=5cm,
-        minimum width=4cm,
+        minimum width=5cm,
         anchor=east] (freq) at (-3,0) {};
 
   \node[fill=magenta!20,
@@ -18,10 +19,17 @@
   \node[red!80!black, above] at (freq.north) {Frequenzbereich};
   \node[magenta!60!black, above] at (cfreq.north) {Bildbereich};
 
+
+
   \node[anchor=south west, rotate=-90, magenta!80!black]
     at (cfreq.north east) {\(z\)-Ebene};
   \node[anchor=south east, rotate=-90, magenta!80!black]
     at (cfreq.south east) {\(s\)-Ebene};
+
+  \node[anchor=south east, rotate=90]
+    at (freq.north west) {\textsc{Diskret}};
+  \node[anchor=south west, rotate=90]
+    at (freq.south west) {\textsc{Kontinuierlich}};
 
   \node (xt) at ($(time)  - (0,1.75)$) {\(f(t)\)};
   \node (xn) at ($(time)  + (0,1.75)$) {\(y_k\)};
@@ -33,16 +41,17 @@
   \node (Xs) at ($(cfreq) - (0,1.75)$) {\(F(s)\)};
   \node (Xz) at ($(cfreq) + (0,1.75)$) {\(F(z)\)};
 
-  \draw[->] (xt) to node[midway, right] {\(\mathcal{S}_\delta\)} (xn);
+  \draw[->] (xt) to node[midway, right] {\(\Sh_{\Delta t}\)} (xn);
 
-  \draw[<->] (Xs) to node[midway, right] {\(z=e^{sT}\)} (Xz);
+  \draw[<-] (Xs) to node[near start, right]
+    {\(\displaystyle s = \frac{\ln(z)}{T}\)} (Xz);
 
   \draw[<->] (cn) to
     node[near end, left, anchor=east] {\(\displaystyle\lim_{T \to \infty}\)}
     node[near start, right] {\(F(k\omega_0) = 2Tc_k\)} (Xo);
 
-  \draw[->] (Xn) to
-    node[midway, left, anchor=east] {\(\displaystyle\lim_{N \to \infty}\)} (cn);
+  \draw[->] (Xn) to node[midway, left, anchor=east]
+    {\(\displaystyle 2\hat{\omega} \leq \frac{2\pi}{\Delta t}\)} (cn);
 
   \draw[<->] (xt) to[out=135, in=10]
     node[near end, sloped, above] {\(\mathcal{F}_T\)}

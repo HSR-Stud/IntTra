@@ -21,5 +21,11 @@
 \newcommand{\hilbert}{\mathcal{H}}
 \newcommand{\system}{\mathcal{S}}
 
-%% TODO: replace with correct symbol
+%% Dirac Comb
+\DeclareFontFamily{U}{wncy}{}
+\DeclareFontShape{U}{wncy}{m}{n}{<->wncyr10}{}
+\DeclareSymbolFont{mcy}{U}{wncy}{m}{n}
+\DeclareMathSymbol{\Sh}{\mathord}{mcy}{"58}
+
+% TODO: replace with correct symbol
 \newcommand{\corresponds}{--}
