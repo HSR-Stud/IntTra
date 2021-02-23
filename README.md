@@ -1,17 +1,13 @@
-IntTra - Integraltransformationen
-======
-### Preview
-[![Build Status](https://travis-ci.org/HSR-Stud/IntTra.svg?branch=master)](https://travis-ci.org/HSR-Stud/IntTra)  
-[HS2017](https://github.com/HSR-Stud/IntTra/releases/download/HS2017/IntTra.pdf)
+# IntTra Zusammenfassung
+Zusammenfasssung der Vorlesung Integraltransformationen Herbstsemester 2020 von Manuel Bichsel an der HSR / OST FHO
 
+## Inhalt
 
-## Erlaubte Hilfsmittel (nach Modulprüfung HS2012/13)
+- Behandelte Themenfeld 1
+  + Behandelte Thema 1
+  + Behandelte Thema 2
+- Behandelte Themenfeld 2
+  + ...
 
-  * Eigene Zusammenfassung
-  * Skripte, Übungen
-  * Alte Prüfungen (nur selbstgelöste Aufgaben keine Kopien von Prüfungsaufgaben oder Lösungen)
-  * Formelsammlung
-  * *kein* Taschenrechner
-  
-## Ausdruck 
-  * Zusammenfassung am Besten als A5-Booklet ausdrucken  
+## License
+See `LICENSE` file
