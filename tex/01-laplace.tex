@@ -1,11 +1,12 @@
 \section{Laplace Transformation}
 \[
-  f(t) = \ilaplace \laplace f =
-    \lim_{\gamma\to\infty} \frac{1}{2\pi j} \int\limits_{x - j\gamma}^{x + j\gamma}
-      \Bigg(
-      \underbrace{
-        \int\limits_{-\infty}^{\infty} f(t) e^{-st} \di{t}
-      }_{F = \laplace f}
-      \Bigg)
-    e^{st} \di{s}
+  F(s) = \laplace f(t) = \int\limits_{0}^{\infty} f(t) e^{-st} \di{t}
+  \qquad
+  f(t) = \ilaplace F(s) = \lim_{\gamma\to\infty} \frac{1}{2\pi j} 
+  	\int\limits_{x - j\gamma}^{x + j\gamma} F(s)\, e^{st} \di{s}
 \]
+\subsection{Konvergenzbereich}
+Zuerst kann man klar sehen, dass ausser wenn 
+\(\mathcal{O}(f) \geq \mathcal{O}(e^{\alpha t})\)
+konvergiert das Laplaceintegral f\"ur \(\real(s) < 0\) nicht.
+Allgemeiner die Bedingung ist \(\real(s) < a \in \mathbf{R}\cup\{\pm\infty\}\).
