@@ -3,11 +3,14 @@ Zusammenfasssung der Vorlesung Integraltransformationen Herbstsemester 2020 von 
 
 ## Inhalt
 
-- Behandelte Themenfeld 1
-  + Behandelte Thema 1
-  + Behandelte Thema 2
-- Behandelte Themenfeld 2
-  + ...
+- Fourier
+  + Reihe
+  + Fouriertransformation
+  + Diskrete Fouriertransformation
+- Hilbertstransformation
+- Laplacetransformation
+  + Loesung von lineare DGL
+- LTI Systeme
 
 ## License
 See `LICENSE` file
