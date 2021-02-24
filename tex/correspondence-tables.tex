@@ -1,0 +1,107 @@
+\begin{sidewaystable}
+\section{Tabellen}
+{
+  \renewcommand{\arraystretch}{2}
+  \begin{tabularx}{\textwidth}{X *{2}{
+      >{\(\displaystyle}r<{\)}
+      @{\(\hspace{2mm}\corresponds\hspace{2mm}\)}
+      >{\(\displaystyle}l<{\)}}
+  }
+    Korrespondenzpaar &
+      f(t) &
+      F(\omega) &
+      \sigma(t) f(t) &
+      F(s) \\
+
+    Symmetrie &
+      F(t) &
+      2\pi f(\omega) &
+      F(t) &
+      \\
+
+    \midrule
+
+    Verschiebung &
+      f(t - \tau) &
+      F(\omega) \cdot e^{-j\omega\tau} &
+      \sigma(t - \tau) f(t - \tau) &
+      F(s) \cdot e^{-s\tau} \\
+
+    Modulation / D\"ampfung &
+      f(t) \cdot e^{j\Omega t} &
+      F(\omega - \Omega) &
+      \sigma(t) f(t) \cdot e^{at} &
+      F(s - a) \\
+
+    Streckung &
+      f(\lambda t) &
+      \frac{1}{|\lambda|} F(\frac{\omega}{\lambda}) &
+      \sigma(\lambda t) f(\lambda t) &
+      \frac{1}{\lambda} F(\frac{s}{\lambda}) \\
+
+    Differentiation &
+      \mathcal{D}^k f(t) = f^{(k)}(t) &
+      (j\omega)^k F(\omega) &
+      \mathcal{D}^k f^{(k)}(t) &
+      s^k F(s) - s^{k-1} f(0^+) - \cdots - f^{(k-1)}(0^+) \\
+
+    Integration &
+      \mathcal{I}^k f(t) = \int\limits_{-\infty}^{\infty} f(u) \di{u^k} &
+      \frac{1}{(j\omega)^k} F(\omega) &
+      \mathcal{I} f(t) = \int\limits_0^t f(u) \di{u} &
+      \frac{1}{s} F(s) \\
+
+    Hilbert Transform &
+      \hilbert f(t) = \frac{1}{\pi} \int\limits_{-\infty}^{\infty} \frac{f(u) \di{u} }{t-u} &
+      -j \sgn(\omega) F(\omega) \\
+
+    \midrule
+
+    Faltung &
+      g(t) * h(t) &
+      G(\omega) \cdot H(\omega) &
+      g(t) * h(t) &
+      G(s) \cdot H(s) \\
+
+    &
+      g(t) \cdot h(t) &
+      \frac{1}{2\pi} G(\omega) * H(\omega) &
+      g(t) \cdot h(t) &
+      \lim_{\gamma\to\infty} \frac{1}{2\pi j}
+        \int\limits_{x - j\gamma}^{x + j\gamma} F(u) \cdot G(s - u) \di{u} \\
+
+    \midrule
+
+    Dirac Delta &
+      \delta(t) &
+      1 &
+      \delta(t) &
+      1 \\
+
+    Heaviside &
+      \sigma(t) &
+      \frac{1}{j\omega} &
+      \sigma(t) &
+      \frac{1}{s} \\
+
+   Sinus &
+    \sin (\Omega t) &
+    -j\pi\left( \delta(\omega - \Omega) - \delta(\omega + \Omega) \right) &
+    \sigma(t)\sin (\omega t) &
+    \frac{s}{s^2 + \omega^2} \\
+
+  Cosinus &
+    \cos (\Omega t) &
+    \pi\left( \delta(\omega - \Omega) + \delta(\omega + \Omega) \right) &
+    \sigma(t)\cos (\omega t) &
+    \frac{\omega}{s^2 + \omega^2} \\
+
+  Monom &
+    t^k &
+    &
+    \sigma(t) t^k &
+    \frac{n!}{s^{n+1}} \\
+
+  \end{tabularx}
+}
+\end{sidewaystable}

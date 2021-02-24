@@ -1,0 +1,85 @@
+\begin{tikzpicture}[
+    semithick,
+    mtext/.style = {inner sep=3mm},
+  ]
+
+  \matrix[row sep=1.25cm, column sep=.75cm] (M) {
+    \node[mtext] (d-image-dgl) {\(pY - h = F\)}; &&
+      \node[mtext] (time-dgl) {\(\sum_k a_k y^{(k)} = f\)}; &&
+      \node[mtext] (i-image-dgl) {\(pY - h = F\)}; &
+      \node (A) {}; \\
+
+    &&
+      &&
+      \node[mtext] (i-image-dgl-g) {\(Y_G = G\cdot F\)}; &
+      \node[mtext] (i-image-dgl-h) {\(Y_H = h/p\)}; \\
+
+    \node[mtext] (d-image-sol) {\(Y = G(F + h)\)}; &&
+      \node[mtext] (time-sol) {\(y\)}; &&
+      \node[mtext] (i-image-sol) {\(Y = Y_G + Y_H\)}; &
+      \node (B) {}; \\
+  };
+
+  % time domain solution
+  \draw[->, dashed] (time-dgl) to (time-sol);
+
+  % direct laplace solution
+  \draw[->] (time-dgl) to node[midway, above] {\(\mathcal{L}\)} (d-image-dgl);
+
+  \draw[->] (d-image-dgl) to node[midway, right] {\(G = 1/p\)} (d-image-sol);
+
+  \draw[->] (d-image-sol) to node[pos=.3, above] {\(\mathcal{L}^{-1}\)} (time-sol);
+
+  % indirect laplace solution
+  \draw[->] (time-dgl) to node[midway, above] {\(\mathcal{L}\)} (i-image-dgl);
+
+  \draw[->] (i-image-dgl) .. controls (A) ..
+    node[near end, right] (F) {\(F = 0\)} (i-image-dgl-h);
+
+  \draw[->] (i-image-dgl) to
+    node[midway, right] {\(h = 0\)} (i-image-dgl-g);
+
+  \draw[->] (i-image-dgl-g) to (i-image-sol);
+  \draw[->] (i-image-dgl-h) .. controls (B) .. (i-image-sol);
+
+  \draw[->] (i-image-sol) to node[pos=.25, above] {\(\mathcal{L}^{-1}\)} (time-sol);
+
+  \begin{pgfonlayer}{background}
+    \coordinate (T1) at (time-dgl.north west);
+    \coordinate (T2) at (time-dgl.east |- time-sol.south east);
+
+    \coordinate (iI1) at (i-image-dgl.north west);
+    \coordinate (iI2) at (F.east |- B.south east);
+
+    \coordinate (dI1) at (d-image-dgl.north west);
+    \coordinate (dI2) at (d-image-sol.east);
+
+    % add a bit more space
+    \coordinate (T1) at ($(T1) + (-.3,.3)$);
+    \coordinate (T2) at ($(T2) + (.3,-.3)$);
+
+    \coordinate (iI1) at ($(iI1) + (-.3,.3)$);
+    \coordinate (iI2) at ($(iI2) + (.3,-.3)$);
+
+    \coordinate (dI1) at ($(dI1) + (-.3,.3)$);
+    \coordinate (dI2) at ($(dI2) + (.3,-.3)$);
+
+    % adjust heights of I to match T
+    \coordinate (iI1) at (T1 -| iI1);
+    \coordinate (iI2) at (T2 -| iI2);
+
+    \coordinate (dI1) at (T1 -| dI1);
+    \coordinate (dI2) at (T2 -| dI2);
+
+    \node[above right, color=blue!70!black] at (T1) {Zeitbereich};
+    \node[above right, color=magenta!70!black] at (iI1) {Bildbereich};
+    \node[above right, color=magenta!70!black] at (dI1) {Bildbereich};
+
+    % \node[below left] at (dI2) {Direkte L\"osung};
+    % \node[below left] at (iI2) {Indirekte L\"osung};
+
+    \fill[color=blue!20] (T1) rectangle (T2);
+    \fill[color=magenta!20] (iI1)rectangle (iI2);
+    \fill[color=magenta!20] (dI1) rectangle (dI2);
+  \end{pgfonlayer}
+\end{tikzpicture}

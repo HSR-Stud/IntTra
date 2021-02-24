@@ -1,0 +1,67 @@
+\section{Fourier}
+\subsection{Reihe, Transformation und Diskrete Transformation}
+F\"ur die Fourier Reihe ist \(\omega_0 = 2\pi / T\), und \(k > 0 : c_{-k} = \overline{c_k}\)
+\[
+  \everymath={\displaystyle}
+  \begin{array}{l l @{\hspace{1cm}} l l}
+    c_k = \fourier_T f &=
+    \frac{1}{T} \int\limits_{-T/2}^{T/2} f(t) \, e^{-jk\omega_0 t} \di{t}
+      &
+      f(t) = \ifourier_T \left( c_k \right)_{k\in\mathbf{Z}} &=
+      \sum_{k=-\infty}^{\infty} c_k e^{jk\omega_0 t}
+      \\
+
+    F(\omega) = \fourier f &=
+    \int\limits_{-\infty}^{\infty} f(t) \, e^{-j\omega t} \di{t}
+      &
+      f(t) = \ifourier F &=
+      \frac{1}{2\pi} \int\limits_{-\infty}^\infty F(t) e^{j\omega t} \di{\omega}
+      \\
+
+    \hat{c}_k = \mathtt{DFT}_N \left( y_n \right) &=
+    \sum_{k=0}^{N-1} \hat{c}_k e^{-jkn2\pi /N}
+      &
+      y_n = \mathtt{IDFT}_N \left( \hat{c}_k \right) &=
+      \frac{1}{N}\sum_{n=0}^{N-1} y_n e^{jkn2\pi /N}
+  \end{array}
+\]
+Seltener benutzte Varianten der Fourier Reihe, mit \(c_k = (a_k + jb_k) / 2\)
+\[
+  \everymath={\displaystyle}
+  \begin{array}{l l @{\hspace{1cm}} l l}
+    a_k = \real(2 c_k) &= \frac{2}{T} \int\limits_0^T f(t) \cos(k\omega_0 t) \di{t}
+    &
+    b_k = \imag(2 c_k) &= \frac{2}{T} \int f(t) \sin(k\omega_0 t) \di{t}
+  \end{array}
+\]
+\[
+  \everymath={\displaystyle}
+  \begin{array}{l l @{\hspace{1cm}} l l}
+    f(t) &= \frac{a_0}{2} + \sum_{k=1}^\infty \left(
+        a_k \cos(k\omega_0 t) + b_k \sin(k\omega_0 t)
+      \right)
+      & A_k = 2|c_k| &= \sqrt{a_k^2 + b_k^2}
+      \\
+    f(t) &= \frac{A_0}{2} + \sum_{k=1}^\infty A_k \cos(k\omega_0 t + \phi_k)
+      & \phi_k = \arg(c_k) &= -\arctan{(b_k / a_k)}
+  \end{array}
+\]
+Eigenschaften von \(f(t)\)
+\begin{center}
+  \begin{tabularx}{\textwidth}{X >{\(}l<{\)} >{\(}l<{\)}}
+    Achsen-symmetrisch, gerade    & f(-t) =  f(t)      & \imag(2 c_k) = b_k = 0 \\
+    Punkt-symmetrisch, ungerade   & f(-t) = -f(t)      & \real(2 c_k) = a_k = 0 \\
+    Halbperiod Achsen-symmetrisch & f(t + T/2) = f(t)  & c_{2k+1} = 0 \\
+    Halbperiod Punkt-symmetrisch  & f(t + T/2) = -f(t) & c_{2k} = 0 \\
+  \end{tabularx}
+\end{center}
+
+\subsection{Hilbertstransformation}
+\[
+  \hilbert x(t) = \frac{1}{\pi} \int\limits_{-\infty}^{\infty}
+    \frac{x(u)}{t - u} \di{u}
+  \qquad
+  \hilbert \left\{ X(\omega) \right\}
+    = \hilbert \left\{ \Re(\omega) + j\Im(\omega) \right\}
+    = - \Im(\omega) + j\Re(\omega)
+\]
