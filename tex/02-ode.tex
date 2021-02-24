@@ -14,15 +14,15 @@
 \]
 
 \subsection{Partialbruchzerlegung}
-Seien \(P\) und \(Q\) Polynomen von \(s\).
-Der Nenner \(Q(s)\) kann in einem Produkt von \(n\) linearen und \(m\)
+Seien \(P\) und \(Q\) Polynomen von \(s\). In einem Bruch \(P/Q\)
+der Nenner \(Q(s)\) kann in einem Produkt von \(n\) linearen und \(m\)
 quadratischen Terme faktorisiert werden, dass heisst mit Terme von der Form
 \(\ell (s) = s - r\) und \(q(s) = a s^2 + b s + c\).
 %
-Die Partialbruchzerlegung macht im einfachsten Fall (\(Q = \ell\cdot q\)) aus
-\(P/(\ell \cdot q)\) eine Summe \(A/\ell + (Bs + C)/q\). Mit mehre Faktoren es
-muss zu jedem \(\ell\) und \(q\) einen \emph{eindeutigen} Z\"ahler (\(A\) bzw.
-\(Bs + C\)) zugeordnet werden.
+Die Partialbruchzerlegung macht im einfachsten Fall in dem \(Q = \ell\cdot q\)
+aus \(P/(\ell \cdot q)\) eine Summe \(A/\ell + (Bs + C)/q\). Mit mehre Faktoren
+es muss zu jedem \(\ell\) und \(q\) einen \emph{eindeutigen} Z\"ahler (\(A\)
+bzw. \(Bs + C\)) zugeordnet werden.
 %
 \begin{align*}
   \frac{P(s)}{Q(s)}
@@ -104,7 +104,6 @@ Beispiel: Hier sind
 \end{align*}
 Das Gleichungssystem in \(\mathcal{P}_{n+m}(\mathbf{R})\)
 \[
-  \mathcal{Q}\vec{k} = \vec{p} \iff
   \begingroup\color{lightgray}
     \begin{matrix}
       s^3 \\ s^2 \\ s^1 \\ s^0
@@ -122,7 +121,9 @@ Das Gleichungssystem in \(\mathcal{P}_{n+m}(\mathbf{R})\)
   \begin{bmatrix}
     0 \\ 0 \\ 0 \\ 3
   \end{bmatrix}
-  \quad\implies\quad
+  \iff
+  \mathcal{Q}\vec{k} = \vec{p}
+  \implies
   \vec{k} = \mathcal{Q}^{-1} \vec{p} =
     \frac{1}{18}
     \begin{bmatrix}

@@ -248,7 +248,7 @@
   % \setlength\hsr@hmarginwidth{30mm}
   % \setlength\hsr@vmarginheight{30mm}
 
-  \ClassWarning{hsrzf}{Setting margin size to \hsr@vmarginwidth}
+  % \ClassWarning{hsrzf}{Setting margin size to \hsr@vmarginwidth}
 \fi
 
 
